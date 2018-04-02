@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ClassView = ({ setClassDie }) => (
-  <div>
-    <label className="gen-class"> Pick a Class:
+  <div className="gen-class-container">
+    <label className="gen-class"> Class:
       <select id="gen-class" onChange={e => setClassDie(e)}>
         <option value="">Select a Class</option>
         <option value="BARBARIAN">Barbarian</option>
