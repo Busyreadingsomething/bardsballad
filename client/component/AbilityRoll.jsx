@@ -1,6 +1,6 @@
 import React from 'react';
 import ScoreView from './ScoreView';
-import RollView from './RollView';
+import RollButtonView from './RollButtonView';
 
 class AbilityRoll extends React.Component {
   constructor(props) {
@@ -166,7 +166,7 @@ class AbilityRoll extends React.Component {
           </div>
         </div>
         {
-          standard ? null : <RollView
+          standard ? null : <RollButtonView
             addRoll={this.addRoll}
             reroll={this.reroll}
             restart={this.restart}
