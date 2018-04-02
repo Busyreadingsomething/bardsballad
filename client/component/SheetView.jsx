@@ -1,54 +1,49 @@
 import React from 'react';
-import AbilityView from './AbilityView';
+import ScoreView from './ScoreView';
 import ProfileView from './ProfileView';
 import WeaponsView from './WeaponsView';
+import SpellView from './SpellView';
+import GenerateView from './GenerateView';
+import CharacterView from './CharacterView';
 
 class SheetView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      madeCharacter: false,
       level: 0,
       experience: 0,
       profile: {
-        name: 'Crumb Buckets',
-        race: 'ELF',
-        class: 'Ranger',
-        alignment: 'Chaotic Good',
+        name: null,
+        race: null,
+        class: null,
+        alignment: null,
       },
-      abilityScores: {
-        STR: {
-          value: 10,
-          modifier: 0,
-        },
-        DEX: {
-          value: 12,
-          modifier: 1,
-        },
-        CON: {
-          value: 12,
-          modifier: 1,
-        },
-        WIS: {
-          value: 10,
-          modifier: 0,
-        },
-        INT: {
-          value: 8,
-          modifier: -1,
-        },
-        CHA: {
-          value: 12,
-          modifier: 1,
-        },
+      scores: {
+        STR: 0,
+        DEX: 0,
+        CON: 0,
+        INT: 0,
+        WIS: 0,
+        CHA: 0,
       },
+      modifiers: {
+        STR: 0,
+        DEX: 0,
+        CON: 0,
+        INT: 0,
+        WIS: 0,
+        CHA: 0,
+      },
+      hitDie: null,
       status: {
-        maxHP: 10,
-        currenHP: 10,
-        ac: 12,
+        maxHP: null,
+        currenHP: null,
+        ac: null,
       },
       weapons: [
         {
-          id: 0,
+          id: 'W0',
           name: 'DAGGER',
           type: 'slashing',
           dieType: 8,
@@ -56,7 +51,7 @@ class SheetView extends React.Component {
           description: 'Basic iron dagger',
         },
         {
-          id: 1,
+          id: 'W1',
           name: 'LONG SWORD',
           type: 'slashing',
           dieType: 5,
@@ -67,42 +62,81 @@ class SheetView extends React.Component {
       armor: [],
       gear: {},
       spells: {
-        prepared: [],
+        prepared: [
+          {
+            id: 'SP0',
+            name: 'Burning Hands',
+            level: 1,
+            time: '1 Action',
+            duration: 'Instantaneous',
+            range: ['Self', '15ft'],
+            save: 'DEX',
+            effect: 'CHARMED',
+            dieType: 6,
+            dice: 3,
+            description: 'Burns people with your hands',
+          },
+          {
+            id: 'SP1',
+            name: 'Charm Person',
+            level: 1,
+            time: '1 Action',
+            duration: '1 Hour',
+            range: ['15ft'],
+            save: 'WIS',
+            effect: 'FIRE',
+            description: 'Becoming a charming person',
+          },
+        ],
         list: [],
       },
     };
+    this.generateCharacter = this.generateCharacter.bind(this);
+  }
+
+  generateCharacter(character) {
+    const {
+      profile,
+      scores,
+      modifiers,
+      hitDie,
+    } = character;
+
+    this.setState({
+      level: 1,
+      madeCharacter: true,
+      profile,
+      scores,
+      modifiers,
+      hitDie,
+    }, () => console.log(this.state));
   }
 
   render() {
     console.log(this.state);
+    const {
+      profile,
+      level,
+      weapons,
+      spells,
+      scores,
+      modifiers,
+      madeCharacter,
+    } = this.state;
+
     return (
       <div>
-        <div>
-          WE GOT THIS GOD WILLING
-        </div>
-        <div className="bard-col-1">
-          <ProfileView profile={this.state.profile} level={this.state.level} />
-          <div>HEALTH AND DEFENSE VIEW</div>
-          {
-            this.state.weapons.map(weapon => (
-              <WeaponsView
-                key={weapon.id}
-                info={weapon}
-              />
-            ))
-          }
-          <div>SPELLS VIEW</div>
-        </div>
-        <div className="bard-col-2">
-          <div className="expeience-row">
-            EXPERIENCE VIEW
-          </div>
-          <div className="ability-row">
-            <AbilityView scores={this.state.abilityScores} />
-          </div>
-          <div>CHARACTER IMAGE VIEW</div>
-          <div>GEAR VIEW</div>
-        </div>
+        {
+          madeCharacter ?
+            <CharacterView
+              profile={profile}
+              level={level}
+              weapons={weapons}
+              spells={spells}
+              scores={scores}
+              modifiers={modifiers}
+            /> : <GenerateView generate={this.generateCharacter} />
+        }
       </div>
     );
   }
