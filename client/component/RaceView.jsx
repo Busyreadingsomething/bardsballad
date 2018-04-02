@@ -1,8 +1,8 @@
 import React from 'react';
 
 const RaceView = ({ setRaceMods }) => (
-  <div className="race-container">
-    <label className="gen-race"> Pick a Race:
+  <div className="gen-race-container">
+    <label className="gen-race"> Race:
       <select id="gen-race" onChange={e => setRaceMods(e)}>
         <option value="">Select a Race</option>
         <option value="DRAGONBORNE">Dragonborne</option>

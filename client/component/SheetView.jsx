@@ -64,7 +64,7 @@ class SheetView extends React.Component {
             name: 'Burning Hands',
             level: 1,
             time: '1 Action',
-            duration: 'Instantaneous',
+            duration: 'Inst.',
             range: ['Self', '15ft'],
             save: 'DEX',
             effect: 'CHARMED',
@@ -120,7 +120,7 @@ class SheetView extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className="main-container">
         {
           madeCharacter ?
             <CharacterView
