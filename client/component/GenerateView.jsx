@@ -94,36 +94,22 @@ class GenerateView extends React.Component {
 
   setRaceMods(e) {
     const { value } = e.target;
-    const { raceMod } = this.state;
+    const { raceMod, scores, modifiers } = this.state;
     console.log(value);
     if (value) {
-      const scores = {
-        STR: 0,
-        DEX: 0,
-        CON: 0,
-        INT: 0,
-        WIS: 0,
-        CHA: 0,
-      };
-      const modifiers = {
-        STR: 0,
-        DEX: 0,
-        CON: 0,
-        INT: 0,
-        WIS: 0,
-        CHA: 0,
-      };
+      const scoreCopy = Object.assign(scores);
+      const modifierCopy = Object.assign(modifiers);
 
       Object.keys(raceMod[value]).forEach((stat) => {
-        if (stat in scores) {
-          scores[stat] += raceMod[value][stat];
-          modifiers[stat] = Math.floor((scores[stat] - 10) / 2);
+        if (stat in scoreCopy) {
+          scoreCopy[stat] += raceMod[value][stat];
+          modifierCopy[stat] = Math.floor((scoreCopy[stat] - 10) / 2);
         }
       });
 
       this.setState({
-        scores,
-        modifiers,
+        scores: scoreCopy,
+        modifiers: modifierCopy,
         playerRace: value,
       });
     }
@@ -210,6 +196,7 @@ class GenerateView extends React.Component {
         CHA: 0,
       },
       playerClass: null,
+      playerAlign: null,
       playerName: null,
       playerRace: null,
       die: null,
@@ -221,22 +208,28 @@ class GenerateView extends React.Component {
     const { scores, modifiers, playerName, playerClass, playerRace, point, playerAlign } = this.state;
     console.log(this.state);
     return (
-      <div className="gen-continer">
+      <div className="gen-container">
         <NameView setName={this.setName} />
-        {
-          playerName ? <RaceView setRaceMods={this.setRaceMods} /> : null
-        }
-        {
-          playerRace ? <ClassView setClassDie={this.setClassDie} /> : null
-        }
-        {
-          playerClass ? <AlignView setAlign={this.setAlign} /> : null
-        }
+        <div className="gen-dropdowns">
+          {
+            playerName ? <RaceView setRaceMods={this.setRaceMods} /> : null
+          }
+          {
+            playerRace ? <ClassView setClassDie={this.setClassDie} /> : null
+          }
+          {
+            playerClass ? <AlignView setAlign={this.setAlign} /> : null
+          }
+        </div>
         {
           playerAlign ? <SelectRoll roll={this.scoreGenSelect} /> : null
         }
         {
-          point === 'roll' ? <AbilityRoll scores={scores} modifiers={modifiers} genRestart={this.genRestart} /> : null
+          point === 'roll' ? <AbilityRoll
+            scores={scores}
+            modifiers={modifiers}
+            genRestart={this.genRestart}
+          /> : null
         }
         {
           point === 'standard' ? <AbilityRoll
@@ -244,7 +237,7 @@ class GenerateView extends React.Component {
             modifiers={modifiers}
             genRestart={this.genRestart}
             standard="[15, 14, 13, 12, 10, 18]"
-            /> : null
+          /> : null
         }
         <div className="gen-submit" onClick={() => this.genCharacter()}>SUBMIT</div>
         Point Generator
