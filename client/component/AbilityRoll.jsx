@@ -26,6 +26,15 @@ class AbilityRoll extends React.Component {
     this.restart = this.restart.bind(this);
   }
 
+  componentDidMount() {
+    const { standard } = this.props;
+    if (standard) {
+      this.setState({
+        rolls: JSON.parse(standard),
+      });
+    }
+  }
+
   setValue(e) {
     const { id } = e.target;
     const {
@@ -100,6 +109,7 @@ class AbilityRoll extends React.Component {
 
   selectRoll(e) {
     const score = e.target.id.split(',');
+    console.log(score);
     const value = Number(score[0]);
     const position = Number(score[1]);
 
@@ -151,28 +161,7 @@ class AbilityRoll extends React.Component {
             />))
           }
         </div>
-        <div className="">
-          <div className="roll-container">
-            {
-              list.map((num, index) => (
-                <div
-                  className="ability-rolled"
-                  id={[num, index]}
-                  position={index}
-                  onClick={(e) => this.selectRoll(e)}>
-                  {num}
-                </div>))
-            }
-          </div>
-        </div>
-        {
-          standard ? null : <RollButtonView
-            addRoll={this.addRoll}
-            reroll={this.reroll}
-            restart={this.restart}
-          />
-        }
-        <div>
+        <div className="ability-stats-container">
           {
             Object.keys(scores).map(stat => (
               <div
@@ -183,6 +172,25 @@ class AbilityRoll extends React.Component {
               </div>))
           }
         </div>
+        <div className="roll-container">
+          {
+            list.map((num, index) => (
+              <div
+                className="ability-rolled"
+                id={[num, index]}
+                position={index}
+                onClick={(e) => this.selectRoll(e)}>
+                {num}
+              </div>))
+          }
+        </div>
+        {
+          standard ? null : <RollButtonView
+            addRoll={this.addRoll}
+            reroll={this.reroll}
+            restart={this.restart}
+          />
+        }
       </div>
     );
   }
