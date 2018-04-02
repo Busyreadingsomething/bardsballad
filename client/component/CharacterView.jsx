@@ -3,6 +3,7 @@ import ProfileView from './ProfileView';
 import WeaponsView from './WeaponsView';
 import SpellView from './SpellView';
 import ScoreView from './ScoreView';
+import StatusView from './StatusView';
 
 const CharacterView = ({
   weapons,
@@ -10,21 +11,33 @@ const CharacterView = ({
   scores,
   profile,
   level,
-  modifier,
+  modifiers,
 }) => (
   <div className="character-container">
     <div className="bard-col-1">
       <ProfileView profile={profile} level={level} />
-      <div>HEALTH AND DEFENSE VIEW</div>
-      {
-        weapons.map(weapon => (
-          <WeaponsView
-            key={weapon.id}
-            info={weapon}
-          />
-        ))
-      }
+      <StatusView
+        armor={13}
+        init={modifiers.DEX}
+        speed={30}
+        maxHp={10}
+        hp={10}
+        tempHp={0}
+        hitdie={10}
+      />
+      <div className="weapons-container">
+        WEAPONS:
+        {
+          weapons.map(weapon => (
+            <WeaponsView
+              key={weapon.id}
+              info={weapon}
+            />
+          ))
+        }
+      </div>
       <div className="spells-container">
+        SPELLS:
         <div className="spells-prepared">
           {
             spells.prepared.map(spell => <SpellView key={spell.id} info={spell} />)
@@ -33,20 +46,21 @@ const CharacterView = ({
       </div>
     </div>
     <div className="bard-col-2">
-      <div className="expeience-row">
+      <div className="experience-row">
         EXPERIENCE VIEW
       </div>
       <div className="ability-row">
         {
           Object.keys(scores).map(stat => (<ScoreView
             key={stat}
+            stat={stat}
             scores={scores[stat]}
             modifiers={modifiers[stat]}
           />))
         }
       </div>
-      <div>CHARACTER IMAGE VIEW</div>
-      <div>GEAR VIEW</div>
+      <div className="character-image-container">CHARACTER IMAGE VIEW</div>
+      <div className="gear-container">GEAR VIEW</div>
     </div>
   </div>
 );
