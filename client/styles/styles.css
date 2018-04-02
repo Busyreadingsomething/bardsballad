@@ -1,0 +1,4 @@
+div, label, input, option {
+  display: flex;
+}
+
