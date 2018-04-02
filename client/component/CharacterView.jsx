@@ -4,7 +4,14 @@ import WeaponsView from './WeaponsView';
 import SpellView from './SpellView';
 import ScoreView from './ScoreView';
 
-const CharacterView = ({ weapons, spells, scores, profile, level, modifiers}) => (
+const CharacterView = ({
+  weapons,
+  spells,
+  scores,
+  profile,
+  level,
+  modifier,
+}) => (
   <div className="character-container">
     <div className="bard-col-1">
       <ProfileView profile={profile} level={level} />
