@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ScoreView = ({ key, score }) => (
+const ScoreView = ({ key, scores, modifiers }) => (
   <div className={key}>
     <div className="ability-value">
-      {score.value}
+      {scores}
     </div>
     <div className="modifier-value">
-      {score.modifier}
+      {modifiers}
     </div>
   </div>
 );
