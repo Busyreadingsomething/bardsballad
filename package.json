@@ -1,0 +1,40 @@
+{
+  "name": "bardsballad",
+  "version": "1.0.0",
+  "description": "Interactive Dungeons and Dragons character sheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Busyreadingsomething/bardsballad.git"
+  },
+  "author": "Makan Azarshahy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Busyreadingsomething/bardsballad/issues"
+  },
+  "homepage": "https://github.com/Busyreadingsomething/bardsballad#readme",
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "webpack": "^3.11.0"
+  }
+}

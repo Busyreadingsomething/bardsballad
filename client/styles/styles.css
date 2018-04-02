@@ -1,0 +1,90 @@
+div, label, input, select, option {
+  display: flex;
+}
+
+.gen-container, .ability-roll-container, .ability-stat-container,
+.bard-col-1, .bard-col-2, .profile-container, .weapons-container,
+.spells-container, .spells-prepared, .weapon-container, .spell-container,
+.status-container, .status-row-2 {
+  flex-flow: column;
+}
+
+.gen-dropdown, .player-base, .weapon-base,
+.status-row-1, .status-row-3 {
+  flex-flow: row;
+}
+
+.player-base {
+  justify-content: space-around;
+}
+
+.ability-stat-container {
+  margin: 5px;
+  align-items: center;
+}
+
+.player-name, .weapon-name, .spell-name {
+  flex-grow: 3;
+}
+
+.player-level, .weapon-damage, .spell-level {
+  flex-grow: 1;
+}
+
+.roll-select-container, .ability-rolled, .ability, .roll-container {
+  margin: 5px;
+}
+
+.spell-time, .spell-duration, .spell-range, .spell-save, .spell-effect,
+.spell-damage {
+  margin: 3px;
+  padding: 3px;
+}
+
+.button {
+  margin: 5px 8px;
+  padding: 5px 8px;
+  border: 1px solid lightblue;
+}
+
+.profile-container, .weapons-container, .spells-container,
+.status-container, .experience-row, .ability-row,
+.character-image-container, .gear-container {
+  margin: 5px 8px;
+  padding: 5px 8px;
+  border: 1px dotted blue;
+}
+
+.ability-value {
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 20px;
+  font-size: 20px
+}
+
+.modifier-value {
+  font-size: 15px 
+}
+
+.weapon-container, .spell-container, .ability-stat-container,
+.ability-value {
+  margin: 5px 8px;
+  padding: 5px 8px;
+  border: 1px dotted green;
+  border-radius: 50px;
+}
+
+.bard-col-1, .bard-col-2 {
+  margin: 5px 8px;
+  padding: 5px 8px;
+  border: 1px dotted red;
+}
+
+.bard-col-1 {
+  width: 20%;
+}
+
+.bard-col-2 {
+  width: 60%;
+}
