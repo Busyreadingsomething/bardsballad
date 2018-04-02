@@ -1,8 +1,4 @@
 import React from 'react';
-import ScoreView from './ScoreView';
-import ProfileView from './ProfileView';
-import WeaponsView from './WeaponsView';
-import SpellView from './SpellView';
 import GenerateView from './GenerateView';
 import CharacterView from './CharacterView';
 
@@ -113,7 +109,6 @@ class SheetView extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const {
       profile,
       level,
