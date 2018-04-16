@@ -1,30 +1,15 @@
 import React from 'react';
-import ProfileView from './ProfileView';
+import ProfileContainer from './containers/ProfileContainer';
 import WeaponsView from './WeaponsView';
 import SpellView from './SpellView';
 import ScoreView from './ScoreView';
-import StatusView from './StatusView';
+import StatusContainer from './containers/StatusContainer';
 
-const CharacterView = ({
-  weapons,
-  spells,
-  scores,
-  profile,
-  level,
-  modifiers,
-}) => (
+const CharacterView = ({ weapons, spells, ability }) => (
   <div className="character-container">
     <div className="bard-col-1">
-      <ProfileView profile={profile} level={level} />
-      <StatusView
-        armor={13}
-        init={modifiers.DEX}
-        speed={30}
-        maxHp={10}
-        hp={10}
-        tempHp={0}
-        hitdie={10}
-      />
+      <ProfileContainer />
+      <StatusContainer />
       <div className="weapons-container">
         WEAPONS:
         {
@@ -40,7 +25,7 @@ const CharacterView = ({
         SPELLS:
         <div className="spells-prepared">
           {
-            spells.prepared.map(spell => <SpellView key={spell.id} info={spell} />)
+            spells.map(spell => <SpellView key={spell.id} info={spell} />)
           }
         </div>
       </div>
@@ -51,11 +36,10 @@ const CharacterView = ({
       </div>
       <div className="ability-row">
         {
-          Object.keys(scores).map(stat => (<ScoreView
+          Object.keys(ability).map(stat => (<ScoreView
             key={stat}
             stat={stat}
-            scores={scores[stat]}
-            modifiers={modifiers[stat]}
+            ability={ability[stat]}
           />))
         }
       </div>
