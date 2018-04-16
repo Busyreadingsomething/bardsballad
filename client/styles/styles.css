@@ -5,7 +5,9 @@ div, label, input, select, option {
 .gen-container, .ability-roll-container, .ability-stat-container,
 .bard-col-1, .bard-col-2, .profile-container, .weapons-container,
 .spells-container, .spells-prepared, .weapon-container, .spell-container,
-.status-container, .status-row-2 {
+.status-container, .status-row-2, .status-armor, .status-initiative,
+.status-speed, .status-max-hitpoints, .status-current-value,
+.status-temp-hitpoints, .status-hitdie {
   flex-flow: column;
 }
 
@@ -53,6 +55,10 @@ div, label, input, select, option {
   margin: 5px 8px;
   padding: 5px 8px;
   border: 1px dotted blue;
+}
+
+.ability-row {
+  justify-content: center;
 }
 
 .ability-value {
