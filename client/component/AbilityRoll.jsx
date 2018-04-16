@@ -2,6 +2,32 @@ import React from 'react';
 import ScoreView from './ScoreView';
 import RollButtonView from './RollButtonView';
 
+const generateRoll = () => {
+  const rolls = [];
+
+  for (let roll = 0; roll < 4; roll += 1) {
+    const num = Math.floor(Math.random() * 7);
+    if (!rolls.length) {
+      rolls.push(num);
+    } else if (rolls[0] < num) {
+      rolls.push(num);
+    } else if (rolls[0] > num) {
+      rolls.unshift(num);
+    } else {
+      rolls.push(num);
+    }
+  }
+
+  return rolls.reduce((acc, num, index) => {
+    let added = acc;
+    if (index) {
+      added += num;
+    }
+    return added;
+  }, 0);
+};
+
+
 class AbilityRoll extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +43,6 @@ class AbilityRoll extends React.Component {
         WIS: false,
         CHA: false,
       },
-      rollCount: 0,
       currentValue: null,
       currentIndex: null,
     };
@@ -30,7 +55,7 @@ class AbilityRoll extends React.Component {
     const { standard } = this.props;
     if (standard) {
       this.setState({
-        rolls: JSON.parse(standard),
+        rolls: standard,
       });
     }
   }
@@ -66,13 +91,12 @@ class AbilityRoll extends React.Component {
   }
 
   addRoll() {
-    const { rolls, rollCount } = this.state;
+    const { rolls } = this.state;
     const rollsCopy = rolls.slice();
     if (rollsCopy.length < 6) {
       rollsCopy.push(this.generateRoll());
       this.setState({
         rolls: rollsCopy,
-        rollCount: rollCount + 1,
       });
     }
   }
@@ -80,7 +104,7 @@ class AbilityRoll extends React.Component {
   reroll() {
     const rolls = this.state.rolls.slice();
     if (rolls.length !== 0) {
-      const score = this.generateRoll();
+      const score = generateRoll();
       rolls[rolls.length - 1] = score;
       this.setState({
         rolls,
@@ -91,7 +115,6 @@ class AbilityRoll extends React.Component {
   restart() {
     this.setState({
       rolls: [],
-      rollCount: 0,
       scores: this.props.scores,
       modifiers: this.props.modifiers,
       currentValue: null,
@@ -121,71 +144,49 @@ class AbilityRoll extends React.Component {
     }
   }
 
-  generateRoll() {
-    const rolls = [];
-
-    for (let roll = 0; roll < 4; roll += 1) {
-      const num = Math.floor(Math.random() * 7);
-      if (!rolls.length) {
-        rolls.push(num);
-      } else if (rolls[0] < num) {
-        rolls.push(num);
-      } else if (rolls[0] > num) {
-        rolls.unshift(num);
-      } else {
-        rolls.push(num);
-      }
-    }
-
-    return rolls.reduce((acc, num, index) => {
-      if (index) {
-        acc += num;
-      }
-      return acc;
-    }, 0);
-  }
-
   render() {
     const { rolls, scores, modifiers } = this.state;
     const { standard } = this.props;
-    const list = standard ? JSON.parse(standard) : rolls;
+    const list = standard.length ? standard : rolls;
 
     return (
       <div className="ability-roll-container">
         <div className="ability-scores">
           {
-            Object.keys(scores).map(stat => (<ScoreView
-              key={stat}
-              scores={scores[stat]}
-              modifiers={modifiers[stat]}
-            />))
+            Object.keys(props.ability).map(stat => (
+              <ScoreView
+                key={stat}
+                ability={props.ability[stat]}
+              />))
           }
         </div>
         <div className="ability-stats-container">
           {
-            Object.keys(scores).map(stat => (
-              <div
+            Object.keys(props.ability).map(stat => (
+              <button
                 className="ability"
                 id={stat}
-                onClick={(e) => this.setValue(e)}>
+                onClick={e => this.setValue(e)}
+              >
                 {stat}
-              </div>))
+              </button>))
           }
         </div>
         <div className="roll-container">
           {
             list.map((num, index) => (
-              <div
+              <button
                 className="ability-rolled"
                 id={[num, index]}
                 position={index}
-                onClick={(e) => this.selectRoll(e)}>
+                onClick={e => this.selectRoll(e)}
+              >
                 {num}
-              </div>))
+              </button>))
           }
         </div>
         {
-          standard ? null : <RollButtonView
+          standard.length ? null : <RollButtonView
             addRoll={this.addRoll}
             reroll={this.reroll}
             restart={this.restart}
