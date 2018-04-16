@@ -1,6 +1,6 @@
 import React from 'react';
 import GenerateView from './GenerateView';
-import CharacterContainer from './containers/CharacterContainer';
+import CharacterView from './CharacterView';
 
 class SheetView extends React.Component {
   constructor(props) {
@@ -123,7 +123,7 @@ class SheetView extends React.Component {
       <div className="main-container">
         {
           madeCharacter ?
-            <CharacterContainer /> : <GenerateView generate={this.generateCharacter} />
+            <CharacterView /> : <GenerateView generate={this.generateCharacter} />
         }
       </div>
     );

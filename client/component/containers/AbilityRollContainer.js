@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
   list: ownProps.standard,
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 const AbilityRollContainer = connect(
   mapStateToProps,
