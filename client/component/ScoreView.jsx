@@ -1,14 +1,26 @@
 import React from 'react';
 
-const ScoreView = ({ stat, scores, modifiers }) => (
+const ScoreView = ({ stat, ability }) => (
   <div className="ability-stat-container" id={stat}>
     <div className="ability-value">
-      {scores}
+      {ability.value}
     </div>
     <div className="modifier-value">
-      {modifiers}
+      {ability.mod}
     </div>
-    <div className="stat-name">{stat}</div>
+    <div className="saves">
+      {
+        // Object.keys(ability.saves).map(save => (
+        //   <div className="save" id={save}>
+        //     {ability.saves[save]}
+        //     <div className="save-name">
+        //       {save}
+        //     </div>
+        //   </div>
+        // ))
+      }
+    </div>
+    <div className="stat-name">{stat.toUpperCase()}</div>
   </div>
 );
 

@@ -123,14 +123,7 @@ class SheetView extends React.Component {
       <div className="main-container">
         {
           madeCharacter ?
-            <CharacterView
-              profile={profile}
-              level={level}
-              weapons={weapons}
-              spells={spells}
-              scores={scores}
-              modifiers={modifiers}
-            /> : <GenerateView generate={this.generateCharacter} />
+            <CharacterView /> : <GenerateView generate={this.generateCharacter} />
         }
       </div>
     );
