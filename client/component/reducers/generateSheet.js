@@ -1,4 +1,5 @@
 import character from '../../../practiceData/genCharacter';
+
 const fillerScores = {
   str: 13,
   dex: 15,
