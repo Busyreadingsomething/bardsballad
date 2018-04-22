@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import toJS from './toJS/index';
 import AbilityListView from '../AbilityListView';
 
-const mapStateToProps = ({ character }) => ({
-  ability: character.ability,
+const mapStateToProps = state => ({
+  ability: state.getIn(['character', 'ability']),
 });
 
 const mapDispatchtoProps = () => ({});
@@ -10,6 +11,6 @@ const mapDispatchtoProps = () => ({});
 const AbilityListContainer = connect(
   mapStateToProps,
   mapDispatchtoProps,
-)(AbilityListView);
+)(toJS(AbilityListView));
 
 export default AbilityListContainer;
