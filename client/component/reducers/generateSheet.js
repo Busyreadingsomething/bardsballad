@@ -1,3 +1,4 @@
+import { fromJS } from 'immutable';
 import character from '../../../practiceData/genCharacter';
 
 const fillerScores = {
@@ -49,7 +50,7 @@ const testSpells = [
 ];
 
 const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
-const initialState = {
+const initialState = fromJS({
   character: blankCharacter,
   currentValue: null,
   currentIndex: null,
@@ -61,8 +62,8 @@ const initialState = {
     WIS: false,
     CHA: false,
   },
-};
-console.log(initialState);
+});
+
 const generateSheet = (state = initialState, action) => {
   return state;
 };
