@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
+import toJS from './toJS/index';
 import StatusView from '../StatusView';
 
-const mapStateToProps = ({ character }) => ({
-  armor: character.status.armorClass,
-  init: character.status.init,
-  speed: character.status.speed,
-  maxHP: character.status.maxHP,
-  currentHP: character.status.currentHP,
-  tempHP: character.status.tempHP,
-  hitDie: character.charClass.hitDie,
+const mapStateToProps = state => ({
+  armor: state.getIn(['character', 'status', 'armorClass']),
+  init: state.getIn(['character', 'status', 'init']),
+  speed: state.getIn(['character', 'status', 'speed']),
+  maxHP: state.getIn(['character', 'status', 'maxHP']),
+  currentHP: state.getIn(['character', 'status', 'currentHP']),
+  tempHP: state.getIn(['character', 'status', 'tempHP']),
+  hitDie: state.getIn(['character', 'status', 'hitDie']),
 });
 
 const mapDispatchToProps = () => ({});
@@ -16,6 +17,6 @@ const mapDispatchToProps = () => ({});
 const StatusContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(StatusView);
+)(toJS(StatusView));
 
 export default StatusContainer;
