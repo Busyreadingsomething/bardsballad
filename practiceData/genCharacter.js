@@ -203,6 +203,8 @@ const genClass = (className) => {
 
 const genStatus = () => ({
   level: 0,
+  experience: Math.floor(Math.random() * 201),
+  nextLevel: 200,
   maxHP: null,
   currentHP: null,
   tempHP: null,
