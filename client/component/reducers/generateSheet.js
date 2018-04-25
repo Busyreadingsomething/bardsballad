@@ -72,6 +72,8 @@ const generateSheet = (state = initialState, action) => {
   switch (action.type) {
     case 'UPDATE_NAME':
       return state.updateIn(['character', 'profile', 'name'], () => action.name);
+    case 'UPDATE_ALIGN':
+      return state.updateIn(['character', 'profile', 'align'], () => action.align);
     default:
       return state;
   }
