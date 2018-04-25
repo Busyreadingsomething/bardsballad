@@ -63,9 +63,18 @@ const initialState = fromJS({
     CHA: false,
   },
 });
+const newMap = initialState.updateIn(['character', 'profile', 'name'], () => 'Makan');
+console.log('NEWMAP', newMap.getIn(['character', 'profile', 'name']));
+console.log('INITIAL STATE', initialState.getIn(['character', 'profile', 'name']));
+console.log(newMap.getIn(['character', 'ability', 'str', 'value']));
 
 const generateSheet = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case 'UPDATE_NAME':
+      return state.updateIn(['character', 'profile', 'name'], () => action.name);
+    default:
+      return state;
+  }
 };
 
 export default generateSheet;
