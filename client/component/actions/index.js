@@ -7,7 +7,7 @@ const updateName = name => ({
 
 const updateAlign = align => ({
   type: actionTypes.UPDATE_ALIGN,
-  align,
+  align: align.target.value,
 });
 
 const updateClass = className => ({
