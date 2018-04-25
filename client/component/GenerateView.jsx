@@ -7,6 +7,7 @@ import SelectRoll from './SelectRoll';
 import NameView from './NameView';
 import NameContainer from './containers/NameContainer';
 import AlignView from './AlignView';
+import AlignContainer from './containers/AlignContainer';
 import raceModifiers from '../../practiceData/raceModifiers';
 
 class GenerateView extends React.Component {
@@ -54,8 +55,6 @@ class GenerateView extends React.Component {
     this.scoreGenSelect = this.scoreGenSelect.bind(this);
     this.setClassDie = this.setClassDie.bind(this);
     this.genRestart = this.genRestart.bind(this);
-    this.setName = this.setName.bind(this);
-    this.setAlign = this.setAlign.bind(this);
   }
 
   setRaceMods(e) {
@@ -96,24 +95,6 @@ class GenerateView extends React.Component {
       this.setState({
         playerClass: value,
         die: this.state.hitDie[value],
-      });
-    }
-  }
-
-  setName(e) {
-    const { key, target } = e;
-    if (key === 'Enter') {
-      this.setState({
-        playerName: target.value,
-      });
-    }
-  }
-
-  setAlign(e) {
-    const { value } = e.target;
-    if (value) {
-      this.setState({
-        playerAlign: value,
       });
     }
   }
@@ -202,7 +183,7 @@ class GenerateView extends React.Component {
         <div className="gen-dropdowns">
           <RaceView setRaceMods={this.setRaceMods} />
           <ClassView setClassDie={this.setClassDie} />
-          <AlignView setAlign={this.setAlign} />
+          <AlignContainer />
         </div>
         <SelectRoll roll={this.scoreGenSelect} />
         {
