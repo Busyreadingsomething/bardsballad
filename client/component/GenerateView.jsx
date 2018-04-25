@@ -5,6 +5,7 @@ import AbilityRoll from './AbilityRoll';
 import AbilityRollContainer from './containers/AbilityRollContainer';
 import SelectRoll from './SelectRoll';
 import NameView from './NameView';
+import NameContainer from './containers/NameContainer';
 import AlignView from './AlignView';
 import raceModifiers from '../../practiceData/raceModifiers';
 
@@ -197,7 +198,7 @@ class GenerateView extends React.Component {
     const { scores, modifiers, point } = this.state;
     return (
       <div className="gen-container">
-        <NameView setName={this.setName} />
+        <NameContainer />
         <div className="gen-dropdowns">
           <RaceView setRaceMods={this.setRaceMods} />
           <ClassView setClassDie={this.setClassDie} />
