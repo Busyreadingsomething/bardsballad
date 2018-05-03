@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
 import character from '../../../practiceData/genCharacter';
+import generator from '../../../practiceData/generatorData';
 
 const fillerScores = {
   str: 13,
@@ -49,24 +50,12 @@ const testSpells = [
   },
 ];
 
+
 const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
 const initialState = fromJS({
   character: blankCharacter,
-  currentValue: null,
-  currentIndex: null,
-  selected: {
-    STR: false,
-    DEX: false,
-    CON: false,
-    INT: false,
-    WIS: false,
-    CHA: false,
-  },
+  data: generator(),
 });
-const newMap = initialState.updateIn(['character', 'profile', 'name'], () => 'Makan');
-console.log('NEWMAP', newMap.getIn(['character', 'profile', 'name']));
-console.log('INITIAL STATE', initialState.getIn(['character', 'profile', 'name']));
-console.log(newMap.getIn(['character', 'ability', 'str', 'value']));
 
 const generateSheet = (state = initialState, action) => {
   switch (action.type) {
@@ -74,6 +63,12 @@ const generateSheet = (state = initialState, action) => {
       return state.updateIn(['character', 'profile', 'name'], () => action.name);
     case 'UPDATE_ALIGN':
       return state.updateIn(['character', 'profile', 'align'], () => action.align);
+    case 'UPDATE_RACE':
+      return state.updateIn(['character', 'race'], () => fromJS(character.genRace(action.race)));
+    case 'UPDATE_CLASS':
+      return state.updateIn(['character', 'charClass'], () => fromJS(character.genClass(action.className)));
+    case 'PICK_ROLL':
+      return state.updateIn(['data', 'roll'], () => action.roll);
     default:
       return state;
   }

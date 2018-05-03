@@ -12,12 +12,17 @@ const updateAlign = align => ({
 
 const updateClass = className => ({
   type: actionTypes.UPDATE_CLASS,
-  className,
+  className: className.target.value,
 });
 
 const updateRace = race => ({
   type: actionTypes.UPDATE_RACE,
-  race,
+  race: race.target.value,
+});
+
+const pickRoll = roll => ({
+  type: actionTypes.PICK_ROLL,
+  roll: roll.target.value,
 });
 
 const actions = {
@@ -25,6 +30,7 @@ const actions = {
   updateAlign,
   updateClass,
   updateRace,
+  pickRoll,
 };
 
 export default actions;
