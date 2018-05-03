@@ -122,8 +122,9 @@ class SheetView extends React.Component {
     return (
       <div className="main-container">
         {
-          madeCharacter ?
-            <CharacterView /> : <GenerateView generate={this.generateCharacter} />
+          madeCharacter
+            ? <CharacterView />
+            : <GenerateView generate={this.generateCharacter} />
         }
       </div>
     );
