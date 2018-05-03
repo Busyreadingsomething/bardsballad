@@ -56,6 +56,21 @@ describe('### GENERATE CHARACTER ###', () => {
     });
   });
 
+  describe('___GEN STAT___', () => {
+    it('Should return an object', () => {
+      const stat = character.genStat(13, 'str');
+      expect(stat).toBeInstanceOf(Object);
+    });
+
+    it('Should have the property of value, mod, and saves', () => {
+      const stat = character.genStat(13, 'str');
+      expect(stat).toHaveProperty('value', 13);
+      expect(stat).toHaveProperty('mod', 1);
+      expect(stat).toHaveProperty('saves');
+      expect(stat.saves).toBeInstanceOf(Object);
+    });
+  });
+
   describe('___GEN ABILITY___', () => {
     it('Should return an object', () => {
       const scores = character.genAbility();
@@ -73,10 +88,12 @@ describe('### GENERATE CHARACTER ###', () => {
     });
 
     it('Stat should have value, mode and saves property', () => {
-      const { str } = character.genAbility();
-      expect(str).toHaveProperty('value');
-      expect(str).toHaveProperty('mod');
-      expect(str).toHaveProperty('saves');
+      const scores = character.genAbility();
+      Object.keys(scores).forEach((stat) => {
+        expect(scores[stat]).toHaveProperty('value');
+        expect(scores[stat]).toHaveProperty('mod');
+        expect(scores[stat]).toHaveProperty('saves');
+      });
     });
 
     it('Should populate the value with 0 if no object is passed through', () => {

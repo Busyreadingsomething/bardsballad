@@ -1,22 +1,22 @@
 import React from 'react';
 
-const ClassView = ({ setClassDie }) => (
+const ClassView = ({ setClass }) => (
   <div className="gen-class-container">
     <label className="gen-class"> Class:
-      <select id="gen-class" onChange={e => setClassDie(e)}>
+      <select id="gen-class" onChange={e => setClass(e)}>
         <option value="">Select a Class</option>
-        <option value="BARBARIAN">Barbarian</option>
-        <option value="BARD">Bard</option>
-        <option value="CLERIC">Cleric</option>
-        <option value="DRUID">Druid</option>
-        <option value="FiGHTER">Fighter</option>
-        <option value="MONK">Monk</option>
-        <option value="PALADIN">Paladin</option>
-        <option value="RANGER">Ranger</option>
-        <option value="ROGUE">Rogue</option>
-        <option value="SORCERROR">Sorcerror</option>
-        <option value="WARLOCK">Warlock</option>
-        <option value="WIZARD">Wizard</option>
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="cleric">Cleric</option>
+        <option value="druid">Druid</option>
+        <option value="fighter">Fighter</option>
+        <option value="monk">Monk</option>
+        <option value="paladin">Paladin</option>
+        <option value="ranger">Ranger</option>
+        <option value="rogue">Rogue</option>
+        <option value="sorcerror">Sorcerror</option>
+        <option value="warlock">Warlock</option>
+        <option value="wizard">Wizard</option>
       </select>
     </label>
   </div>

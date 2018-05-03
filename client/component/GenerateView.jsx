@@ -1,35 +1,16 @@
 import React from 'react';
-import RaceView from './RaceView';
-import ClassView from './ClassView';
-import AbilityRoll from './AbilityRoll';
+import RaceContainer from './containers/RaceContainer';
+import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
 import SelectRoll from './SelectRoll';
-import NameView from './NameView';
-import AlignView from './AlignView';
-import raceModifiers from '../../practiceData/raceModifiers';
+import SelectRollContainer from './containers/SelectRollContainer';
+import NameContainer from './containers/NameContainer';
+import AlignContainer from './containers/AlignContainer';
 
 class GenerateView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: null,
-      playerRace: null,
-      playerClass: null,
-      playerAlign: null,
-      hitDie: {
-        BARBARIAN: 12,
-        BARD: 8,
-        CLERIC: 8,
-        DRUID: 8,
-        FIGHTER: 10,
-        MONK: 8,
-        PALADIN: 10,
-        RANGER: 10,
-        ROGUE: 8,
-        SORCERROR: 6,
-        WARLOCK: 8,
-        WIZARD: 6,
-      },
       point: null,
       scores: {
         STR: 0,
@@ -49,73 +30,38 @@ class GenerateView extends React.Component {
       },
       die: null,
     };
-    this.setRaceMods = this.setRaceMods.bind(this);
+
     this.scoreGenSelect = this.scoreGenSelect.bind(this);
-    this.setClassDie = this.setClassDie.bind(this);
     this.genRestart = this.genRestart.bind(this);
-    this.setName = this.setName.bind(this);
-    this.setAlign = this.setAlign.bind(this);
   }
 
-  setRaceMods(e) {
-    const { value } = e.target;
-    const { scores, modifiers, playerRace } = this.state;
-    console.log('HITTING ME');
-    if (!value) {
-      return 'Error';
-    }
-    const scoresCopy = Object.assign({}, scores);
-    const modCopy = Object.assign({}, modifiers);
+  // setRace(e) {
+  //   const { value } = e.target;
+  //   const { scores, modifiers, playerRace } = this.state;
+  //   console.log('HITTING ME');
+  //   if (!value) {
+  //     return 'Error';
+  //   }
+  //   const scoresCopy = Object.assign({}, scores);
+  //   const modCopy = Object.assign({}, modifiers);
 
-    console.log('FIRST:', scoresCopy);
-    Object.keys(scoresCopy).forEach((stat) => {
-      if (stat in raceModifiers[value]) {
-        scoresCopy[stat] += raceModifiers[value][stat];
-      }
-      if (playerRace && stat in raceModifiers[playerRace]) {
-        scoresCopy[stat] -= raceModifiers[playerRace][stat];
-      }
-      modCopy[stat] = Math.floor((scoresCopy[stat] - 10) / 2);
-    });
+  //   Object.keys(scoresCopy).forEach((stat) => {
+  //     if (stat in raceModifiers[value]) {
+  //       scoresCopy[stat] += raceModifiers[value][stat];
+  //     }
+  //     if (playerRace && stat in raceModifiers[playerRace]) {
+  //       scoresCopy[stat] -= raceModifiers[playerRace][stat];
+  //     }
+  //     modCopy[stat] = Math.floor((scoresCopy[stat] - 10) / 2);
+  //   });
 
-    console.log('SECOND:', scoresCopy);
-
-    this.setState({
-      scores: scoresCopy,
-      modifiers: modCopy,
-      playerRace: value,
-      point: null,
-    }, () => console.log(this.state.scores));
-  }
-
-  setClassDie(e) {
-    const { value } = e.target;
-    console.log(this.state.hitDie[value]);
-    if (value) {
-      this.setState({
-        playerClass: value,
-        die: this.state.hitDie[value],
-      });
-    }
-  }
-
-  setName(e) {
-    const { key, target } = e;
-    if (key === 'Enter') {
-      this.setState({
-        playerName: target.value,
-      });
-    }
-  }
-
-  setAlign(e) {
-    const { value } = e.target;
-    if (value) {
-      this.setState({
-        playerAlign: value,
-      });
-    }
-  }
+  //   this.setState({
+  //     scores: scoresCopy,
+  //     modifiers: modCopy,
+  //     playerRace: value,
+  //     point: null,
+  //   }, () => console.log(this.state.scores));
+  // }
 
   scoreGenSelect(e) {
     this.setState({
@@ -194,16 +140,16 @@ class GenerateView extends React.Component {
   }
 
   render() {
-    const { scores, modifiers, point } = this.state;
+    const { point } = this.state;
     return (
       <div className="gen-container">
-        <NameView setName={this.setName} />
+        <NameContainer />
         <div className="gen-dropdowns">
-          <RaceView setRaceMods={this.setRaceMods} />
-          <ClassView setClassDie={this.setClassDie} />
-          <AlignView setAlign={this.setAlign} />
+          <RaceContainer />
+          <ClassContainer />
+          <AlignContainer />
         </div>
-        <SelectRoll roll={this.scoreGenSelect} />
+        <SelectRollContainer />
         {
           point === 'roll' ? <AbilityRollContainer
             genRestart={this.genRestart}
