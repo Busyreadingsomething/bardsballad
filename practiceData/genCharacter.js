@@ -145,19 +145,19 @@ const genSaves = (stat, mod) => {
   return saves;
 };
 
+const genStat = (value, stat) => {
+  const score = {};
+  score.value = value;
+  score.mod = Math.floor((value - 10) / 2);
+  score.saves = genSaves(stat, score.mod);
+  return score;
+};
+
 const genAbility = (scores) => {
   const ability = {};
   const stats = scores || emptyScores;
-
   Object.keys(stats).forEach((stat) => {
-    const score = {};
-    const value = stats[stat];
-    const mod = Math.floor((value - 10) / 2);
-
-    score.value = value;
-    score.mod = mod;
-    score.saves = genSaves(stat, mod);
-    ability[stat] = score;
+    ability[stat] = genStat(stats[stat], stat);
   });
 
   return ability;
@@ -249,6 +249,7 @@ const genCharacter = (scores, name, gender, align, raceName, className, weapons,
 
 export default {
   genSaves,
+  genStat,
   genAbility,
   genProfile,
   genClass,
