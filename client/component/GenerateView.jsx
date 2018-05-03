@@ -2,7 +2,6 @@ import React from 'react';
 import RaceContainer from './containers/RaceContainer';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
-import SelectRoll from './SelectRoll';
 import SelectRollContainer from './containers/SelectRollContainer';
 import NameContainer from './containers/NameContainer';
 import AlignContainer from './containers/AlignContainer';
