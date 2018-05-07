@@ -5,7 +5,7 @@ import actions from '../actions';
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setAlign: e => dispatch(actions.updateAlign(e)),
+  setAlign: e => dispatch(actions.updateProfile(e)),
 });
 
 const AlignContainer = connect(

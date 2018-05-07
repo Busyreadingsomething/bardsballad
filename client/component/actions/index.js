@@ -1,13 +1,9 @@
 import actionTypes from '../actionTypes';
 
-const updateName = name => ({
-  type: actionTypes.UPDATE_NAME,
-  name: name.target.value,
-});
-
-const updateAlign = align => ({
-  type: actionTypes.UPDATE_ALIGN,
-  align: align.target.value,
+const updateProfile = profile => ({
+  type: actionTypes.UPDATE_PROFILE,
+  prop: profile.target.id.split('-'),
+  value: profile.target.value,
 });
 
 const updateClass = className => ({
@@ -26,8 +22,7 @@ const pickRoll = roll => ({
 });
 
 const actions = {
-  updateName,
-  updateAlign,
+  updateProfile,
   updateClass,
   updateRace,
   pickRoll,
