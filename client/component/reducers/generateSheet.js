@@ -51,7 +51,7 @@ const testSpells = [
 ];
 
 
-const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
+const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', '5ft 3', 31, 'silver', 'green', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
 const initialState = fromJS({
   character: blankCharacter,
   data: generator(),
@@ -59,10 +59,8 @@ const initialState = fromJS({
 
 const generateSheet = (state = initialState, action) => {
   switch (action.type) {
-    case 'UPDATE_NAME':
-      return state.updateIn(['character', 'profile', 'name'], () => action.name);
-    case 'UPDATE_ALIGN':
-      return state.updateIn(['character', 'profile', 'align'], () => action.align);
+    case 'UPDATE_PROFILE':
+      return state.updateIn(action.prop, () => action.value);
     case 'UPDATE_RACE':
       return state.updateIn(['character', 'race'], () => fromJS(character.genRace(action.race)));
     case 'UPDATE_CLASS':

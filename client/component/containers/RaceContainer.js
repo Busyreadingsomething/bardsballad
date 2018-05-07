@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import RaceView from '../RaceView';
+import RaceView from '../ProfileGenViews/RaceView';
 import actions from '../actions';
 
 const mapStateToProps = () => ({});

@@ -3,7 +3,7 @@ import React from 'react';
 const ClassView = ({ setClass }) => (
   <div className="gen-class-container">
     <label className="gen-class"> Class:
-      <select id="gen-class" onChange={e => setClass(e)}>
+      <select id="character-charClass" onChange={e => setClass(e)}>
         <option value="">Select a Class</option>
         <option value="barbarian">Barbarian</option>
         <option value="bard">Bard</option>

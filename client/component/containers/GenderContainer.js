@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import AlignView from '../AlignView';
+import GenderView from '../ProfileGenViews/GenderView';
 import actions from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setAlign: e => dispatch(actions.updateProfile(e)),
+  setGender: e => dispatch(actions.updateProfile(e)),
 });
 
-const AlignContainer = connect(
+const GenderContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AlignView);
+)(GenderView);
 
-export default AlignContainer;
+export default GenderContainer;
