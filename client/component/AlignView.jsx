@@ -3,7 +3,7 @@ import React from 'react';
 const AlignView = ({ setAlign }) => (
   <div className="gen-align-container">
     <label className="gen-align"> Alignment:
-      <select id="gen-align" onChange={e => setAlign(e)}>
+      <select id="character-profile-align" onChange={e => setAlign(e)}>
         <option value="">Select an Alignment</option>
         <option value="LAWFUL GOOD">Lawful Good</option>
         <option value="NEUTRAL GOOD">Neutral Good</option>

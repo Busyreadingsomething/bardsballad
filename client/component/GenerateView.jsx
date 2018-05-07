@@ -1,10 +1,9 @@
 import React from 'react';
-import RaceContainer from './containers/RaceContainer';
+import ProfileGenView from './ProfileGenView';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
 import SelectRoll from './SelectRoll';
 import SelectRollContainer from './containers/SelectRollContainer';
-import NameContainer from './containers/NameContainer';
 import AlignContainer from './containers/AlignContainer';
 
 class GenerateView extends React.Component {
@@ -143,9 +142,8 @@ class GenerateView extends React.Component {
     const { point } = this.state;
     return (
       <div className="gen-container">
-        <NameContainer />
+        <ProfileGenView />
         <div className="gen-dropdowns">
-          <RaceContainer />
           <ClassContainer />
           <AlignContainer />
         </div>
