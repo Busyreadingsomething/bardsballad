@@ -2,7 +2,6 @@ import React from 'react';
 import ProfileGenView from './ProfileGenView';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
-import SelectRoll from './SelectRoll';
 import SelectRollContainer from './containers/SelectRollContainer';
 import AlignContainer from './containers/AlignContainer';
 
