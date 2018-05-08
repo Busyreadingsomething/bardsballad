@@ -120,15 +120,19 @@ describe('### GENERATE CHARACTER ###', () => {
   });
 
   describe('___GEN PROFILE___', () => {
-    const profile = character.genProfile('bort', 'male', 'chaotic good');
+    const profile = character.genProfile('bort', 'male', '6ft', 30, 'silver', 'green', 'chaotic good');
 
     it('Should return an object', () => {
       expect(profile).toBeInstanceOf(Object);
     });
 
-    it('Should have the proeprties name, gender, and align', () => {
+    it('Should have the proeprties name, gender, height, age, hair, eye, and align', () => {
       expect(profile).toHaveProperty('name', 'bort');
       expect(profile).toHaveProperty('gender', 'male');
+      expect(profile).toHaveProperty('height', '6ft');
+      expect(profile).toHaveProperty('age', 30);
+      expect(profile).toHaveProperty('hair', 'silver');
+      expect(profile).toHaveProperty('eye', 'green');
       expect(profile).toHaveProperty('align', 'chaotic good');
     });
   });

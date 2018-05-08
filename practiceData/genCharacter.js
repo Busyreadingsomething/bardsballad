@@ -226,7 +226,21 @@ const genGear = (weapons, spells, money) => {
   return gear;
 };
 
-const genCharacter = (scores, name, gender, height, age, hair, eye, align, raceName, className, weapons, spells, money) => {
+const genCharacter = (
+  scores,
+  name,
+  gender,
+  height,
+  age,
+  hair,
+  eye,
+  align,
+  raceName,
+  className,
+  weapons,
+  spells,
+  money,
+) => {
   const character = {};
   character.ability = genAbility(scores);
   character.profile = genProfile(name, gender, height, age, hair, eye, align);
