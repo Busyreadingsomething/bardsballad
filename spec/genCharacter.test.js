@@ -1,6 +1,33 @@
 import character from '../practiceData/genCharacter';
 
 describe('### GENERATE CHARACTER ###', () => {
+  describe('___GEN RACE MODS___', () => {
+    it('Should return an object', () => {
+      const raceMods = character.genRaceMods();
+      expect(raceMods).toBeInstanceOf(Object);
+    });
+
+    it('Should have the ability stats as properties with default 0 if nothing passed in', () => {
+      const raceMods = character.genRaceMods();
+      expect(raceMods).toHaveProperty('str', 0);
+      expect(raceMods).toHaveProperty('dex', 0);
+      expect(raceMods).toHaveProperty('con', 0);
+      expect(raceMods).toHaveProperty('int', 0);
+      expect(raceMods).toHaveProperty('wis', 0);
+      expect(raceMods).toHaveProperty('cha', 0);
+    });
+
+    it('Should over write properties with the object values passed in', () => {
+      const overWrite = {
+        str: 1,
+        con: 2,
+      };
+      const raceMods = character.genRaceMods(overWrite);
+      expect(raceMods).toHaveProperty('str', 1);
+      expect(raceMods).toHaveProperty('con', 2);
+    })
+  });
+
   describe('___GEN SAVES___', () => {
     it('Should return an object', () => {
       const saves = character.genSaves('str', 3);

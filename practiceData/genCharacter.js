@@ -135,6 +135,16 @@ const savesList = {
   wis: ['saving', 'animalHandling', 'insight', 'medicine', 'perception', 'survival'],
   cha: ['saving', 'deception', 'intimidation', 'performance', 'persuasion'],
 };
+const genRaceMods = (mods) => {
+  const boosts = mods || {};
+  const stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  const base = {};
+  stats.forEach((stat) => {
+    base[stat] = 0;
+  });
+
+  return Object.assign(base, boosts);
+};
 
 const genSaves = (stat, mod) => {
   const saves = {};
@@ -257,6 +267,7 @@ const genCharacter = (
 };
 
 export default {
+  genRaceMods,
   genSaves,
   genStat,
   genAbility,

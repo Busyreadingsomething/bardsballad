@@ -39,4 +39,20 @@ describe('### ROLL GENERATOR ###', () => {
       });
     });
   });
+
+  describe('___GEN STANDARD___', () => {
+    const standard = generateRolls.genStandard();
+    it('Should return an array', () => {
+      expect(standard).toBeInstanceOf(Array);
+    });
+
+    it('Should have a length of 6', () => {
+      expect(standard.length).toBe(6);
+    });
+
+    it('Should have the standard array', () => {
+      const expected = [15, 14, 13, 12, 10, 8];
+      expect(standard).toEqual(expect.arrayContaining(expected));
+    });
+  });
 });
