@@ -12,7 +12,6 @@ const toJS = Component => (props) => {
         : prop[VALUE];
       return newProps;
     }, {});
-  console.log(Component, propsJS);
   return <Component {...propsJS} />;
 };
 
