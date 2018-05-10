@@ -1,13 +1,16 @@
 import React from 'react';
+import StatListView from './ScoreGenViews/StatListView';
+import ModListView from './ScoreGenViews/ModListView';
+import RollListView from './ScoreGenViews/RollListView';
+import RollListContainer from './containers/RollListContainer';
 
 const ScoreGenView = props => (
   <div className="score-gen-container">
     <div>
-      <div>SCORE</div>
-      <div>STAT</div>
+      <StatListView />
     </div>
-    <div>RACE MOD</div>
-    <div>ROLLS</div>
+    <ModListView />
+    <RollListContainer />
     <div>
       <button>REROLL</button>
       <button>SUBMIT</button>
