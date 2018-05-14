@@ -25,7 +25,7 @@ describe('### GENERATE CHARACTER ###', () => {
       const raceMods = character.genRaceMods(overWrite);
       expect(raceMods).toHaveProperty('str', 1);
       expect(raceMods).toHaveProperty('con', 2);
-    })
+    });
   });
 
   describe('___GEN SAVES___', () => {
@@ -180,7 +180,6 @@ describe('### GENERATE CHARACTER ###', () => {
     it('Should have an empty string or null if nothing is passed in', () => {
       const race = character.genRace();
       expect(race).toHaveProperty('name', '');
-      console.log(race.modifiers);
       expect(race).toHaveProperty('attributes', null);
     });
 
