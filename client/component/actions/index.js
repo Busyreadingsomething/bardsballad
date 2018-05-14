@@ -18,7 +18,22 @@ const updateRace = race => ({
 
 const pickRoll = roll => ({
   type: actionTypes.PICK_ROLL,
-  roll: roll.target.value,
+  rollSelect: roll.target.value,
+});
+
+const setScore = (val, index) => ({
+  type: actionTypes.SET_SCORE,
+  val,
+  index,
+});
+
+const updateHolder = stat => ({
+  type: actionTypes.UPDATE_HOLDER,
+  stat,
+});
+
+const setAbility = () => ({
+  type: actionTypes.SET_ABILITY,
 });
 
 const actions = {
@@ -26,6 +41,9 @@ const actions = {
   updateClass,
   updateRace,
   pickRoll,
+  setScore,
+  updateHolder,
+  setAbility,
 };
 
 export default actions;

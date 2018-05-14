@@ -3,6 +3,9 @@ const actionTypes = {
   UPDATE_CLASS: 'UPDATE_CLASS',
   UPDATE_RACE: 'UPDATE_RACE',
   PICK_ROLL: 'PICK_ROLL',
+  SET_SCORE: 'SET_SCORE',
+  UPDATE_HOLDER: 'UPDATE_HOLDER',
+  SET_ABILITY: 'SET_ABILITY',
 };
 
 export default actionTypes;
