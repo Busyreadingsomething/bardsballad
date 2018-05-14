@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ModView = props => (
+const ModView = ({ mod }) => (
   <div className="mod-container">
-    Mad VALUE
+    {`+${mod}`}
   </div>
 );
 

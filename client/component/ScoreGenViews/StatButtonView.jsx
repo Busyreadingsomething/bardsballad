@@ -1,8 +1,8 @@
 import React from 'react';
 
-const StatButtonView = props => (
+const StatButtonView = ({ stat, selectStat }) => (
   <div className="stat-button-container">
-    <button>STAT BUTTON</button>
+    <button className="scoregen-stat-button" onClick={() => selectStat(stat)}>{stat}</button>
   </div>
 );
 
