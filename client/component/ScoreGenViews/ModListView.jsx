@@ -1,9 +1,11 @@
 import React from 'react';
 import ModView from './ModView';
 
-const ModListView = props => (
+const ModListView = ({ mods, stats }) => (
   <div className="mode-list-container">
-    <ModView />
+    {
+      stats.map(stat => <ModView mod={mods[stat]} />)
+    }
   </div>
 );
 
