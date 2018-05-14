@@ -1,8 +1,8 @@
 import React from 'react';
 import ProfileGenView from './ProfileGenView';
+import ScoreGenContainer from './containers/ScoreGenContainer';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
-import SelectRollContainer from './containers/SelectRollContainer';
 import AlignContainer from './containers/AlignContainer';
 
 class GenerateView extends React.Component {
@@ -32,34 +32,6 @@ class GenerateView extends React.Component {
     this.scoreGenSelect = this.scoreGenSelect.bind(this);
     this.genRestart = this.genRestart.bind(this);
   }
-
-  // setRace(e) {
-  //   const { value } = e.target;
-  //   const { scores, modifiers, playerRace } = this.state;
-  //   console.log('HITTING ME');
-  //   if (!value) {
-  //     return 'Error';
-  //   }
-  //   const scoresCopy = Object.assign({}, scores);
-  //   const modCopy = Object.assign({}, modifiers);
-
-  //   Object.keys(scoresCopy).forEach((stat) => {
-  //     if (stat in raceModifiers[value]) {
-  //       scoresCopy[stat] += raceModifiers[value][stat];
-  //     }
-  //     if (playerRace && stat in raceModifiers[playerRace]) {
-  //       scoresCopy[stat] -= raceModifiers[playerRace][stat];
-  //     }
-  //     modCopy[stat] = Math.floor((scoresCopy[stat] - 10) / 2);
-  //   });
-
-  //   this.setState({
-  //     scores: scoresCopy,
-  //     modifiers: modCopy,
-  //     playerRace: value,
-  //     point: null,
-  //   }, () => console.log(this.state.scores));
-  // }
 
   scoreGenSelect(e) {
     this.setState({
@@ -142,11 +114,11 @@ class GenerateView extends React.Component {
     return (
       <div className="gen-container">
         <ProfileGenView />
+        <ScoreGenContainer />
         <div className="gen-dropdowns">
           <ClassContainer />
           <AlignContainer />
         </div>
-        <SelectRollContainer />
         {
           point === 'roll' ? <AbilityRollContainer
             genRestart={this.genRestart}

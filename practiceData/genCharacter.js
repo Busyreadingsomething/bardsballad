@@ -136,6 +136,17 @@ const savesList = {
   cha: ['saving', 'deception', 'intimidation', 'performance', 'persuasion'],
 };
 
+const genRaceMods = (mods) => {
+  const boosts = mods || {};
+  const stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  const base = {};
+  stats.forEach((stat) => {
+    base[stat] = 0;
+  });
+
+  return Object.assign(base, boosts);
+};
+
 const genSaves = (stat, mod) => {
   const saves = {};
   savesList[stat].forEach((save) => {
@@ -150,6 +161,7 @@ const genStat = (value, stat) => {
   score.value = value;
   score.mod = Math.floor((value - 10) / 2);
   score.saves = genSaves(stat, score.mod);
+
   return score;
 };
 
@@ -172,14 +184,16 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
   profile.hair = hair;
   profile.eye = eye;
   profile.align = align;
+
   return profile;
 };
 
 const genRace = (raceName) => {
   const race = {};
   race.name = raceName || '';
-  race.modifiers = raceModifiers[raceName] || null;
+  race.modifiers = genRaceMods(raceModifiers[raceName]) || null;
   race.attributes = raceAttributes[raceName] || null;
+
   return race;
 };
 
@@ -190,11 +204,11 @@ const genClass = (className) => {
   charClass.proficiencies = null;
   charClass.features = null;
 
-  if (className) {
-    charClass.name = className || '';
-    charClass.hitDie = classList[className].die || null;
-    charClass.proficiencies = classList[className].proficiencies || null;
-    charClass.features = classList[className].features || null;
+  if (className in classList) {
+    charClass.name = className;
+    charClass.hitDie = classList[className].die;
+    charClass.proficiencies = classList[className].proficiencies;
+    charClass.features = classList[className].features;
   }
 
   return charClass;
@@ -223,10 +237,25 @@ const genGear = (weapons, spells, money) => {
   gear.weapons = [...weaponList];
   gear.spells = [...spellList];
   gear.money = money || emptyMoney;
+
   return gear;
 };
 
-const genCharacter = (scores, name, gender, height, age, hair, eye, align, raceName, className, weapons, spells, money) => {
+const genCharacter = (
+  scores,
+  name,
+  gender,
+  height,
+  age,
+  hair,
+  eye,
+  align,
+  raceName,
+  className,
+  weapons,
+  spells,
+  money,
+) => {
   const character = {};
   character.ability = genAbility(scores);
   character.profile = genProfile(name, gender, height, age, hair, eye, align);
@@ -239,10 +268,12 @@ const genCharacter = (scores, name, gender, height, age, hair, eye, align, raceN
     spells: [],
     armor: [],
   };
+
   return character;
 };
 
 export default {
+  genRaceMods,
   genSaves,
   genStat,
   genAbility,

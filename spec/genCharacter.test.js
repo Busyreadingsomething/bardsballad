@@ -1,6 +1,33 @@
 import character from '../practiceData/genCharacter';
 
 describe('### GENERATE CHARACTER ###', () => {
+  describe('___GEN RACE MODS___', () => {
+    it('Should return an object', () => {
+      const raceMods = character.genRaceMods();
+      expect(raceMods).toBeInstanceOf(Object);
+    });
+
+    it('Should have the ability stats as properties with default 0 if nothing passed in', () => {
+      const raceMods = character.genRaceMods();
+      expect(raceMods).toHaveProperty('str', 0);
+      expect(raceMods).toHaveProperty('dex', 0);
+      expect(raceMods).toHaveProperty('con', 0);
+      expect(raceMods).toHaveProperty('int', 0);
+      expect(raceMods).toHaveProperty('wis', 0);
+      expect(raceMods).toHaveProperty('cha', 0);
+    });
+
+    it('Should over write properties with the object values passed in', () => {
+      const overWrite = {
+        str: 1,
+        con: 2,
+      };
+      const raceMods = character.genRaceMods(overWrite);
+      expect(raceMods).toHaveProperty('str', 1);
+      expect(raceMods).toHaveProperty('con', 2);
+    })
+  });
+
   describe('___GEN SAVES___', () => {
     it('Should return an object', () => {
       const saves = character.genSaves('str', 3);
@@ -120,15 +147,19 @@ describe('### GENERATE CHARACTER ###', () => {
   });
 
   describe('___GEN PROFILE___', () => {
-    const profile = character.genProfile('bort', 'male', 'chaotic good');
+    const profile = character.genProfile('bort', 'male', '6ft', 30, 'silver', 'green', 'chaotic good');
 
     it('Should return an object', () => {
       expect(profile).toBeInstanceOf(Object);
     });
 
-    it('Should have the proeprties name, gender, and align', () => {
+    it('Should have the proeprties name, gender, height, age, hair, eye, and align', () => {
       expect(profile).toHaveProperty('name', 'bort');
       expect(profile).toHaveProperty('gender', 'male');
+      expect(profile).toHaveProperty('height', '6ft');
+      expect(profile).toHaveProperty('age', 30);
+      expect(profile).toHaveProperty('hair', 'silver');
+      expect(profile).toHaveProperty('eye', 'green');
       expect(profile).toHaveProperty('align', 'chaotic good');
     });
   });
@@ -149,8 +180,14 @@ describe('### GENERATE CHARACTER ###', () => {
     it('Should have an empty string or null if nothing is passed in', () => {
       const race = character.genRace();
       expect(race).toHaveProperty('name', '');
-      expect(race).toHaveProperty('modifiers', null);
+      console.log(race.modifiers);
       expect(race).toHaveProperty('attributes', null);
+    });
+
+    it('Should have mod stats of 0 for each in the modifiers property', () => {
+      const race = character.genRace();
+      expect(race.modifiers).toBeInstanceOf(Object);
+      Object.keys(race.modifiers).forEach(stat => expect(race.modifiers[stat]).toBe(0));
     });
 
     it('Should set the value according to the race', () => {

@@ -1,35 +1,19 @@
 const genData = () => {
   const data = {};
 
+  data.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   data.currentValue = null;
   data.currentIndex = null;
-  data.roll = null;
-  data.holder = {
-    str: {
+  data.rollSelect = null;
+
+  data.holder = {};
+
+  data.stats.forEach((stat) => {
+    data.holder[stat] = {
       val: 0,
       selected: false,
-    },
-    dex: {
-      val: 0,
-      selected: false,
-    },
-    con: {
-      val: 0,
-      selected: false,
-    },
-    wis: {
-      val: 0,
-      selected: false,
-    },
-    int: {
-      val: 0,
-      selected: false,
-    },
-    cha: {
-      val: 0,
-      selected: false,
-    },
-  };
+    };
+  });
   data.rolls = [];
 
   return data;
