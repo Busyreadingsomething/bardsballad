@@ -1,13 +1,14 @@
 const genData = () => {
   const data = {};
 
-  data.scores = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  data.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   data.currentValue = null;
   data.currentIndex = null;
-  data.roll = null;
+  data.rollSelect = null;
 
   data.holder = {};
-  data.scores.forEach((stat) => {
+
+  data.stats.forEach((stat) => {
     data.holder[stat] = {
       val: 0,
       selected: false,

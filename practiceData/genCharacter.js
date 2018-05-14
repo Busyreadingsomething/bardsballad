@@ -135,6 +135,7 @@ const savesList = {
   wis: ['saving', 'animalHandling', 'insight', 'medicine', 'perception', 'survival'],
   cha: ['saving', 'deception', 'intimidation', 'performance', 'persuasion'],
 };
+
 const genRaceMods = (mods) => {
   const boosts = mods || {};
   const stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
@@ -160,6 +161,7 @@ const genStat = (value, stat) => {
   score.value = value;
   score.mod = Math.floor((value - 10) / 2);
   score.saves = genSaves(stat, score.mod);
+
   return score;
 };
 
@@ -182,14 +184,16 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
   profile.hair = hair;
   profile.eye = eye;
   profile.align = align;
+
   return profile;
 };
 
 const genRace = (raceName) => {
   const race = {};
   race.name = raceName || '';
-  race.modifiers = raceModifiers[raceName] || null;
+  race.modifiers = genRaceMods(raceModifiers[raceName]) || null;
   race.attributes = raceAttributes[raceName] || null;
+
   return race;
 };
 
@@ -233,6 +237,7 @@ const genGear = (weapons, spells, money) => {
   gear.weapons = [...weaponList];
   gear.spells = [...spellList];
   gear.money = money || emptyMoney;
+
   return gear;
 };
 
@@ -263,6 +268,7 @@ const genCharacter = (
     spells: [],
     armor: [],
   };
+
   return character;
 };
 
