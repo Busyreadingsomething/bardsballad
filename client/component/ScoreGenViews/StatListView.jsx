@@ -1,11 +1,15 @@
 import React from 'react';
 import StatView from './StatView';
-import StatButtonView from './StatButtonView';
+import StatButtonContainer from '../containers/StatButtonContainer';
 
-const StatListView = props => (
+const StatListView = ({ holder, stats }) => (
   <div className="stat-list-container">
-    <StatView />
-    <StatButtonView />
+    {
+      stats.map(stat => <StatView score={holder[stat]} />)
+    }
+    {
+      stats.map(stat => <StatButtonContainer stat={stat} />)
+    }
   </div>
 );
 
