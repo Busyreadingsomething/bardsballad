@@ -180,8 +180,14 @@ describe('### GENERATE CHARACTER ###', () => {
     it('Should have an empty string or null if nothing is passed in', () => {
       const race = character.genRace();
       expect(race).toHaveProperty('name', '');
-      expect(race).toHaveProperty('modifiers', null);
+      console.log(race.modifiers);
       expect(race).toHaveProperty('attributes', null);
+    });
+
+    it('Should have mod stats of 0 for each in the modifiers property', () => {
+      const race = character.genRace();
+      expect(race.modifiers).toBeInstanceOf(Object);
+      Object.keys(race.modifiers).forEach(stat => expect(race.modifiers[stat]).toBe(0));
     });
 
     it('Should set the value according to the race', () => {

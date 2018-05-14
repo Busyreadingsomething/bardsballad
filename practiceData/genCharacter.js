@@ -204,11 +204,11 @@ const genClass = (className) => {
   charClass.proficiencies = null;
   charClass.features = null;
 
-  if (className) {
-    charClass.name = className || '';
-    charClass.hitDie = classList[className].die || null;
-    charClass.proficiencies = classList[className].proficiencies || null;
-    charClass.features = classList[className].features || null;
+  if (className in classList) {
+    charClass.name = className;
+    charClass.hitDie = classList[className].die;
+    charClass.proficiencies = classList[className].proficiencies;
+    charClass.features = classList[className].features;
   }
 
   return charClass;

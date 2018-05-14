@@ -11,7 +11,7 @@ describe('### GENERATOR DATA ###', () => {
     it('Should have the properties currentValue, currentIndex, roll, holder, and rolls', () => {
       expect(data).toHaveProperty('currentValue', null);
       expect(data).toHaveProperty('currentIndex', null);
-      expect(data).toHaveProperty('roll', null);
+      expect(data).toHaveProperty('rollSelect', null);
       expect(data).toHaveProperty('holder');
       expect(data).toHaveProperty('rolls');
     });
