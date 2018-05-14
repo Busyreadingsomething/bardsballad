@@ -1,20 +1,17 @@
 import React from 'react';
-import StatListView from './ScoreGenViews/StatListView';
-import ModListView from './ScoreGenViews/ModListView';
-import RollListView from './ScoreGenViews/RollListView';
 import RollListContainer from './containers/RollListContainer';
+import StatListContainer from './containers/StatListContainer';
+import ModListContainer from './containers/ModListContainer';
+import SelectRollContainer from './containers/SelectRollContainer';
 
-const ScoreGenView = props => (
+const ScoreGenView = ({ rollSelect }) => (
   <div className="score-gen-container">
-    <div>
-      <StatListView />
-    </div>
-    <ModListView />
-    <RollListContainer />
-    <div>
-      <button>REROLL</button>
-      <button>SUBMIT</button>
-    </div>
+    <StatListContainer />
+    <ModListContainer />
+    <SelectRollContainer />
+    {
+      rollSelect === 'standard' ? <RollListContainer /> : 'NOPE'
+    }
   </div>
 );
 

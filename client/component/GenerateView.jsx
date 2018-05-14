@@ -1,9 +1,8 @@
 import React from 'react';
 import ProfileGenView from './ProfileGenView';
-import ScoreGenView from './ScoreGenView';
+import ScoreGenContainer from './containers/ScoreGenContainer';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
-import SelectRollContainer from './containers/SelectRollContainer';
 import AlignContainer from './containers/AlignContainer';
 
 class GenerateView extends React.Component {
@@ -115,12 +114,11 @@ class GenerateView extends React.Component {
     return (
       <div className="gen-container">
         <ProfileGenView />
-        <ScoreGenView />
+        <ScoreGenContainer />
         <div className="gen-dropdowns">
           <ClassContainer />
           <AlignContainer />
         </div>
-        <SelectRollContainer />
         {
           point === 'roll' ? <AbilityRollContainer
             genRestart={this.genRestart}
