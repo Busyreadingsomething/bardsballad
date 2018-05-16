@@ -94,6 +94,7 @@ const setRolls = (state, select) => {
   } else if (select === 'roll') {
     updatedState = updatedState.updateIn(['data', 'rolls'], () => fromJS(rolls.genRollList()));
   }
+  console.log(updatedState.getIn(['data', 'rolls']));
 
   return updatedState;
 };
