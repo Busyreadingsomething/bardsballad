@@ -5,6 +5,7 @@ import action from '../actions';
 
 const mapStateToProps = state => ({
   rolls: state.getIn(['data', 'rolls']),
+  rollKeys: state.getIn(['data', 'rollKeys']),
 });
 
 const mapDispatchToProps = dispatch => ({

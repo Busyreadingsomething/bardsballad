@@ -10,14 +10,9 @@ const ScoreGenView = ({ rollSelect }) => (
     <ModListContainer />
     <SelectRollContainer />
     {
-      rollSelect ? <RollListContainer /> : 'NOPE'
+      rollSelect ? <RollListContainer /> : null
     }
-
   </div>
 );
 
 export default ScoreGenView;
-
-// {
-//   rollSelect === 'roll' ? <RollListContainer /> : 'NOPE'
-// }
