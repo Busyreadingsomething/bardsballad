@@ -1,26 +1,16 @@
 const genRoll = () => {
-  const rolls = [];
+  let final = 0;
+  let smallest = 0;
 
-  while (rolls.length < 4) {
+  for (let i = 0; i < 4; i += 1) {
     const num = Math.ceil(Math.random() * 6);
-    if (!rolls.length) {
-      rolls.push(num);
-    } else if (rolls[0] < num) {
-      rolls.push(num);
-    } else if (rolls[0] > num) {
-      rolls.unshift(num);
-    } else {
-      rolls.push(num);
+    if (smallest === 0 || num < smallest) {
+      smallest = num;
     }
+    final += num;
   }
 
-  return rolls.reduce((acc, num, index) => {
-    let added = acc;
-    if (index) {
-      added += num;
-    }
-    return added;
-  }, 0);
+  return final - smallest;
 };
 
 const genRollList = () => {

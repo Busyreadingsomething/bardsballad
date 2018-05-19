@@ -15,6 +15,7 @@ const genData = () => {
     };
   });
   data.rolls = [];
+  data.rollKeys = [0, 1, 2, 3, 4, 5];
 
   return data;
 };
