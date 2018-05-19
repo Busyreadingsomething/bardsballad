@@ -1,7 +1,9 @@
 import React from 'react';
 import RollContainer from '../containers/RollContainer';
 
-const RollListView = ({ rolls, setAbility }) => (
+const RollListView = ({ rolls, setAbility }) => {
+  console.log(rolls);
+  return (
   <div className="roll-list-container">
     {
       rolls.map((roll, index) => <RollContainer roll={roll} key={`roll${roll}`} position={index} />)
@@ -11,6 +13,6 @@ const RollListView = ({ rolls, setAbility }) => (
       <button className="scoregen-submit" onClick={setAbility}>SUBMIT</button>
     </div>
   </div>
-);
+)};
 
 export default RollListView;
