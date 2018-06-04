@@ -1,3 +1,24 @@
+const skillsList = [
+  'acrobatics',
+  'animal handling',
+  'arcana',
+  'atheltics',
+  'deception',
+  'history',
+  'insight',
+  'intimidation',
+  'investigation',
+  'medicine',
+  'nature',
+  'perception',
+  'performance',
+  'persuasion',
+  'religion',
+  'sleight of hand',
+  'stealth',
+  'survival',
+];
+
 const raceModifiers = {
   dragonborne: {
     str: 2,
@@ -33,6 +54,19 @@ const raceModifiers = {
   tiefling: {
     int: 1,
     cha: 2,
+  },
+};
+
+const raceProficiencies = {
+  dwarf: {
+    type: 'Tool Proficiency',
+    rule: 1,
+    list: ['Brewer\'s Supplies', 'Smith\'s Tools', 'Mason\'s Tools'],
+  },
+  'half-elf': {
+    type: 'Skill Proficiency',
+    rule: 2,
+    list: skillsList,
   },
 };
 
