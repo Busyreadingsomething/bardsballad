@@ -1,38 +1,72 @@
+const skillsList = [
+  'acrobatics',
+  'animal handling',
+  'arcana',
+  'atheltics',
+  'deception',
+  'history',
+  'insight',
+  'intimidation',
+  'investigation',
+  'medicine',
+  'nature',
+  'perception',
+  'performance',
+  'persuasion',
+  'religion',
+  'sleight of hand',
+  'stealth',
+  'survival',
+];
+
 const raceModifiers = {
-  DRAGONBORNE: {
-    STR: 2,
-    CHA: 1,
+  dragonborne: {
+    str: 2,
+    cha: 1,
   },
-  DWARF: {
-    CON: 2,
+  dwarf: {
+    con: 2,
   },
-  ELF: {
-    DEX: 2,
+  elf: {
+    dex: 2,
   },
-  GNOME: {
-    INT: 2,
+  gnome: {
+    int: 2,
   },
-  'HALF-ELF': {
-    CHA: 2,
+  'half-elf': {
+    cha: 2,
   },
-  'HALF-ORC': {
-    STR: 2,
-    CON: 1,
+  'half-orc': {
+    str: 2,
+    Con: 1,
   },
-  HALFLING: {
-    DEX: 2,
+  halfling: {
+    dex: 2,
   },
-  HUMAN: {
-    STR: 1,
-    DEX: 1,
-    CON: 1,
-    INT: 1,
-    WIS: 1,
-    CHA: 1,
+  human: {
+    str: 1,
+    dex: 1,
+    con: 1,
+    int: 1,
+    wis: 1,
+    cha: 1,
   },
-  TIEFLING: {
-    INT: 1,
-    CHA: 2,
+  tiefling: {
+    int: 1,
+    cha: 2,
+  },
+};
+
+const raceProficiencies = {
+  dwarf: {
+    type: 'Tool Proficiency',
+    rule: 1,
+    list: ['Brewer\'s Supplies', 'Smith\'s Tools', 'Mason\'s Tools'],
+  },
+  'half-elf': {
+    type: 'Skill Proficiency',
+    rule: 2,
+    list: skillsList,
   },
 };
 

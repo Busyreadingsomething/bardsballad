@@ -1,40 +1,4 @@
-const raceModifiers = {
-  dragonborne: {
-    str: 2,
-    cha: 1,
-  },
-  dwarf: {
-    con: 2,
-  },
-  elf: {
-    dex: 2,
-  },
-  gnome: {
-    int: 2,
-  },
-  'half-elf': {
-    cha: 2,
-  },
-  'half-orc': {
-    str: 2,
-    Con: 1,
-  },
-  halfling: {
-    dex: 2,
-  },
-  human: {
-    str: 1,
-    dex: 1,
-    con: 1,
-    int: 1,
-    wis: 1,
-    cha: 1,
-  },
-  tiefling: {
-    int: 1,
-    cha: 2,
-  },
-};
+import raceModifiers from './raceModifiers';
 
 const emptyScores = {
   str: 0,
@@ -241,6 +205,26 @@ const genGear = (weapons, spells, money) => {
   return gear;
 };
 
+const genProficiencies = () => ({
+  acrobatics: 0,
+  'animal handling': 0,
+  arcana: 0,
+  atheltics: 0,
+  deception: 0,
+  history: 0,
+  insight: 0,
+  intimidation: 0,
+  investigation: 0,
+  medicine: 0,
+  nature: 0,
+  perception: 0,
+  performance: 0,
+  persuasion: 0,
+  religion: 0,
+  'sleight of hand': 0,
+  survival: 0,
+});
+
 const genCharacter = (
   scores,
   name,
@@ -262,6 +246,7 @@ const genCharacter = (
   character.race = genRace(raceName);
   character.charClass = genClass(className);
   character.status = genStatus();
+  character.proficiencies = genProficiencies();
   character.gear = genGear(weapons, spells, money);
   character.equipped = {
     weapons: [],
@@ -283,4 +268,5 @@ export default {
   genStatus,
   genGear,
   genCharacter,
+  genProficiencies,
 };
