@@ -15,7 +15,10 @@ const genData = () => {
     };
   });
   data.rolls = [];
-  data.rollKeys = [0, 1, 2, 3, 4, 5];
+  data.rollKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'];
+  data.skills = {};
+  data.classProficiencies = [];
+  data.raceProficiencies = [];
 
   return data;
 };
