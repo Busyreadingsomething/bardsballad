@@ -16,6 +16,7 @@ const ProfileGenView = () => (
     <AgeContainer />
     <HairContainer />
     <EyeContainer />
+    <button id="profile">NEXT</button>
   </div>
 );
 
