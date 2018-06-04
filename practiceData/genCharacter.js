@@ -205,6 +205,26 @@ const genGear = (weapons, spells, money) => {
   return gear;
 };
 
+const genProficiencies = () => ({
+  acrobatics: 0,
+  'animal handling': 0,
+  arcana: 0,
+  atheltics: 0,
+  deception: 0,
+  history: 0,
+  insight: 0,
+  intimidation: 0,
+  investigation: 0,
+  medicine: 0,
+  nature: 0,
+  perception: 0,
+  performance: 0,
+  persuasion: 0,
+  religion: 0,
+  'sleight of hand': 0,
+  survival: 0,
+});
+
 const genCharacter = (
   scores,
   name,
@@ -226,6 +246,7 @@ const genCharacter = (
   character.race = genRace(raceName);
   character.charClass = genClass(className);
   character.status = genStatus();
+  character.proficiencies = genProficiencies();
   character.gear = genGear(weapons, spells, money);
   character.equipped = {
     weapons: [],
@@ -247,4 +268,5 @@ export default {
   genStatus,
   genGear,
   genCharacter,
+  genProficiencies,
 };
