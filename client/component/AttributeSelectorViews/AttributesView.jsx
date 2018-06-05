@@ -1,7 +1,12 @@
 import React from 'react';
 
 const AttributesView = props => (
-  <button><i className="icon" />{props.name}</button>
+  <button className="proficiency">
+    <i className="icon" />
+    {
+      props.name.toUpperCase()
+    }
+  </button>
 );
 
 export default AttributesView;
