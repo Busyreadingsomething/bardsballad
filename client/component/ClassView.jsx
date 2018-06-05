@@ -14,7 +14,7 @@ const ClassView = ({ setClass }) => (
         <option value="paladin">Paladin</option>
         <option value="ranger">Ranger</option>
         <option value="rogue">Rogue</option>
-        <option value="sorcerror">Sorcerror</option>
+        <option value="sorceror">Sorceror</option>
         <option value="warlock">Warlock</option>
         <option value="wizard">Wizard</option>
       </select>
