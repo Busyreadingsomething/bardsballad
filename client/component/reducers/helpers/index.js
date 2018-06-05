@@ -23,6 +23,7 @@ const setAbilityStat = (state, stat) => {
 const setFinalAbility = (state) => {
   let updatedState = state;
   const holder = state.getIn(['data', 'holder']).toJS();
+  const proficiencies = state.getIn(['character', 'proficiencies']).toJS();
   const isReady = Object.keys(holder).every(stat => holder[stat].selected);
 
   if (isReady) {
@@ -30,8 +31,14 @@ const setFinalAbility = (state) => {
       acc[stat] = holder[stat].val;
       return acc;
     }, {});
+    proficiencies.list.forEach((skill) => {
+      const { base } = proficiencies[skill];
+      const mod = Math.floor((scores[base] - 10) / 2);
+      proficiencies[skill].val = mod;
+    });
     const ability = character.genAbility(scores);
     updatedState = updatedState.updateIn(['character', 'ability'], () => fromJS(ability));
+    updatedState = updatedState.updateIn(['character', 'proficiencies'], () => fromJS(proficiencies));
   }
 
   return updatedState;
