@@ -1,4 +1,5 @@
 import raceMod from './raceModifiers';
+import classList from './classList';
 
 const emptyScores = {
   str: 0,
@@ -26,167 +27,6 @@ const raceAttributes = {
   halfling: [1, 2, 3, 4],
   human: [1, 2, 3, 4],
   tiefling: [1, 2, 3, 4],
-};
-
-const classList = {
-  barbarian: {
-    die: 12,
-    saves: ['STR', 'CON'],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['animal handling', 'athletics', 'intimidation', 'nature', 'perception', 'survival'],
-    }],
-    features: ['features go here'],
-  },
-  bard: {
-    die: 8,
-    saves: ['DEX', 'CHA'],
-    spells: [],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: raceMod.skillsList,
-    },
-    {
-      type: 'Tool Proficiency: Musical Instruments',
-      rule: 3,
-      list: ['bagpipes', 'drum', 'dulcimer', 'flute', 'horn', 'lute', 'lyre', 'pan flute', 'shawm', 'viol'],
-    }],
-    features: ['features go here'],
-  },
-  cleric: {
-    die: 8,
-    saves: ['WIS', 'CHA'],
-    spells: [],
-    styles: [{
-      type: 'Divine Domain',
-      rule: 1,
-      list: ['life domain'],
-    }],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['history', 'insight', 'medicine', 'persuasion', 'religion'],
-    }],
-    features: ['features go here'],
-  },
-  druid: {
-    die: 8,
-    saves: ['INT', 'WIS'],
-    spells: [],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['animal handling', 'arcana', 'insight', 'medicine', 'nature', 'perception', 'religion', 'survival'],
-    }],
-    features: ['features go here'],
-  },
-  fighter: {
-    die: 10,
-    saves: ['STR', 'CON'],
-    styles: [{
-      type: 'Fighting Style',
-      rule: 1,
-      list: ['archery', 'defense', 'dueling', 'great weapon fighting', 'protection', 'two weapon fighting'],
-    }],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['acrobatics', 'animal handling', 'atheltics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
-    }],
-    features: ['features go here'],
-  },
-  monk: {
-    die: 8,
-    saves: ['STR', 'DEX'],
-    spells: [],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['acrobatics', 'athletics', 'history', 'insight', 'religion', 'stealth'],
-    },
-    {
-      type: 'Tool Proficiencies',
-      rule: 1,
-      list: ['artisan tools', 'musical instruments'],
-    }],
-    features: ['features go here'],
-  },
-  paladin: {
-    die: 10,
-    saves: ['WIS', 'CHA'],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['athletics', 'insight', 'intimidation', 'medicine', 'persuasion', 'religion'],
-    }],
-    features: ['features go here'],
-  },
-  ranger: {
-    die: 10,
-    saves: ['STR', 'DEX'],
-    styles: [],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['animal handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival'],
-    }],
-    features: ['features go here'],
-  },
-  rogue: {
-    die: 8,
-    saves: ['DEX', 'INT'],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'investigation', 'perception', 'performance', 'persuasion', 'sleight of hand', 'stealth'],
-    }],
-    features: ['features go here'],
-  },
-  sorceror: {
-    die: 6,
-    saves: ['CON', 'CHA'],
-    spells: [],
-    styles: [{
-      type: 'Sorceror Bloodline',
-      rule: 1,
-      list: ['draconic bloodline'],
-    }],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['arcana', 'deception', 'insight', 'intimidation', 'persuasion', 'religion'],
-    }],
-    features: ['features go here'],
-  },
-  warlock: {
-    die: 8,
-    saves: ['WIS', 'CHA'],
-    spells: [],
-    styles: [{
-      type: 'Other Worldly Patron',
-      rule: 1,
-      list: ['The Fiend'],
-    }],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['arcana', 'deception', 'history', 'insight', 'investigation', 'nature', 'religion'],
-    }],
-    features: ['features go here'],
-  },
-  wizard: {
-    die: 8,
-    saves: ['INT', 'WIS'],
-    spells: [],
-    proficiencies: [{
-      type: 'Skill Proficiency',
-      rule: 2,
-      list: ['arcana', 'history', 'insight', 'investigation', 'medicine', 'religion'],
-    }],
-    features: ['features go here'],
-  },
 };
 
 const savesList = {
@@ -263,14 +103,18 @@ const genClass = (className) => {
   const charClass = {};
   charClass.name = '';
   charClass.hitDie = null;
-  charClass.proficiencies = null;
-  charClass.features = null;
+  charClass.spells = [];
+  charClass.proficiencies = [];
+  charClass.styles = [];
+  charClass.features = [];
 
   if (className in classList) {
-    charClass.name = className;
-    charClass.hitDie = classList[className].die;
-    charClass.proficiencies = classList[className].proficiencies;
-    charClass.features = classList[className].features;
+    charClass.name = className || '';
+    charClass.hitDie = classList[className].die || null;
+    charClass.spells = classList[className].spells || [];
+    charClass.proficiencies = classList[className].proficiencies || [];
+    charClass.styles = classList[className].styles || [];
+    charClass.features = classList[className].features || [];
   }
 
   return charClass;
@@ -304,23 +148,97 @@ const genGear = (weapons, spells, money) => {
 };
 
 const genProficiencies = () => ({
-  acrobatics: 0,
-  'animal handling': 0,
-  arcana: 0,
-  atheltics: 0,
-  deception: 0,
-  history: 0,
-  insight: 0,
-  intimidation: 0,
-  investigation: 0,
-  medicine: 0,
-  nature: 0,
-  perception: 0,
-  performance: 0,
-  persuasion: 0,
-  religion: 0,
-  'sleight of hand': 0,
-  survival: 0,
+  acrobatics: {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  'animal handling': {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  arcana: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  atheltics: {
+    val: 0,
+    proficient: false,
+    base: 'str',
+  },
+  deception: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  history: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  insight: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  intimidation: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  investigation: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  medicine: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  nature: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  perception: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  performance: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  persuasion: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  religion: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  'sleight of hand': {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  stealth: {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  survival: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  list: raceMod.skillsList,
 });
 
 const genCharacter = (
