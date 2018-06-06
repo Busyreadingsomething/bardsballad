@@ -3,7 +3,7 @@ import ScoreGenView from '../ScoreGenView';
 import toJS from './toJS/index';
 
 const mapStateToProps = state => ({
-  rollSelect: state.getIn(['data', 'rollSelect']),
+  rollSelect: state.getIn(['rollSelect']),
 });
 
 const mapDispatchToProps = () => ({});

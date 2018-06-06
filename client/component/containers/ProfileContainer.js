@@ -3,13 +3,13 @@ import toJS from './toJS/index';
 import ProfileView from '../ProfileView';
 
 const mapStateToProps = state => ({
-  profile: state.getIn(['character', 'profile']),
-  race: state.getIn(['character', 'race', 'name']),
-  charClass: state.getIn(['character', 'charClass', 'name']),
-  level: state.getIn(['character', 'status', 'level']),
+  profile: state.getIn(['profile']),
+  race: state.getIn(['race', 'name']),
+  charClass: state.getIn(['charClass', 'name']),
+  level: state.getIn(['status', 'level']),
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 const ProfileContainer = connect(
   mapStateToProps,

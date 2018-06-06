@@ -3,7 +3,7 @@ import toJS from './toJS/index';
 import WeaponsListView from '../WeaponsListView';
 
 const mapStateToProps = state => ({
-  weapons: state.getIn(['character', 'equipped', 'weapons']),
+  weapons: state.getIn(['equipped', 'weapons']),
 });
 
 const mapDispatchToProps = () => ({});

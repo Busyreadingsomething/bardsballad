@@ -3,7 +3,7 @@ import toJS from './toJS/index';
 import AbilityListView from '../AbilityListView';
 
 const mapStateToProps = state => ({
-  ability: state.getIn(['character', 'ability']),
+  ability: state.getIn(['ability']),
 });
 
 const mapDispatchtoProps = () => ({});

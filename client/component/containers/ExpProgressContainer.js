@@ -3,8 +3,8 @@ import toJS from './toJS/index';
 import ExpProgressView from '../ExpProgressView';
 
 const mapStateToProps = state => ({
-  experience: state.getIn(['character', 'status', 'experience']),
-  nextLevel: state.getIn(['character', 'status', 'nextLevel']),
+  experience: state.getIn(['status', 'experience']),
+  nextLevel: state.getIn(['status', 'nextLevel']),
 });
 
 const mapDispatchToProps = () => ({});

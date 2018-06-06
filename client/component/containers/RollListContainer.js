@@ -4,8 +4,8 @@ import toJS from './toJS/index';
 import action from '../actions';
 
 const mapStateToProps = state => ({
-  rolls: state.getIn(['data', 'rolls']),
-  rollKeys: state.getIn(['data', 'rollKeys']),
+  rolls: state.getIn(['rolls']),
+  rollKeys: state.getIn(['rollKeys']),
 });
 
 const mapDispatchToProps = dispatch => ({
