@@ -259,6 +259,7 @@ const genCharacter = (
   money,
 ) => {
   const character = {};
+  
   character.ability = genAbility(scores);
   character.profile = genProfile(name, gender, height, age, hair, eye, align);
   character.race = genRace(raceName);
@@ -271,6 +272,22 @@ const genCharacter = (
     spells: [],
     armor: [],
   };
+  character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+  character.currentValue = null;
+  character.currentIndex = null;
+  character.rollSelect = null;
+  character.holder = {};
+
+  character.stats.forEach((stat) => {
+    character.holder[stat] = {
+      val: 0,
+      selected: false,
+    };
+  });
+  character.rolls = [];
+  character.rollKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'];
+  character.classProficiencies = [];
+  character.raceProficiencies = [];
 
   return character;
 };
