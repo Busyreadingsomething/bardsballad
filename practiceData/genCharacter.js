@@ -1,4 +1,5 @@
-import raceModifiers from './raceModifiers';
+import raceMod from './raceModifiers';
+import classList from './classList';
 
 const emptyScores = {
   str: 0,
@@ -26,69 +27,6 @@ const raceAttributes = {
   halfling: [1, 2, 3, 4],
   human: [1, 2, 3, 4],
   tiefling: [1, 2, 3, 4],
-};
-
-const classList = {
-  barbarian: {
-    die: 12,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  bard: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  cleric: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  druid: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  fighter: {
-    die: 10,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  monk: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  paladin: {
-    die: 10,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  ranger: {
-    die: 10,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  rogue: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  sorceror: {
-    die: 6,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  warlock: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
-  wizard: {
-    die: 8,
-    proficiencies: ['proficiencies go here'],
-    features: ['features go here'],
-  },
 };
 
 const savesList = {
@@ -155,7 +93,7 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
 const genRace = (raceName) => {
   const race = {};
   race.name = raceName || '';
-  race.modifiers = genRaceMods(raceModifiers[raceName]) || null;
+  race.modifiers = genRaceMods(raceMod.abilities[raceName]);
   race.attributes = raceAttributes[raceName] || null;
 
   return race;
@@ -165,13 +103,19 @@ const genClass = (className) => {
   const charClass = {};
   charClass.name = '';
   charClass.hitDie = null;
-  charClass.proficiencies = null;
-  charClass.features = null;
+  charClass.spells = [];
+  charClass.saves = [];
+  charClass.proficiencies = [];
+  charClass.styles = [];
+  charClass.features = [];
 
   if (className in classList) {
     charClass.name = className;
     charClass.hitDie = classList[className].die;
+    charClass.spells = classList[className].spells;
+    charClass.saves = classList[className].saves;
     charClass.proficiencies = classList[className].proficiencies;
+    charClass.styles = classList[className].styles;
     charClass.features = classList[className].features;
   }
 
@@ -206,23 +150,97 @@ const genGear = (weapons, spells, money) => {
 };
 
 const genProficiencies = () => ({
-  acrobatics: 0,
-  'animal handling': 0,
-  arcana: 0,
-  atheltics: 0,
-  deception: 0,
-  history: 0,
-  insight: 0,
-  intimidation: 0,
-  investigation: 0,
-  medicine: 0,
-  nature: 0,
-  perception: 0,
-  performance: 0,
-  persuasion: 0,
-  religion: 0,
-  'sleight of hand': 0,
-  survival: 0,
+  acrobatics: {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  'animal handling': {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  arcana: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  atheltics: {
+    val: 0,
+    proficient: false,
+    base: 'str',
+  },
+  deception: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  history: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  insight: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  intimidation: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  investigation: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  medicine: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  nature: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  perception: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  performance: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  persuasion: {
+    val: 0,
+    proficient: false,
+    base: 'cha',
+  },
+  religion: {
+    val: 0,
+    proficient: false,
+    base: 'int',
+  },
+  'sleight of hand': {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  stealth: {
+    val: 0,
+    proficient: false,
+    base: 'dex',
+  },
+  survival: {
+    val: 0,
+    proficient: false,
+    base: 'wis',
+  },
+  list: raceMod.skillsList,
 });
 
 const genCharacter = (

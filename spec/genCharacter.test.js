@@ -194,7 +194,7 @@ describe('### GENERATE CHARACTER ###', () => {
       expect(race.name).toBe('elf');
       expect(race.modifiers).toBeInstanceOf(Object);
       expect(race.modifiers).toHaveProperty('dex', 2);
-      expect(Array.isArray(race.attributes)).toBe(true);
+      expect(race.attributes).toBeInstanceOf(Array);
     });
   });
 
@@ -216,16 +216,26 @@ describe('### GENERATE CHARACTER ###', () => {
       const charClass = character.genClass();
       expect(charClass).toHaveProperty('name', '');
       expect(charClass).toHaveProperty('hitDie', null);
-      expect(charClass).toHaveProperty('proficiencies', null);
-      expect(charClass).toHaveProperty('features', null);
+      expect(charClass.proficiencies).toBeInstanceOf(Array);
+      expect(charClass.proficiencies.length).toBe(0);
+      expect(charClass.styles).toBeInstanceOf(Array);
+      expect(charClass.styles.length).toBe(0);
+      expect(charClass.spells).toBeInstanceOf(Array);
+      expect(charClass.spells.length).toBe(0);
+      expect(charClass.saves).toBeInstanceOf(Array);
+      expect(charClass.saves.length).toBe(0);
     });
 
     it('Should set values based on the class name passed in ', () => {
       const charClass = character.genClass('barbarian');
+      const saves = ['str', 'con'];
+
       expect(charClass).toHaveProperty('name', 'barbarian');
       expect(charClass).toHaveProperty('hitDie', 12);
-      expect(Array.isArray(charClass.proficiencies)).toBe(true);
-      expect(Array.isArray(charClass.features)).toBe(true);
+      expect(charClass.saves.length).toBe(2);
+      expect(charClass.saves).toEqual(expect.arrayContaining(saves));
+      expect(charClass.spells.length).toBe(0);
+      expect(charClass.styles.length).toBe(0);
     });
   });
 
@@ -250,8 +260,8 @@ describe('### GENERATE CHARACTER ###', () => {
       const { saves } = status;
       expect(saves).toHaveProperty('success');
       expect(saves).toHaveProperty('failures');
-      expect(Array.isArray(saves.success)).toBe(true);
-      expect(Array.isArray(saves.failures)).toBe(true);
+      expect(saves.success).toBeInstanceOf(Array);
+      expect(saves.failures).toBeInstanceOf(Array);
       expect(saves.success).toHaveLength(3);
       expect(saves.failures).toHaveLength(3);
     });
@@ -267,9 +277,9 @@ describe('### GENERATE CHARACTER ###', () => {
       const gear = character.genGear();
       const { weapons, spells, money } = gear;
       expect(gear).toHaveProperty('weapons');
-      expect(Array.isArray(weapons)).toBe(true);
+      expect(weapons).toBeInstanceOf(Array);
       expect(gear).toHaveProperty('spells');
-      expect(Array.isArray(spells)).toBe(true);
+      expect(spells).toBeInstanceOf(Array);
       expect(gear).toHaveProperty('money');
       expect(money).toBeInstanceOf(Object);
     });
@@ -336,11 +346,11 @@ describe('### GENERATE CHARACTER ###', () => {
       const { equipped } = char;
       const { weapons, spells, armor } = equipped;
       expect(equipped).toHaveProperty('weapons');
-      expect(Array.isArray(weapons)).toBe(true);
+      expect(weapons).toBeInstanceOf(Array);
       expect(equipped).toHaveProperty('spells');
-      expect(Array.isArray(spells)).toBe(true);
+      expect(spells).toBeInstanceOf(Array);
       expect(equipped).toHaveProperty('armor');
-      expect(Array.isArray(armor)).toBe(true);
+      expect(armor).toBeInstanceOf(Array);
     });
   });
 });

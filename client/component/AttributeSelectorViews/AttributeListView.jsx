@@ -6,7 +6,7 @@ const AttributeListView = props => (
     <h1>{props.attribute.type}</h1>
     <h3>Select {props.attribute.rule}</h3>
     {
-      props.attribute.list.map(attr => <AV name={attr} />)
+      props.attribute.list.map(attr => <AV name={attr} key={attr} />)
     }
   </div>
 );

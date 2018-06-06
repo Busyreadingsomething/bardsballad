@@ -4,7 +4,7 @@ import ScoreGenContainer from './containers/ScoreGenContainer';
 import ClassContainer from './containers/ClassContainer';
 import AbilityRollContainer from './containers/AbilityRollContainer';
 import AlignContainer from './containers/AlignContainer';
-import AttributeSelectorView from './AttributeSelectorView';
+import AttributeSelectorContainer from './containers/AttributeSelectorContainer';
 
 class GenerateView extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class GenerateView extends React.Component {
             standard={[15, 14, 13, 12, 10, 18]}
           /> : null
         }
-        <AttributeSelectorView />
+        <AttributeSelectorContainer />
         <button className="gen-submit" onClick={this.props.generate}>SUBMIT</button>
       </div>
     );

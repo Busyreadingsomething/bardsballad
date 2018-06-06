@@ -19,7 +19,7 @@ const skillsList = [
   'survival',
 ];
 
-const raceModifiers = {
+const abilities = {
   dragonborne: {
     str: 2,
     cha: 1,
@@ -57,7 +57,7 @@ const raceModifiers = {
   },
 };
 
-const raceProficiencies = {
+const proficiencies = {
   dwarf: {
     type: 'Tool Proficiency',
     rule: 1,
@@ -70,4 +70,8 @@ const raceProficiencies = {
   },
 };
 
-export default raceModifiers;
+export default {
+  abilities,
+  proficiencies,
+  skillsList,
+};
