@@ -93,7 +93,7 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
 const genRace = (raceName) => {
   const race = {};
   race.name = raceName || '';
-  race.modifiers = genRaceMods(raceMod.abilities[raceName]) || null;
+  race.modifiers = genRaceMods(raceMod.abilities[raceName]);
   race.attributes = raceAttributes[raceName] || null;
 
   return race;
@@ -104,17 +104,19 @@ const genClass = (className) => {
   charClass.name = '';
   charClass.hitDie = null;
   charClass.spells = [];
+  charClass.saves = [];
   charClass.proficiencies = [];
   charClass.styles = [];
   charClass.features = [];
 
   if (className in classList) {
-    charClass.name = className || '';
-    charClass.hitDie = classList[className].die || null;
-    charClass.spells = classList[className].spells || [];
-    charClass.proficiencies = classList[className].proficiencies || [];
-    charClass.styles = classList[className].styles || [];
-    charClass.features = classList[className].features || [];
+    charClass.name = className;
+    charClass.hitDie = classList[className].die;
+    charClass.spells = classList[className].spells;
+    charClass.saves = classList[className].saves;
+    charClass.proficiencies = classList[className].proficiencies;
+    charClass.styles = classList[className].styles;
+    charClass.features = classList[className].features;
   }
 
   return charClass;

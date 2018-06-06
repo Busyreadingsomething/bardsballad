@@ -3,7 +3,9 @@ import raceMod from './raceModifiers';
 const classList = {
   barbarian: {
     die: 12,
-    saves: ['STR', 'CON'],
+    saves: ['str', 'con'],
+    spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -13,8 +15,9 @@ const classList = {
   },
   bard: {
     die: 8,
-    saves: ['DEX', 'CHA'],
+    saves: ['dex', 'cha'],
     spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -29,7 +32,7 @@ const classList = {
   },
   cleric: {
     die: 8,
-    saves: ['WIS', 'CHA'],
+    saves: ['wis', 'cha'],
     spells: [],
     styles: [{
       type: 'Divine Domain',
@@ -45,8 +48,9 @@ const classList = {
   },
   druid: {
     die: 8,
-    saves: ['INT', 'WIS'],
+    saves: ['int', 'wis'],
     spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -56,7 +60,8 @@ const classList = {
   },
   fighter: {
     die: 10,
-    saves: ['STR', 'CON'],
+    saves: ['str', 'con'],
+    spells: [],
     styles: [{
       type: 'Fighting Style',
       rule: 1,
@@ -71,8 +76,9 @@ const classList = {
   },
   monk: {
     die: 8,
-    saves: ['STR', 'DEX'],
+    saves: ['str', 'dex'],
     spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -87,7 +93,9 @@ const classList = {
   },
   paladin: {
     die: 10,
-    saves: ['WIS', 'CHA'],
+    saves: ['wis', 'cha'],
+    spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -97,7 +105,8 @@ const classList = {
   },
   ranger: {
     die: 10,
-    saves: ['STR', 'DEX'],
+    saves: ['str', 'dex'],
+    spells: [],
     styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
@@ -108,7 +117,9 @@ const classList = {
   },
   rogue: {
     die: 8,
-    saves: ['DEX', 'INT'],
+    saves: ['dex', 'cha'],
+    spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
@@ -118,7 +129,7 @@ const classList = {
   },
   sorceror: {
     die: 6,
-    saves: ['CON', 'CHA'],
+    saves: ['con', 'cha'],
     spells: [],
     styles: [{
       type: 'Sorceror Bloodline',
@@ -134,7 +145,7 @@ const classList = {
   },
   warlock: {
     die: 8,
-    saves: ['WIS', 'CHA'],
+    saves: ['wis', 'cha'],
     spells: [],
     styles: [{
       type: 'Other Worldly Patron',
@@ -150,8 +161,9 @@ const classList = {
   },
   wizard: {
     die: 8,
-    saves: ['INT', 'WIS'],
+    saves: ['int', 'wis'],
     spells: [],
+    styles: [],
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
