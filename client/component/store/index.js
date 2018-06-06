@@ -2,7 +2,6 @@ import { createStore } from 'redux';
 import { fromJS } from 'immutable';
 import generateSheet from '../reducers/generateSheet';
 import character from '../../../practiceData/genCharacter';
-import generator from '../../../practiceData/generatorData';
 
 const fillerScores = {
   str: 13,
@@ -54,10 +53,7 @@ const testSpells = [
 
 const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', '5ft 3', 31, 'silver', 'green', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
 
-const initialState = fromJS({
-  character: blankCharacter,
-  data: generator(),
-});
+const initialState = fromJS(blankCharacter);
 
 const store = createStore(
   generateSheet,
