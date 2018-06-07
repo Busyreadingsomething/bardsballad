@@ -3,7 +3,7 @@ import toJS from './toJS/index';
 import SpellsListView from '../SpellsListView';
 
 const mapStateToProps = state => ({
-  spells: state.getIn(['character', 'equipped', 'spells']),
+  spells: state.getIn(['equipped', 'spells']),
 });
 
 const mapDispatchToProps = () => ({});

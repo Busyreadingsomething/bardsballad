@@ -3,13 +3,13 @@ import toJS from './toJS/index';
 import StatusView from '../StatusView';
 
 const mapStateToProps = state => ({
-  armor: state.getIn(['character', 'status', 'armorClass']),
-  init: state.getIn(['character', 'status', 'init']),
-  speed: state.getIn(['character', 'status', 'speed']),
-  maxHP: state.getIn(['character', 'status', 'maxHP']),
-  currentHP: state.getIn(['character', 'status', 'currentHP']),
-  tempHP: state.getIn(['character', 'status', 'tempHP']),
-  hitDie: state.getIn(['character', 'status', 'hitDie']),
+  armor: state.getIn(['status', 'armorClass']),
+  init: state.getIn(['status', 'init']),
+  speed: state.getIn(['status', 'speed']),
+  maxHP: state.getIn(['status', 'maxHP']),
+  currentHP: state.getIn(['status', 'currentHP']),
+  tempHP: state.getIn(['status', 'tempHP']),
+  hitDie: state.getIn(['status', 'hitDie']),
 });
 
 const mapDispatchToProps = () => ({});

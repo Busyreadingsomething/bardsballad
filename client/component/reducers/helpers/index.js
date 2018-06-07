@@ -22,8 +22,8 @@ const setAbilityStat = (state, stat) => {
 
 const setFinalAbility = (state) => {
   let updatedState = state;
-  const holder = state.getIn(['data', 'holder']).toJS();
-  const proficiencies = state.getIn(['character', 'proficiencies']).toJS();
+  const holder = state.getIn(['holder']).toJS();
+  const proficiencies = state.getIn(['proficiencies']).toJS();
   const isReady = Object.keys(holder).every(stat => holder[stat].selected);
 
   if (isReady) {
@@ -37,20 +37,20 @@ const setFinalAbility = (state) => {
       proficiencies[skill].val = mod;
     });
     const ability = character.genAbility(scores);
-    updatedState = updatedState.updateIn(['character', 'ability'], () => fromJS(ability));
-    updatedState = updatedState.updateIn(['character', 'proficiencies'], () => fromJS(proficiencies));
+    updatedState = updatedState.updateIn(['ability'], () => fromJS(ability));
+    updatedState = updatedState.updateIn(['proficiencies'], () => fromJS(proficiencies));
   }
 
   return updatedState;
 };
 
 const setRolls = (state, select) => {
-  let updatedState = state.updateIn(['data', 'rollSelect'], () => select);
+  let updatedState = state.updateIn(['rollSelect'], () => select);
 
   if (select === 'standard') {
-    updatedState = updatedState.updateIn(['data', 'rolls'], () => fromJS(rolls.genStandard()));
+    updatedState = updatedState.updateIn(['rolls'], () => fromJS(rolls.genStandard()));
   } else if (select === 'roll') {
-    updatedState = updatedState.updateIn(['data', 'rolls'], () => fromJS(rolls.genRollList()));
+    updatedState = updatedState.updateIn(['rolls'], () => fromJS(rolls.genRollList()));
   }
 
   return updatedState;
