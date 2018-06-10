@@ -9,16 +9,16 @@ const generateSheet = (state, action) => {
         .updateIn(action.prop, () => action.value);
     case 'UPDATE_RACE':
       return state
-        .updateIn(['race'], () => fromJS(character.genRace(action.race)));
+        .update('race', () => fromJS(character.genRace(action.race)));
     case 'UPDATE_CLASS':
       return state
-        .updateIn(['charClass'], () => fromJS(character.genClass(action.className)));
+        .update('charClass', () => fromJS(character.genClass(action.className)));
     case 'PICK_ROLL':
       return helpers.setRolls(state, action.rollSelect);
     case 'SET_SCORE':
       return state
-        .updateIn(['currentValue'], () => action.val)
-        .updateIn(['currentIndex'], () => action.index);
+        .update('currentValue', () => action.val)
+        .update('currentIndex', () => action.index);
     case 'UPDATE_HOLDER':
       return helpers.setAbilityStat(state, action.stat);
     case 'SET_ABILITY':
