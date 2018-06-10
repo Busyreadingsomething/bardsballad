@@ -36,10 +36,18 @@ const setAbility = () => ({
   type: actionTypes.SET_ABILITY,
 });
 
+const updateAttr = (index, attr, prof) => ({
+  type: actionTypes.UPDATE_ATTR,
+  index,
+  attr,
+  prof,
+});
+
 const actions = {
   updateProfile,
   updateClass,
   updateRace,
+  updateAttr,
   pickRoll,
   setScore,
   updateHolder,
