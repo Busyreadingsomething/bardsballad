@@ -4,10 +4,22 @@ import ALV from './AttributeSelectorViews/AttributeListView';
 const AttributeSelectorView = props => (
   <div className="selector-container">
     {
-      props.styles.map(style => <ALV attribute={style} key={style.type} />)
+      props.proficiencies.map((attr, index) => (
+        <ALV
+          attribute={attr}
+          key={attr.type}
+          prof="proficiencies"
+          index={index}
+        />))
     }
     {
-      props.proficiencies.map(attr => <ALV attribute={attr} key={attr.type} />)
+      props.styles.map((style, index) => (
+        <ALV
+          attribute={style}
+          key={style.type}
+          prof="style"
+          index={index}
+        />))
     }
   </div>
 );
