@@ -37,8 +37,9 @@ const setFinalAbility = (state) => {
       proficiencies[skill].val = mod;
     });
     const ability = character.genAbility(scores);
-    updatedState = updatedState.updateIn(['ability'], () => fromJS(ability));
-    updatedState = updatedState.updateIn(['proficiencies'], () => fromJS(proficiencies));
+    updatedState = updatedState
+      .updateIn(['ability'], () => fromJS(ability))
+      .updateIn(['proficiencies'], () => fromJS(proficiencies));
   }
 
   return updatedState;
