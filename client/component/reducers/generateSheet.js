@@ -2,6 +2,18 @@ import { fromJS } from 'immutable';
 import character from '../../../practiceData/genCharacter';
 import helpers from './helpers';
 
+const setAttribute = (state, action) => {
+  const { index, attr, prof } = action;
+  const item = state.getIn([prof, attr]).toJS();
+  const { proficient } = item;
+
+  item.val = proficient ? item.val - 2 : item.val + 2;
+  item.proficient = !item.proficient;
+
+  return state.updateIn([prof, attr], () => fromJS(item));
+};
+
+
 const generateSheet = (state, action) => {
   switch (action.type) {
     case 'UPDATE_PROFILE':
@@ -24,8 +36,7 @@ const generateSheet = (state, action) => {
     case 'SET_ABILITY':
       return helpers.setFinalAbility(state);
     case 'UPDATE_ATTR':
-      console.log(action);
-      return state;
+      return setAttribute(state, action);
     default:
       return state;
   }
