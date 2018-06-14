@@ -4,17 +4,17 @@ import rolls from '../../../../practiceData/genRolls';
 
 const setAbilityStat = (state, stat) => {
   let updatedState = state;
-  const updated = state.getIn(['data', 'holder', stat, 'selected']);
-  const val = state.getIn(['data', 'currentValue']);
-  const position = state.getIn(['data', 'currentIndex']);
+  const updated = state.getIn(['holder', stat, 'selected']);
+  const val = state.getIn(['currentValue']);
+  const position = state.getIn(['currentIndex']);
 
   if (val && !updated) {
     updatedState = state
-      .updateIn(['data', 'currentValue'], () => null)
-      .updateIn(['data', 'currentIndex'], () => null)
-      .updateIn(['data', 'rolls', position], () => 'DONE')
-      .updateIn(['data', 'holder', stat, 'val'], () => val)
-      .updateIn(['data', 'holder', stat, 'selected'], () => true);
+      .updateIn(['currentValue'], () => null)
+      .updateIn(['currentIndex'], () => null)
+      .updateIn(['rolls', position], () => 'DONE')
+      .updateIn(['holder', stat, 'val'], () => val)
+      .updateIn(['holder', stat, 'selected'], () => true);
   }
 
   return updatedState;
