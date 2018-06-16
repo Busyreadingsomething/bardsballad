@@ -16,12 +16,12 @@ const StatListView = ({ holder, stats }) => (
 
 StatListView.propTypes = {
   holder: PropTypes.shape({
-    str: PropTypes.number,
-    dex: PropTypes.number,
-    con: PropTypes.number,
-    int: PropTypes.number,
-    wis: PropTypes.number,
-    cha: PropTypes.number,
+    str: PropTypes.object,
+    dex: PropTypes.object,
+    con: PropTypes.object,
+    int: PropTypes.object,
+    wis: PropTypes.object,
+    cha: PropTypes.object,
   }).isRequired,
   stats: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

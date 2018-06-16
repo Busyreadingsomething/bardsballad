@@ -19,7 +19,7 @@ ModListView.propTypes = {
     wis: PropTypes.number,
     cha: PropTypes.number,
   }).isRequired,
-  stats: PropTypes.arrayOf(PropTypes.number).isRequired,
+  stats: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ModListView;
