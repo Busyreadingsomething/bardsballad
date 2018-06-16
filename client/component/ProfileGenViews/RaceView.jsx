@@ -3,7 +3,7 @@ import React from 'react';
 const RaceView = ({ setRace }) => (
   <div className="gen-race-container">
     <label className="gen-race"> Race:
-      <select id="character-race" onChange={e => setRace(e)}>
+      <select id="race" onChange={e => setRace(e)}>
         <option value="">Select a Race</option>
         <option value="dragonborne">Dragonborne</option>
         <option value="dwarf">Dwarf</option>

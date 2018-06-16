@@ -6,6 +6,7 @@ const actionTypes = {
   SET_SCORE: 'SET_SCORE',
   UPDATE_HOLDER: 'UPDATE_HOLDER',
   SET_ABILITY: 'SET_ABILITY',
+  UPDATE_ATTR: 'UPDATE_ATTR',
 };
 
 export default actionTypes;
