@@ -3,7 +3,7 @@ import toJS from './toJS/index';
 import ProfileView from '../ProfileView';
 
 const mapStateToProps = state => ({
-  profile: state.getIn(['profile']),
+  profile: state.get('profile'),
   race: state.getIn(['race', 'name']),
   charClass: state.getIn(['charClass', 'name']),
   level: state.getIn(['status', 'level']),
