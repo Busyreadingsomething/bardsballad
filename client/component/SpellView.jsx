@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const SpellView = ({ info }) => (
   <div className="spell-container">
@@ -19,5 +20,20 @@ const SpellView = ({ info }) => (
     <div className="spell-description">{info.description}</div>
   </div>
 );
+
+SpellView.propTypes = {
+  info: PropTypes.shape({
+    name: PropTypes.string,
+    level: PropTypes.number,
+    time: PropTypes.string,
+    duration: PropTypes.string,
+    range: PropTypes.array,
+    save: PropTypes.string,
+    effect: PropTypes.string,
+    dieType: PropTypes.number,
+    dice: PropTypes.number,
+    description: PropTypes.string,
+  }).isRequired,
+};
 
 export default SpellView;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, shape, number } from 'prop-types';
 
 const ScoreView = ({ stat, ability }) => (
   <div className="ability-stat-container" id={stat}>
@@ -23,5 +24,13 @@ const ScoreView = ({ stat, ability }) => (
     <div className="stat-name">{stat.toUpperCase()}</div>
   </div>
 );
+
+ScoreView.propTypes = {
+  stat: string.isRequired,
+  ability: shape({
+    value: number,
+    mod: number,
+  }).isRequired,
+};
 
 export default ScoreView;

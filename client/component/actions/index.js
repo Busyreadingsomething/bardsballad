@@ -43,6 +43,10 @@ const updateAttr = (index, attr, prof) => ({
   prof,
 });
 
+const makeCharacter = () => ({
+  type: actionTypes.MAKE_CHARACTER,
+});
+
 const actions = {
   updateProfile,
   updateClass,
@@ -52,6 +56,7 @@ const actions = {
   setScore,
   updateHolder,
   setAbility,
+  makeCharacter,
 };
 
 export default actions;

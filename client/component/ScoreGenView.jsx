@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 import RollListContainer from './containers/RollListContainer';
 import StatListContainer from './containers/StatListContainer';
 import ModListContainer from './containers/ModListContainer';
@@ -14,5 +15,9 @@ const ScoreGenView = ({ rollSelect }) => (
     }
   </div>
 );
+
+ScoreGenView.propTypes = {
+  rollSelect: func.isRequired,
+};
 
 export default ScoreGenView;

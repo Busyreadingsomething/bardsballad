@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const EyeView = ({ setEyes }) => (
   <div className="gen-eye-container">
@@ -7,5 +8,9 @@ const EyeView = ({ setEyes }) => (
     </label>
   </div>
 );
+
+EyeView.propTypes = {
+  setEyes: func.isRequired,
+};
 
 export default EyeView;

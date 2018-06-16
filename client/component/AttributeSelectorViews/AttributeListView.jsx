@@ -1,5 +1,5 @@
 import React from 'react';
-import AV from './AttributesView';
+import PropTypes from 'prop-types';
 import AttributesContainer from '../containers/AttributesContainer';
 
 const AttributeListView = props => (
@@ -17,5 +17,15 @@ const AttributeListView = props => (
     }
   </div>
 );
+
+AttributeListView.propTypes = {
+  attribute: PropTypes.shape({
+    type: PropTypes.string,
+    rule: PropTypes.number,
+    list: PropTypes.array,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  prof: PropTypes.string.isRequired,
+};
 
 export default AttributeListView;

@@ -272,6 +272,7 @@ const genCharacter = (
     spells: [],
     armor: [],
   };
+  character.madeCharacter = false;
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;
   character.currentIndex = null;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { number } from 'prop-types';
 
 const StatusView = ({
   armor,
@@ -49,5 +50,15 @@ const StatusView = ({
     </div>
   </div>
 );
+
+StatusView.propTypes = {
+  armor: number.isRequired,
+  init: number.isRequired,
+  speed: number.isRequired,
+  maxHP: number.isRequired,
+  currentHP: number.isRequired,
+  tempHP: number.isRequired,
+  hitDie: number.isRequired,
+};
 
 export default StatusView;

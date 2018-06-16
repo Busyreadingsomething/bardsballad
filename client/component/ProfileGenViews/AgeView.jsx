@@ -1,4 +1,6 @@
 import React from 'react';
+import { func } from 'prop-types';
+
 
 const AgeView = ({ setAge }) => (
   <div>
@@ -7,5 +9,9 @@ const AgeView = ({ setAge }) => (
     </label>
   </div>
 );
+
+AgeView.propTypes = {
+  setAge: func.isRequired,
+};
 
 export default AgeView;

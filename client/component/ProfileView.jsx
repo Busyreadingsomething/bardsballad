@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, number, string } from 'prop-types';
 
 const ProfileView = ({
   profile,
@@ -21,5 +22,19 @@ const ProfileView = ({
     <div className="player-alignment">{profile.align}</div>
   </div>
 );
+
+ProfileView.propTypes = {
+  profile: shape({
+    name: string,
+    gender: string,
+    age: number,
+    height: string,
+    hair: string,
+    align: string,
+  }).isRequired,
+  level: number.isRequired,
+  charClass: string.isRequired,
+  race: string.isRequired,
+};
 
 export default ProfileView;

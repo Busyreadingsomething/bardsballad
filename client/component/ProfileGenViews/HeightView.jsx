@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const HeightView = ({ setHeight }) => (
   <div className="gen-name-container">
@@ -7,5 +8,9 @@ const HeightView = ({ setHeight }) => (
     </label>
   </div>
 );
+
+HeightView.propTypes = {
+  setHeight: func.isRequired,
+};
 
 export default HeightView;

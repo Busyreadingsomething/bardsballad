@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const AlignView = ({ setAlign }) => (
   <div className="gen-align-container">
@@ -18,5 +19,9 @@ const AlignView = ({ setAlign }) => (
     </label>
   </div>
 );
+
+AlignView.propTypes = {
+  setAlign: func.isRequired,
+};
 
 export default AlignView;
