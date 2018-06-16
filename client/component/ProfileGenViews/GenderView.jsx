@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const GenderView = ({ setGender }) => (
   <div>
@@ -11,5 +12,9 @@ const GenderView = ({ setGender }) => (
     </label>
   </div>
 );
+
+GenderView.propTypes = {
+  setGender: func.isRequired,
+};
 
 export default GenderView;

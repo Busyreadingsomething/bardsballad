@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const NameView = ({ setName }) => (
   <div className="gen-name-container">
@@ -7,5 +8,9 @@ const NameView = ({ setName }) => (
     </label>
   </div>
 );
+
+NameView.propTypes = {
+  setName: func.isRequired,
+};
 
 export default NameView;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const RaceView = ({ setRace }) => (
   <div className="gen-race-container">
@@ -18,5 +19,9 @@ const RaceView = ({ setRace }) => (
     </label>
   </div>
 );
+
+RaceView.propTypes = {
+  setRace: func.isRequired,
+};
 
 export default RaceView;

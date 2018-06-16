@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const HairView = ({ setHair }) => (
   <div>
@@ -7,5 +8,9 @@ const HairView = ({ setHair }) => (
     </label>
   </div>
 );
+
+HairView.propTypes = {
+  setHair: func.isRequired,
+};
 
 export default HairView;
