@@ -1,4 +1,5 @@
 import React from 'react';
+import { arrayOf, object } from 'prop-types';
 import SpellView from './SpellView';
 
 const SpellsListView = ({ spells }) => (
@@ -9,5 +10,9 @@ const SpellsListView = ({ spells }) => (
     }
   </div>
 );
+
+SpellsListView.propTypes = {
+  spells: arrayOf(object).isRequired,
+};
 
 export default SpellsListView;

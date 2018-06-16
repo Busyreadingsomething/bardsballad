@@ -1,4 +1,5 @@
 import React from 'react';
+import { bool, func } from 'prop-types';
 import GenerateView from './GenerateView';
 import CharacterView from './CharacterView';
 
@@ -12,5 +13,10 @@ const SheetView = props => (
     }
   </div>
 );
+
+SheetView.propTypes = {
+  madeCharacter: bool.isRequired,
+  genCharacter: func.isRequired,
+};
 
 export default SheetView;

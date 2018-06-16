@@ -6,7 +6,7 @@ import AbilityListContainer from './containers/AbilityListContainer';
 import StatusContainer from './containers/StatusContainer';
 import ExpProgressContainer from './containers/ExpProgressContainer';
 
-const CharacterView = props => (
+const CharacterView = () => (
   <div className="character-container">
     <div className="bard-col-1">
       <ProfileContainer />

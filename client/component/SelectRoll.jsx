@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const SelectRoll = ({ roll }) => (
   <div className="roll-select-container">
@@ -7,5 +8,9 @@ const SelectRoll = ({ roll }) => (
     <input type="radio" id="gen-point-buy" value="point-buy" name="roll" onClick={roll} /> Point Buy <br></br>
   </div>
 );
+
+SelectRoll.propTypes = {
+  roll: func.isRequired,
+};
 
 export default SelectRoll;

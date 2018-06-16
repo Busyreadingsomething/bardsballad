@@ -1,4 +1,5 @@
 import React from 'react';
+import { arrayOf, object } from 'prop-types';
 import ALV from './AttributeSelectorViews/AttributeListView';
 
 const AttributeSelectorView = props => (
@@ -23,5 +24,10 @@ const AttributeSelectorView = props => (
     }
   </div>
 );
+
+AttributeSelectorView.propTypes = {
+  proficiencies: arrayOf(object).isRequired,
+  styles: arrayOf(object).isRequired,
+};
 
 export default AttributeSelectorView;

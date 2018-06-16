@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 const ClassView = ({ setClass }) => (
   <div className="gen-class-container">
@@ -21,5 +22,9 @@ const ClassView = ({ setClass }) => (
     </label>
   </div>
 );
+
+ClassView.propTypes = {
+  setClass: func.isRequired,
+};
 
 export default ClassView;

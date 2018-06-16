@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, object } from 'prop-types';
 import ScoreView from './ScoreView';
 
 const AbilityListView = ({ ability }) => (
@@ -12,5 +13,16 @@ const AbilityListView = ({ ability }) => (
     }
   </div>
 );
+
+AbilityListView.propTypes = {
+  ability: shape({
+    str: object,
+    dex: object,
+    con: object,
+    int: object,
+    wis: object,
+    cha: object,
+  }).isRequired,
+};
 
 export default AbilityListView;

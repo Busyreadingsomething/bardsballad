@@ -1,4 +1,5 @@
 import React from 'react';
+import { func } from 'prop-types';
 import ProfileGenView from './ProfileGenView';
 import ScoreGenContainer from './containers/ScoreGenContainer';
 import ClassContainer from './containers/ClassContainer';
@@ -17,5 +18,9 @@ const GenerateView = props => (
     <button className="gen-submit" onClick={props.generate}>SUBMIT</button>
   </div>
 );
+
+GenerateView.propTypes = {
+  generate: func.isRequired,
+};
 
 export default GenerateView;
