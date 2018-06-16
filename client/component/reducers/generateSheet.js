@@ -37,6 +37,8 @@ const generateSheet = (state, action) => {
       return helpers.setFinalAbility(state);
     case 'UPDATE_ATTR':
       return setAttribute(state, action);
+    case 'MAKE_CHARACTER':
+      return state.update('madeCharacter', () => true);
     default:
       return state;
   }

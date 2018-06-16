@@ -7,6 +7,7 @@ const actionTypes = {
   UPDATE_HOLDER: 'UPDATE_HOLDER',
   SET_ABILITY: 'SET_ABILITY',
   UPDATE_ATTR: 'UPDATE_ATTR',
+  MAKE_CHARACTER: 'MAKE_CHARACTER',
 };
 
 export default actionTypes;
