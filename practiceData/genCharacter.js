@@ -149,6 +149,13 @@ const genGear = (weapons, spells, money) => {
   return gear;
 };
 
+const genNotes = () => {
+  const notes = {};
+  notes.styles = [];
+  notes.description = '';
+  return notes;
+};
+
 const genProficiencies = () => ({
   acrobatics: {
     val: 0,
@@ -259,7 +266,7 @@ const genCharacter = (
   money,
 ) => {
   const character = {};
-  
+
   character.ability = genAbility(scores);
   character.profile = genProfile(name, gender, height, age, hair, eye, align);
   character.race = genRace(raceName);
@@ -272,6 +279,7 @@ const genCharacter = (
     spells: [],
     armor: [],
   };
+  character.notes = genNotes();
   character.madeCharacter = false;
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;
