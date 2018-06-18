@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { fromJS } from 'immutable';
 import generateSheet from '../reducers/generateSheet';
-import character from '../../../practiceData/genCharacter';
+import character from '../../practiceData/genCharacter';
 
 const fillerScores = {
   str: 13,
