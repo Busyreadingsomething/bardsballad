@@ -284,7 +284,7 @@ const genCharacter = (
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;
   character.currentIndex = null;
-  character.rollSelect = null;
+  character.rollSelect = '';
   character.holder = {};
 
   character.stats.forEach((stat) => {
