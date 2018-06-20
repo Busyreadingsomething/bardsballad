@@ -19,7 +19,7 @@ const setAttribute = (state, action) => {
       .updateIn([prof, attr, 'proficient'], selected => !selected)
       .updateIn(['charClass', prof, index, 'rule'], () => rule - 1);
   }
-  console.log(newState.getIn(['charClass', prof, index, 'rule']));
+
   return newState;
 };
 
