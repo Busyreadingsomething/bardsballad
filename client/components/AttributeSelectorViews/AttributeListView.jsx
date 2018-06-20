@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AttributesContainer from '../../containers/AttributesContainer';
 
-const AttributeListView = props => (
+const AttributeListView = ({ attribute, index, prof }) => (
   <div className="attribute-container">
-    <h1>{props.attribute.type}</h1>
-    <h3>Select {props.attribute.rule}</h3>
+    <h1>{attribute.type}</h1>
+    <h3>Select {attribute.rule}</h3>
     {
-      props.attribute.list.map(attr => (
+      attribute.list.map(attr => (
         <AttributesContainer
           name={attr}
           key={attr}
-          index={props.index}
-          prof={props.prof}
+          index={index}
+          prof={prof}
         />))
     }
   </div>
