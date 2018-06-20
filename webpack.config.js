@@ -4,7 +4,7 @@ module.exports = {
   entry: './client/app.jsx',
   output: {
     path: path.resolve(__dirname, 'public/dist'),
-    filename: 'app-bundle.js',
+    filename: 'bard-bundle.js',
     publicPath: '/',
   },
   module: {

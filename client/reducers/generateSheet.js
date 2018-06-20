@@ -3,14 +3,24 @@ import character from '../../practiceData/genCharacter';
 import helpers from './helpers';
 
 const setAttribute = (state, action) => {
-  const { attr, prof } = action;
-  const item = state.getIn([prof, attr]).toJS();
-  const { proficient } = item;
+  const { attr, prof, index } = action;
+  let newState = state;
+  const proficient = state.getIn([prof, attr, 'proficient']);
+  const rule = state.getIn(['charClass', prof, index, 'rule']);
 
-  item.val = proficient ? item.val - 2 : item.val + 2;
-  item.proficient = !item.proficient;
+  if (proficient) {
+    newState = state
+      .updateIn([prof, attr, 'val'], val => val - 2)
+      .updateIn([prof, attr, 'proficient'], selected => !selected)
+      .updateIn(['charClass', prof, index, 'rule'], () => rule + 1);
+  } else if (rule !== 0) {
+    newState = state
+      .updateIn([prof, attr, 'val'], val => val + 2)
+      .updateIn([prof, attr, 'proficient'], selected => !selected)
+      .updateIn(['charClass', prof, index, 'rule'], () => rule - 1);
+  }
 
-  return state.updateIn([prof, attr], () => fromJS(item));
+  return newState;
 };
 
 
