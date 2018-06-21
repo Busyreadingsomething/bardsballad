@@ -1,50 +1,33 @@
-import { fromJS } from 'immutable';
-import character from '../../practiceData/genCharacter';
 import helpers from './helpers';
 
-const setAttribute = (state, action) => {
-  const { attr, prof, index } = action;
-  let newState = state;
-  const proficient = state.getIn([prof, attr, 'proficient']);
-  const rule = state.getIn(['charClass', prof, index, 'rule']);
-
-  if (proficient) {
-    newState = state
-      .updateIn([prof, attr, 'val'], val => val - 2)
-      .updateIn([prof, attr, 'proficient'], selected => !selected)
-      .updateIn(['charClass', prof, index, 'rule'], () => rule + 1);
-  } else if (rule !== 0) {
-    newState = state
-      .updateIn([prof, attr, 'val'], val => val + 2)
-      .updateIn([prof, attr, 'proficient'], selected => !selected)
-      .updateIn(['charClass', prof, index, 'rule'], () => rule - 1);
-  }
-
-  return newState;
-};
-
+const {
+  setProfile,
+  setRace,
+  setClass,
+  setRolls,
+  setAbilityStat,
+  setFinalAbility,
+  setAttribute,
+} = helpers;
 
 const generateSheet = (state, action) => {
   switch (action.type) {
     case 'UPDATE_PROFILE':
-      return state
-        .updateIn(action.prop, () => action.value);
+      return setProfile(state, action);
     case 'UPDATE_RACE':
-      return state
-        .update('race', () => fromJS(character.genRace(action.race)));
+      return setRace(state, action);
     case 'UPDATE_CLASS':
-      return state
-        .update('charClass', () => fromJS(character.genClass(action.className)));
+      return setClass(state, action);
     case 'PICK_ROLL':
-      return helpers.setRolls(state, action.rollSelect);
+      return setRolls(state, action.rollSelect);
     case 'SET_SCORE':
       return state
         .update('currentValue', () => action.val)
         .update('currentIndex', () => action.index);
     case 'UPDATE_HOLDER':
-      return helpers.setAbilityStat(state, action.stat);
+      return setAbilityStat(state, action.stat);
     case 'SET_ABILITY':
-      return helpers.setFinalAbility(state);
+      return setFinalAbility(state);
     case 'UPDATE_ATTR':
       return setAttribute(state, action);
     case 'MAKE_CHARACTER':
