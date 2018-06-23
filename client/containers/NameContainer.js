@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import NameView from '../components/ProfileGenViews/NameView';
-import actions from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setName: e => dispatch(actions.updateProfile(e)),
+  setName: e => dispatch(updateProfile(e)),
 });
 
 const NameContainer = connect(

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import ClassView from '../components/ClassView';
-import action from '../actions';
+import { updateClass } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setClass: e => dispatch(action.updateClass(e)),
+  setClass: e => dispatch(updateClass(e)),
 });
 
 const ClassContainer = connect(

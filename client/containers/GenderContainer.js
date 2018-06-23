@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import GenderView from '../components/ProfileGenViews/GenderView';
-import actions from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setGender: e => dispatch(actions.updateProfile(e)),
+  setGender: e => dispatch(updateProfile(e)),
 });
 
 const GenderContainer = connect(

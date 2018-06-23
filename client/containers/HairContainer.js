@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import HairView from '../components/ProfileGenViews/HairView';
-import action from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setHair: e => dispatch(action.updateProfile(e)),
+  setHair: e => dispatch(updateProfile(e)),
 });
 
 const HairContainer = connect(

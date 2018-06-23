@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import toJS from './toJS';
-import action from '../actions';
+import { makeCharacter } from '../actions';
 import SheetView from '../components/SheetView';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  genCharacter: () => dispatch(action.makeCharacter()),
+  genCharacter: () => dispatch(makeCharacter()),
 });
 
 const SheetContainer = connect(

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import RaceView from '../components/ProfileGenViews/RaceView';
-import actions from '../actions';
+import { updateRace } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setRace: e => dispatch(actions.updateRace(e)),
+  setRace: e => dispatch(updateRace(e)),
 });
 
 const RaceContainer = connect(
