@@ -5,7 +5,7 @@ import ModView from './ModView';
 const ModListView = ({ mods, stats }) => (
   <div className="mode-list-container">
     {
-      stats.map(stat => <ModView mod={mods[stat]} />)
+      stats.map(stat => <ModView mod={mods[stat]} key={stat} />)
     }
   </div>
 );
