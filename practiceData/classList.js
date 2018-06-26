@@ -1,4 +1,4 @@
-import raceMod from './raceModifiers';
+import { skillsList } from './raceModifiers';
 
 const classList = {
   barbarian: {
@@ -21,7 +21,7 @@ const classList = {
     proficiencies: [{
       type: 'Skill Proficiency',
       rule: 2,
-      list: raceMod.skillsList,
+      list: skillsList,
     },
     {
       type: 'Tool Proficiency: Musical Instruments',

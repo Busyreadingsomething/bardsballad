@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import SelectRoll from '../components/SelectRoll';
-import action from '../actions';
+import { pickRoll } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchtoProps = dispatch => ({
-  roll: e => dispatch(action.pickRoll(e)),
+  roll: e => dispatch(pickRoll(e)),
 });
 
 const SelectRollContainer = connect(

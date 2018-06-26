@@ -4,6 +4,7 @@ import toJS from './toJS/index';
 
 const mapStateToProps = state => ({
   rollSelect: state.getIn(['rollSelect']),
+  race: state.getIn(['race', 'name']),
 });
 
 const mapDispatchToProps = () => ({});

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import HeightView from '../components/ProfileGenViews/HeightView';
-import action from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setHeight: e => dispatch(action.updateProfile(e)),
+  setHeight: e => dispatch(updateProfile(e)),
 });
 
 const HeightContainer = connect(

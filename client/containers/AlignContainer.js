@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import AlignView from '../components/AlignView';
-import actions from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setAlign: e => dispatch(actions.updateProfile(e)),
+  setAlign: e => dispatch(updateProfile(e)),
 });
 
 const AlignContainer = connect(

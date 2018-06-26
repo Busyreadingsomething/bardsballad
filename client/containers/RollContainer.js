@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import RollView from '../components/ScoreGenViews/RollView';
-import action from '../actions';
+import { setScore } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setScore: (val, position) => dispatch(action.setScore(val, position)),
+  setScore: (val, position) => dispatch(setScore(val, position)),
 });
 
 const RollContainer = connect(

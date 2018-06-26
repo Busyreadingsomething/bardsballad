@@ -1,53 +1,53 @@
 import actionTypes from '../actionTypes';
 
-const updateProfile = profile => ({
+export const updateProfile = profile => ({
   type: actionTypes.UPDATE_PROFILE,
   prop: profile.target.id.split('-'),
   value: profile.target.value,
 });
 
-const updateClass = className => ({
+export const updateClass = className => ({
   type: actionTypes.UPDATE_CLASS,
   className: className.target.value,
 });
 
-const updateRace = race => ({
+export const updateRace = race => ({
   type: actionTypes.UPDATE_RACE,
   race: race.target.value,
 });
 
-const pickRoll = roll => ({
+export const pickRoll = roll => ({
   type: actionTypes.PICK_ROLL,
   rollSelect: roll.target.value,
 });
 
-const setScore = (val, index) => ({
+export const setScore = (val, index) => ({
   type: actionTypes.SET_SCORE,
   val,
   index,
 });
 
-const updateHolder = stat => ({
+export const updateHolder = stat => ({
   type: actionTypes.UPDATE_HOLDER,
   stat,
 });
 
-const setAbility = () => ({
+export const setAbility = () => ({
   type: actionTypes.SET_ABILITY,
 });
 
-const updateAttr = (index, attr, prof) => ({
+export const updateAttr = (index, attr, prof) => ({
   type: actionTypes.UPDATE_ATTR,
   index,
   attr,
   prof,
 });
 
-const makeCharacter = () => ({
+export const makeCharacter = () => ({
   type: actionTypes.MAKE_CHARACTER,
 });
 
-const actions = {
+export default {
   updateProfile,
   updateClass,
   updateRace,
@@ -58,5 +58,3 @@ const actions = {
   setAbility,
   makeCharacter,
 };
-
-export default actions;

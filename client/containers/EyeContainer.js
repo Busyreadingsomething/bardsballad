@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import EyeView from '../components/ProfileGenViews/EyeView';
-import action from '../actions';
+import { updateProfile } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  setEyes: e => dispatch(action.updateProfile(e)),
+  setEyes: e => dispatch(updateProfile(e)),
 });
 
 const EyeContainer = connect(
