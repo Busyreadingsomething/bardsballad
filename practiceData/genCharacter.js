@@ -93,7 +93,7 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
 const genRace = (raceName) => {
   const race = {};
   race.name = raceName || '';
-  race.modifiers = genRaceMods(raceList[raceName].abilities);
+  race.modifiers = raceName ? genRaceMods(raceList[raceName].abilities) : {};
   race.attributes = raceAttributes[raceName] || null;
 
   return race;
