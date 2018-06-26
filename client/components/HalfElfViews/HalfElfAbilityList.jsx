@@ -4,14 +4,21 @@ import HEPV from './HalfElfPointView';
 
 const HalfElfAbilityList = props => (
   <div className="half-elf-point-container">
+    <div className="points-left">{props.rule}</div>
     {
-      props.abilities.map(ability => <HEPV val={props.score[ability]} ability={ability} key={ability} />)
+      props.abilities.map(ability => (
+        <HEPV
+          val={props.score[ability]}
+          ability={ability}
+          key={ability}
+        />))
     }
-  </div>  
+  </div>
 );
 
 HalfElfAbilityList.propTypes = {
   abilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  rule: PropTypes.number.isRequired,
   score: PropTypes.shape({
     str: PropTypes.number,
     dex: PropTypes.number,
