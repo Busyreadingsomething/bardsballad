@@ -84,6 +84,16 @@ const setAttribute = (state, action) => {
   return newState;
 };
 
+const changePage = (state, motion) => {
+  let updatedState = state;
+  if (motion === 'next') {
+    updatedState = state.update('genPage', val => val + 1);
+  } else if (motion === 'prev') {
+    updatedState = state.update('genPage', val => val - 1);
+  }
+  return updatedState;
+};
+
 export default {
   setAbilityStat,
   setFinalAbility,
@@ -92,4 +102,5 @@ export default {
   setRace,
   setClass,
   setAttribute,
+  changePage,
 };
