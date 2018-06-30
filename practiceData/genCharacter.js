@@ -83,7 +83,7 @@ const genRace = (raceName) => {
   if (raceName && raceList[raceName]) {
     race.name = raceName;
     race = Object.assign(race, raceList[raceName]);
-    race.modifiers = genRaceMods(raceList[raceName].abilities);
+    race.modifiers = genRaceMods(raceList[raceName].modifiers);
   }
 
   return race;
