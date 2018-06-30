@@ -32,6 +32,8 @@ const generateSheet = (state, action) => {
       return setAttribute(state, action);
     case 'MAKE_CHARACTER':
       return state.update('madeCharacter', () => true);
+    case 'NEXT_PAGE':
+      return state.update('genPage', page => page + 1);
     default:
       return state;
   }
