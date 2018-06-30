@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import PGV from '../components/ProfileGenView';
-import { nextPage } from '../actions';
+import { modPage } from '../actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  next: () => dispatch(nextPage()),
+  selectPage: e => dispatch(modPage(e)),
 });
 
 const ProfileGenContainer = connect(

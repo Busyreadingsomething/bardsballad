@@ -8,7 +8,7 @@ import AgeContainer from '../containers/AgeContainer';
 import HairContainer from '../containers/HairContainer';
 import EyeContainer from '../containers/EyeContainer';
 
-const ProfileGenView = ({ next }) => (
+const ProfileGenView = ({ selectPage }) => (
   <div className="gen-profile">
     <NameContainer />
     <GenderContainer />
@@ -17,12 +17,12 @@ const ProfileGenView = ({ next }) => (
     <AgeContainer />
     <HairContainer />
     <EyeContainer />
-    <button id="profile" onClick={() => next()}>NEXT</button>
+    <button id="profile" motion="next" onClick={e => selectPage(e)}>NEXT</button>
   </div>
 );
 
 ProfileGenView.propTypes = {
-  next: func.isRequired,
+  selectPage: func.isRequired,
 };
 
 export default ProfileGenView;
