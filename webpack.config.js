@@ -1,16 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/app.jsx',
+  entry: {
+    client: path.resolve(__dirname, './client/app.jsx'),
+    server: path.resolve(__dirname, './client/components/SheetView.jsx'),
+  },
   output: {
     path: path.resolve(__dirname, 'public/dist'),
-    filename: 'bard-bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '/',
   },
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {

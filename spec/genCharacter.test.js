@@ -170,31 +170,19 @@ describe('### GENERATE CHARACTER ###', () => {
       expect(race).toBeInstanceOf(Object);
     });
 
-    it('Should have the properties name, modifiers, attributes', () => {
-      const race = character.genRace();
-      expect(race).toHaveProperty('name');
-      expect(race).toHaveProperty('modifiers');
-      expect(race).toHaveProperty('attributes');
-    });
-
-    it('Should have an empty string or null if nothing is passed in', () => {
-      const race = character.genRace();
-      expect(race).toHaveProperty('name', '');
-      expect(race).toHaveProperty('attributes', null);
-    });
-
-    it('Should have mod stats of 0 for each in the modifiers property', () => {
-      const race = character.genRace();
-      expect(race.modifiers).toBeInstanceOf(Object);
-      Object.keys(race.modifiers).forEach(stat => expect(race.modifiers[stat]).toBe(0));
+    it('Should have return an empty object ', () => {
+      const { length } = Object.keys(character.genRace());
+      expect(length).toBe(0);
     });
 
     it('Should set the value according to the race', () => {
       const race = character.genRace('elf');
+      expect(race).toHaveProperty('name');
+      expect(race).toHaveProperty('modifiers');
+      expect(race.modifiers).toBeInstanceOf(Object);
       expect(race.name).toBe('elf');
       expect(race.modifiers).toBeInstanceOf(Object);
       expect(race.modifiers).toHaveProperty('dex', 2);
-      expect(race.attributes).toBeInstanceOf(Array);
     });
   });
 

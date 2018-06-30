@@ -21,7 +21,7 @@ export const skillsList = [
 
 export const raceList = {
   dragonborne: {
-    abilities: {
+    modifiers: {
       str: 2,
       cha: 1,
     },
@@ -165,7 +165,7 @@ export const raceList = {
     traits: [],
   },
   dwarf: {
-    abilities: {
+    modifiers: {
       con: 2,
     },
     select: null,
@@ -203,7 +203,7 @@ export const raceList = {
     ],
   },
   elf: {
-    abilities: {
+    modifiers: {
       dex: 2,
     },
     select: null,
@@ -250,7 +250,7 @@ export const raceList = {
     ],
   },
   gnome: {
-    abilities: {
+    modifiers: {
       int: 2,
     },
     select: null,
@@ -287,7 +287,7 @@ export const raceList = {
     ],
   },
   'half-elf': {
-    abilities: {
+    modifiers: {
       cha: 2,
     },
     select: {
@@ -323,7 +323,7 @@ export const raceList = {
     ],
   },
   'half-orc': {
-    abilities: {
+    modifiers: {
       str: 2,
       con: 1,
     },
@@ -349,7 +349,7 @@ export const raceList = {
     ],
   },
   halfling: {
-    abilities: {
+    modifiers: {
       dex: 2,
     },
     select: null,
@@ -381,7 +381,7 @@ export const raceList = {
     ],
   },
   human: {
-    abilities: {
+    modifiers: {
       str: 1,
       dex: 1,
       con: 1,
@@ -398,7 +398,7 @@ export const raceList = {
     traits: [],
   },
   tiefling: {
-    abilities: {
+    modifiers: {
       int: 1,
       cha: 2,
     },

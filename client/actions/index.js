@@ -47,6 +47,10 @@ export const makeCharacter = () => ({
   type: actionTypes.MAKE_CHARACTER,
 });
 
+export const nextPage = () => ({
+  type: actionTypes.NEXT_PAGE,
+});
+
 export default {
   updateProfile,
   updateClass,
@@ -57,4 +61,5 @@ export default {
   updateHolder,
   setAbility,
   makeCharacter,
+  nextPage,
 };

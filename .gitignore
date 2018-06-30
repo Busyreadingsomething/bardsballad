@@ -1,4 +1,5 @@
 node_modules/
-bard-bundle.js
+client.bundle.js
+server.bundle.js
 coverage/
 .vscode/
