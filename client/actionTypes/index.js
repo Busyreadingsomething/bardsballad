@@ -8,7 +8,7 @@ const actionTypes = {
   SET_ABILITY: 'SET_ABILITY',
   UPDATE_ATTR: 'UPDATE_ATTR',
   MAKE_CHARACTER: 'MAKE_CHARACTER',
-  NEXT_CHARACTER: 'NEXT_CHARACTER',
+  NEXT_PAGE: 'NEXT_PAGE',
 };
 
 export default actionTypes;
