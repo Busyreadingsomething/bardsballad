@@ -17,18 +17,6 @@ const emptyMoney = {
   pp: 0,
 };
 
-const raceAttributes = {
-  dragonborne: [1, 2, 3, 4],
-  dwarf: [1, 2, 3, 4],
-  elf: [1, 2, 3, 4],
-  gnome: [1, 2, 3, 4],
-  'half-elf': [1, 2, 3, 4],
-  'half-orc': [1, 2, 3, 4],
-  halfling: [1, 2, 3, 4],
-  human: [1, 2, 3, 4],
-  tiefling: [1, 2, 3, 4],
-};
-
 const savesList = {
   str: ['saving', 'athletics'],
   dex: ['saving', 'acrobatics', 'slightOfHand', 'stealth'],
@@ -91,10 +79,12 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
 };
 
 const genRace = (raceName) => {
-  const race = {};
-  race.name = raceName || '';
-  race.modifiers = raceName ? genRaceMods(raceList[raceName].abilities) : {};
-  race.attributes = raceAttributes[raceName] || null;
+  let race = {};
+  if (raceName && raceList[raceName]) {
+    race.name = raceName;
+    race = Object.assign(race, raceList[raceName]);
+    race.modifiers = genRaceMods(raceList[raceName].abilities);
+  }
 
   return race;
 };
@@ -280,6 +270,8 @@ const genCharacter = (
     armor: [],
   };
   character.notes = genNotes();
+  character.genList = ['profile', 'score', 'class', 'attributes'];
+  character.currentGen = 0;
   character.madeCharacter = false;
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;
