@@ -1,6 +1,7 @@
 import React from 'react';
 import { func } from 'prop-types';
 import ProfileGenView from './ProfileGenView';
+import ProfileGenContainer from '../containers/ProfileGenContainer';
 import ScoreGenContainer from '../containers/ScoreGenContainer';
 import ClassContainer from '../containers/ClassContainer';
 import AlignContainer from '../containers/AlignContainer';
@@ -8,7 +9,7 @@ import AttributeSelectorContainer from '../containers/AttributeSelectorContainer
 
 const GenerateView = props => (
   <div className="gen-container">
-    <ProfileGenView />
+    <ProfileGenContainer />
     <ScoreGenContainer />
     <div className="gen-dropdowns">
       <ClassContainer />
