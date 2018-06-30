@@ -271,7 +271,7 @@ const genCharacter = (
   };
   character.notes = genNotes();
   character.genList = ['profile', 'score', 'class', 'attributes'];
-  character.currentGen = 0;
+  character.genPage = 0;
   character.madeCharacter = false;
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;

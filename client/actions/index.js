@@ -47,8 +47,9 @@ export const makeCharacter = () => ({
   type: actionTypes.MAKE_CHARACTER,
 });
 
-export const nextPage = () => ({
-  type: actionTypes.NEXT_PAGE,
+export const modPage = e => ({
+  type: actionTypes.MOD_PAGE,
+  motion: e.target.getAttribute('motion'),
 });
 
 export default {
@@ -61,5 +62,5 @@ export default {
   updateHolder,
   setAbility,
   makeCharacter,
-  nextPage,
+  modPage,
 };

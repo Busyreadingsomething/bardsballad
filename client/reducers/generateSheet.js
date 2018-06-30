@@ -8,6 +8,7 @@ const {
   setAbilityStat,
   setFinalAbility,
   setAttribute,
+  changePage,
 } = helpers;
 
 const generateSheet = (state, action) => {
@@ -32,6 +33,8 @@ const generateSheet = (state, action) => {
       return setAttribute(state, action);
     case 'MAKE_CHARACTER':
       return state.update('madeCharacter', () => true);
+    case 'MOD_PAGE':
+      return changePage(state, action.motion);
     default:
       return state;
   }

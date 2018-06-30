@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import toJS from './toJS/index';
-import actions from '../actions';
 import ProfileView from '../components/ProfileView';
 
 const mapStateToProps = state => ({
@@ -10,7 +9,7 @@ const mapStateToProps = state => ({
   level: state.getIn(['status', 'level']),
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 const ProfileContainer = connect(
   mapStateToProps,
