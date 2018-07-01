@@ -1,22 +1,21 @@
 import React from 'react';
-import { bool, func } from 'prop-types';
-import GenerateView from './GenerateView';
+import { bool } from 'prop-types';
 import CharacterView from './CharacterView';
+import GenerateContainer from '../containers/GenerateContainer';
 
 
-const SheetView = props => (
+const SheetView = ({ madeCharacter }) => (
   <div className="main-container">
     {
-      props.madeCharacter
+      madeCharacter
         ? <CharacterView />
-        : <GenerateView generate={props.genCharacter} />
+        : <GenerateContainer />
     }
   </div>
 );
 
 SheetView.propTypes = {
   madeCharacter: bool.isRequired,
-  genCharacter: func.isRequired,
 };
 
 export default SheetView;
