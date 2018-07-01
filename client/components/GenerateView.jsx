@@ -11,7 +11,6 @@ const GenerateView = props => (
     <ScoreGenContainer />
     <RoleSelectContainer />
     <AttributeSelectorContainer />
-    <button className="gen-submit" onClick={props.generate}>SUBMIT</button>
   </div>
 );
 

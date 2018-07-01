@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, object } from 'prop-types';
+import { arrayOf, object, func } from 'prop-types';
 import ALV from './AttributeSelectorViews/AttributeListView';
 
 const AttributeSelectorView = props => (
@@ -22,12 +22,14 @@ const AttributeSelectorView = props => (
           index={index}
         />))
     }
+    <button className="gen-submit" onClick={props.genCharacter}>SUBMIT</button>
   </div>
 );
 
 AttributeSelectorView.propTypes = {
   proficiencies: arrayOf(object).isRequired,
   styles: arrayOf(object).isRequired,
+  genCharacter: func.isRequired,
 };
 
 export default AttributeSelectorView;
