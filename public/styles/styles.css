@@ -18,7 +18,10 @@ div, label, input, select, option {
   align-items: center;
 }
 
+/* ------------------ */
 /* PROFILE GEN STYLES */
+/* ------------------ */
+
 select {
   -webkit-appearance: none;
 }
@@ -48,11 +51,11 @@ option {
 .gen-profile-input {
   height: 40px;
   width: 400px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 3px 0px 3px 3px;
   border-radius: 2px;
   text-indent: 5px;
-  line-height: 0.9;
+  line-height: 2.1rem;
   transition: all 0.30s ease-in-out;
   outline: none;
   padding: 3px 0px 3px 3px;
@@ -95,7 +98,11 @@ option {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25);
 }
 
-/* SCORE GEN */
+/* ------------------- */
+/* ---- SCORE GEN ---- */
+/* ------------------- */
+
+/* CARD */
 .gen-score-container {
   display: flex;
   flex-flow: column;
@@ -114,6 +121,11 @@ option {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+.gen-title {
+  letter-spacing: 0.05rem;
+}
+
+/* STATS */
 .gen-stat-container{
   display: flex;
   flex-flow: column;
@@ -129,10 +141,12 @@ option {
   justify-content: space-evenly;
 }
 
+/* MOD */
 .mod-container {
   width: 30px;
   height: 30px;
   margin: 0 12.3%;
+  display: flex;
   color: white;
   font-size: 0.9rem;
   background-color: #448AFF;
@@ -143,7 +157,7 @@ option {
 }
 
 .mod-container > span {
-  font-size: 0.3rem;
+  font-size: 0.7rem;
 }
 
 .gen-stat-buttons > * {
@@ -167,30 +181,184 @@ option {
   background-color: #ff5252;
 }
 
-.page-button-list {
-  display: flex;
-  flex-flow: row;
+/* SELECT ROLL */
+/* [type="radio"]:not(:checked), [type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
 }
 
-.page-button-list > * {
-  margin: 0 5%;
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
 }
-/*  */
+
+[type="radio"]:not(:checked) + span, [type="radio"]:checked + span {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  -webkit-transition: 0.28s ease;
+  -moz-transition: 0.28s ease;
+  -o-transition: 0.28s ease;
+  -ms-transition: 0.28s ease;
+  transition: 0.28s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+}
+
+[type="radio"].gen-select-roll:checked + span:before {
+  border-radius: 50%;
+  border: 2px solid #ff4081;
+}
+
+[type="radio"]:checked + span:before {
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+[type="radio"] + span:before, [type="radio"] + span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  -webkit-transition: 0.28s ease;
+  -moz-transition: 0.28s ease;
+  -o-transition: 0.28s ease;
+  -ms-transition: 0.28s ease;
+  transition: 0.28s ease;
+}
+
+[type="radio"].gen-select-roll:checked + span:after {
+  border-radius: 50%;
+  border: 2px solid #ff4081;
+  background-color: #ff4081;
+  z-index: 0;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+[type="radio"]:checked + span:after {
+  border-radius: 50%;
+  border: 2px solid #ff4081;
+  background-color: #ff4081;
+  z-index: 0;
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+[type="radio"] + span:before, [type="radio"] + span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  -webkit-transition: 0.28s ease;
+  -moz-transition: 0.28s ease;
+  -o-transition: 0.28s ease;
+  -ms-transition: 0.28s ease;
+  transition: 0.28s ease;
+} */
+
+/* ROLLS */
+.gen-roll-container {
+  display: flex;
+  flex-flow: column;
+}
+
+.gen-roll-list {
+  display: flex;
+  flex-flow: row;
+  flex-shrink: 0;
+}
 
 .scoregen-roll, .scoregen-stat-button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  font-size: 1.05rem;
   border: 0px;
   margin: 3px;
   font-weight: bolder;
-  background-color: lightsteelblue;
-  transition: all .2s ease-in-out;
+  background-color: #F5F5F5;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .scoregen-roll:hover, .scoregen-stat-button:hover, .proficiency:hover {
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.22);
   transform: scale(1.1);
 }
+
+.gen-roll-button {
+  border: 0.1px grey;
+  color: #FEFEFE;
+  height: 35px;
+  width: 75px;
+  font-size: 1rem;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+  transition: all .2s ease-in-out;
+  background-color: #ff1744;
+}
+
+.gen-roll-button:hover {
+  transform: scale(1.05);
+}
+
+.gen-page-focus {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+}
+.page-button-list {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 5px;
+}
+
+.page-button-list > * {
+  margin: 0 5%;
+}
+/* -------------------- */
+/* -- ROLE GENERATOR -- */
+/* -------------------- */
+.gen-role-container {
+  display: flex;
+  flex-flow: column;
+  width: 420px;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid lightgray;
+  padding: 15px;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: #CFD8DC;
+}
+
+.gen-role-container:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/*  */
 
 .proficiency {
   width: 100px;
