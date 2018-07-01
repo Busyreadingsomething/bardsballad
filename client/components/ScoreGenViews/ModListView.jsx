@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ModView from './ModView';
 
 const ModListView = ({ mods, stats }) => (
-  <div className="mode-list-container">
+  <div className="mod-list-container">
     {
       stats.map(stat => <ModView mod={mods[stat]} key={stat} />)
     }

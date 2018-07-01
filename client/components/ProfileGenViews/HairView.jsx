@@ -2,11 +2,14 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const HairView = ({ setHair }) => (
-  <div>
-    <label className="gen-hair" >Hair Color
-      <input id="profile-hair" type="text" onKeyUp={e => setHair(e)} />
-    </label>
-  </div>
+  <label className="gen-label" >Hair Color
+    <input
+      id="profile-hair"
+      className="gen-profile-input"
+      type="text"
+      onKeyUp={e => setHair(e)}
+    />
+  </label>
 );
 
 HairView.propTypes = {

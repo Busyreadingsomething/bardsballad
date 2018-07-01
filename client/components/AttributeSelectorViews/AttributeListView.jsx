@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import AttributesContainer from '../../containers/AttributesContainer';
 
 const AttributeListView = ({ attribute, index, prof }) => (
-  <div className="attribute-container">
-    <h1>{attribute.type}</h1>
-    <h3>Select {attribute.rule}</h3>
-    {
-      attribute.list.map(attr => (
-        <AttributesContainer
-          name={attr}
-          key={attr}
-          index={index}
-          prof={prof}
-        />))
-    }
+  <div className="gen-attribute-container">
+    <h2>{attribute.type}</h2>
+    <h4>Select {attribute.rule}</h4>
+    <div className="gen-attribute-list">
+      {
+        attribute.list.map(attr => (
+          <AttributesContainer
+            name={attr}
+            key={attr}
+            index={index}
+            prof={prof}
+          />))
+      }
+    </div>
   </div>
 );
 

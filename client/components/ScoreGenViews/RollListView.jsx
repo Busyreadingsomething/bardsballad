@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import RollContainer from '../../containers/RollContainer';
 
 const RollListView = ({ rolls, setAbility, rollKeys }) => (
-  <div className="roll-list-container">
-    {
-      rolls.map((roll, index) =>
-        <RollContainer roll={roll} key={rollKeys[index]} position={index} />)
-    }
-    <div className="button-list-containers">
-      <button className="scoregen-reroll">REROLL</button>
-      <button className="scoregen-submit" onClick={setAbility}>SUBMIT</button>
+  <div className="gen-roll-container">
+    <div className="gen-roll-list">
+      {
+        rolls.map((roll, index) =>
+          <RollContainer roll={roll} key={rollKeys[index]} position={index} />)
+      }
+    </div>
+    <div className="page-button-list">
+      <button className="gen-roll-button">REROLL</button>
+      <button className="gen-roll-button" onClick={setAbility}>SUBMIT</button>
     </div>
   </div>
 );

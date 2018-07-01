@@ -3,11 +3,14 @@ import { func } from 'prop-types';
 
 
 const AgeView = ({ setAge }) => (
-  <div>
-    <label className="gen-age">Age
-      <input id="profile-age" type="number" onKeyUp={e => setAge(e)} />
-    </label>
-  </div>
+  <label className="gen-label">Age
+    <input
+      id="profile-age"
+      className="gen-profile-input"
+      type="number"
+      onKeyUp={e => setAge(e)}
+    />
+  </label>
 );
 
 AgeView.propTypes = {

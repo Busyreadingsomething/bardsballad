@@ -3,7 +3,7 @@ import { number } from 'prop-types';
 
 const ModView = ({ mod }) => (
   <div className="mod-container">
-    {`+${mod}`}
+    <span>+</span>{mod}
   </div>
 );
 

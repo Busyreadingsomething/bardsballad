@@ -4,11 +4,14 @@ import ClassContainer from '../containers/ClassContainer';
 import AlignContainer from '../containers/AlignContainer';
 
 const RoleSelectView = ({ selectPage }) => (
-  <div>
+  <div className="gen-role-container">
+    <h1 className="gen-title">Select Your Class</h1>
     <ClassContainer />
     <AlignContainer />
-    <button motion="prev" className="gen-button" onClick={selectPage}>PREV</button>
-    <button motion="next" className="gen-button" onClick={selectPage}>NEXT</button>
+    <div className="page-button-list">
+      <button motion="prev" className="gen-page" onClick={selectPage}>PREV</button>
+      <button motion="next" className="gen-page" onClick={selectPage}>NEXT</button>
+    </div>
   </div>
 );
 
