@@ -4,13 +4,17 @@ import StatView from './StatView';
 import StatButtonContainer from '../../containers/StatButtonContainer';
 
 const StatListView = ({ holder, stats }) => (
-  <div className="stat-list-container">
-    {
-      stats.map(stat => <StatView score={holder[stat]} />)
-    }
-    {
-      stats.map(stat => <StatButtonContainer stat={stat} />)
-    }
+  <div className="gen-stat-container">
+    <div className="gen-stat-list">
+      {
+        stats.map(stat => <StatView score={holder[stat]} />)
+      }
+    </div>
+    <div className="gen-stat-buttons">
+      {
+        stats.map(stat => <StatButtonContainer stat={stat} />)
+      }
+    </div>
   </div>
 );
 
