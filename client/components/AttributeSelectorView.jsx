@@ -3,7 +3,8 @@ import { arrayOf, object, func } from 'prop-types';
 import ALV from './AttributeSelectorViews/AttributeListView';
 
 const AttributeSelectorView = props => (
-  <div className="selector-container">
+  <div className="gen-selector-container">
+    <h1 className="gen-title">Select Your Skills</h1>
     {
       props.proficiencies.map((attr, index) => (
         <ALV
@@ -22,7 +23,8 @@ const AttributeSelectorView = props => (
           index={index}
         />))
     }
-    <button className="gen-submit" onClick={props.genCharacter}>SUBMIT</button>
+    <button motion="prev" className="gen-page" onClick={props.selectPage}>PREV</button>
+    <button className="gen-submit" onClick={props.genCharacter}>MAKE CHARACTER</button>
   </div>
 );
 
@@ -30,6 +32,7 @@ AttributeSelectorView.propTypes = {
   proficiencies: arrayOf(object).isRequired,
   styles: arrayOf(object).isRequired,
   genCharacter: func.isRequired,
+  selectPage: func.isRequired,
 };
 
 export default AttributeSelectorView;

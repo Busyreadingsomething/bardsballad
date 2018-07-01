@@ -324,7 +324,7 @@ input[type="checkbox"], input[type="radio"] {
   transform: scale(1.05);
 }
 
-.gen-page-focus {
+.gen-roll:focus {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25);
 }
 .page-button-list {
@@ -358,7 +358,70 @@ input[type="checkbox"], input[type="radio"] {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-/*  */
+
+/* ------------------------- */
+/* -- Attributes Selector -- */
+/* ------------------------- */
+.gen-selector-container {
+  display: flex;
+  flex-flow: column;
+  width: 820px;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid lightgray;
+  padding: 15px;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: #CFD8DC;
+}
+
+.gen-selector-container:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.gen-selector-container > button {
+  margin: 10px 0;
+}
+
+.gen-submit {
+  display: flex;
+  border: 0.1px grey;
+  color: #FEFEFE;
+  height: 75px;
+  width: 160px;
+  font-size: 1.5em;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease-in-out;
+  background-color: #2196F3;
+}
+
+.gen-submit:hover {
+  transform: scale(1.1);
+}
+
+.gen-submit:focus {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+}
+
+.gen-attribute-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gen-attribute-list {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
 .proficiency {
   width: 100px;
@@ -368,9 +431,14 @@ input[type="checkbox"], input[type="radio"] {
   margin: 5px;
   background-color: lightskyblue;
   font-weight: bolder;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19);
   transition: all .2s ease-in-out;
   flex-shrink: 0;
 }
+
+/* -------------------------- */
+/* -- CHARACTER SHEET VIEW -- */
+/* -------------------------- */
 
 .gen-container, .ability-roll-container, .ability-stat-container,
 .bard-col-1, .bard-col-2, .profile-container, .weapons-container,

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { makeCharacter } from '../actions';
+import { makeCharacter, modPage } from '../actions';
 import toJS from './toJS/index';
 import AttributeSelectorView from '../components/AttributeSelectorView';
 
@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   genCharacter: () => dispatch(makeCharacter()),
+  selectPage: e => dispatch(modPage(e)),
 });
 
 const AttributeSelectorContainer = connect(
