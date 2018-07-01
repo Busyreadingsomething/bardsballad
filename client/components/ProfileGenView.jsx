@@ -32,7 +32,14 @@ const ProfileGenView = ({ selectPage }) => {
       {
         list.map((Component, index) => <Component key={key[index]} />)
       }
-      <button id="profile" motion="next" onClick={e => selectPage(e)}>NEXT</button>
+      <button
+        id="profile"
+        className="gen-page"
+        motion="next"
+        onClick={e => selectPage(e)}
+      >
+        NEXT
+      </button>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const RaceView = ({ setRace }) => (
-  <label className="gen-label"> Race:
+  <label className="gen-label"> Race
     <select
       id="race"
       className="gen-profile-input"

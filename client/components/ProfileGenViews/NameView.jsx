@@ -7,7 +7,6 @@ const NameView = ({ setName }) => (
       id="profile-name"
       className="gen-profile-input"
       type="text"
-      placeholder="Character Name"
       onKeyUp={e => setName(e)}
     />
   </label>
