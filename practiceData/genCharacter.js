@@ -240,6 +240,48 @@ const genProficiencies = () => ({
   list: skillsList,
 });
 
+const testWeapon1 = {
+  id: 'wp1234567',
+  name: 'Long Sword',
+  dice: 1,
+  dieType: 8,
+  description: 'This is the mystical TEST blade. When people weild it, will demonstrate what it is supposed to look like and people can play around with it. Indeed a formidable blade',
+};
+
+const testWeapon2 = {
+  id: 'wp1237890',
+  name: 'Hammer of Thor',
+  dice: 2,
+  dieType: 10,
+  description: 'This is Thor\'s hammer. Kratos will probably kill him in the next game...',
+};
+
+const testSpell1 = {
+  id: 'sp5201c2',
+  name: 'Rage of the Valkyries',
+  level: 1,
+  time: 'instant',
+  duration: '2 turns',
+  range: ['Self'],
+  save: null,
+  effect: 'buff',
+  description: 'This is pretty much boost your power. Also this is a fake spell. Testing and stuff. However, I\'d think that they should have a spell like this in the real game.',
+};
+
+const testSpell2 = {
+  id: 'sp4z21b9',
+  name: 'Laufey',
+  level: 3,
+  time: '2 turns',
+  duration: 'instant',
+  range: ['10ft'],
+  save: 'dex',
+  effect: 'push',
+  dieType: 20,
+  dice: 2,
+  description: 'Fey will punch someone in the face...with a spell...like a giant. Also this is a fake spell. Testing and stuff. However, I\'d think that they should have a spell like this in the real game.',
+};
+
 const genCharacter = (
   scores,
   name,
@@ -265,8 +307,8 @@ const genCharacter = (
   character.proficiencies = genProficiencies();
   character.gear = genGear(weapons, spells, money);
   character.equipped = {
-    weapons: [],
-    spells: [],
+    weapons: [testWeapon1, testWeapon2, testWeapon1],
+    spells: [testSpell1, testSpell2],
     armor: [],
   };
   character.notes = genNotes();
