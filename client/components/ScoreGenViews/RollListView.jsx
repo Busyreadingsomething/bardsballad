@@ -2,7 +2,12 @@ import React from 'react';
 import PropType from 'prop-types';
 import RollContainer from '../../containers/RollContainer';
 
-const RollListView = ({ rolls, setAbility, rollKeys, reroll }) => (
+const RollListView = ({
+  rolls,
+  setAbility,
+  rollKeys,
+  reroll,
+}) => (
   <div className="gen-roll-container">
     <div className="gen-roll-list">
       {
