@@ -28,7 +28,7 @@ const ProfileGenView = ({ selectPage }) => {
     'Eye',
   ];
   return (
-    <div className="gen-profile-container">
+    <div className="gen-profile-container gen-card animated slideInRight">
       {
         list.map((Component, index) => <Component key={key[index]} />)
       }

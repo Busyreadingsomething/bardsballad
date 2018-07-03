@@ -3,7 +3,7 @@ import { arrayOf, object, func } from 'prop-types';
 import ALV from './AttributeSelectorViews/AttributeListView';
 
 const AttributeSelectorView = props => (
-  <div className="gen-selector-container">
+  <div className="gen-selector-container gen-card animated slideInRight">
     <h1 className="gen-title">Select Your Skills</h1>
     {
       props.proficiencies.map((attr, index) => (

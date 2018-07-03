@@ -7,7 +7,7 @@ import SelectRollContainer from '../containers/SelectRollContainer';
 import HalfElfAbilityList from '../components/HalfElfViews/HalfElfAbilityList';
 
 const ScoreGenView = ({ rollSelect, race, selectPage }) => (
-  <div className="gen-score-container">
+  <div className="gen-score-container gen-card animated slideInRight">
     <h2 className="gen-title">Select Your Ability Score</h2>
     <StatListContainer />
     <ModListContainer />
