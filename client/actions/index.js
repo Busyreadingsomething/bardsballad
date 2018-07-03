@@ -52,6 +52,10 @@ export const modPage = e => ({
   motion: e.target.getAttribute('motion'),
 });
 
+export const reroll = () => ({
+  type: actionTypes.REROLL,
+});
+
 export default {
   updateProfile,
   updateClass,
@@ -63,4 +67,5 @@ export default {
   setAbility,
   makeCharacter,
   modPage,
+  reroll,
 };

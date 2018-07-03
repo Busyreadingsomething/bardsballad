@@ -9,6 +9,7 @@ const actionTypes = {
   UPDATE_ATTR: 'UPDATE_ATTR',
   MAKE_CHARACTER: 'MAKE_CHARACTER',
   MOD_PAGE: 'MOD_PAGE',
+  REROLL: 'REROLL',
 };
 
 export default actionTypes;

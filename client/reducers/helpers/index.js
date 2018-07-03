@@ -57,6 +57,8 @@ const setRolls = (state, select) => {
   return updatedState;
 };
 
+const reroll = state => state.update('rolls', () => fromJS(rolls.genRollList()));
+
 const setProfile = (state, action) => state.updateIn(action.prop, () => action.value);
 
 const setRace = (state, action) => state.update('race', () => fromJS(character.genRace(action.race)));
@@ -103,4 +105,5 @@ export default {
   setClass,
   setAttribute,
   changePage,
+  reroll,
 };
