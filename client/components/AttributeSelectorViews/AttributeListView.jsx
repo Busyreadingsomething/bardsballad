@@ -6,7 +6,7 @@ const AttributeListView = ({ attribute, index, prof }) => (
   <div className="gen-attribute-container">
     <h2>{attribute.type}</h2>
     <h4>Select {attribute.rule}</h4>
-    <div className="gen-attribute-list">
+    <div className="gen-attribute-list card primary">
       {
         attribute.list.map(attr => (
           <AttributesContainer

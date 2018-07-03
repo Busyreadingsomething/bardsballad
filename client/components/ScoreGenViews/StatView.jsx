@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const StatView = ({ score }) => (
-  <div className="gen-ability-value">
+  <div className="gen-ability-value secondary">
     {score.val}
   </div>
 );

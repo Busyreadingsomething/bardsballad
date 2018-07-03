@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AttributesView = props => (
-  <button className="proficiency" onClick={() => props.setAttr(props.index, props.name, props.prof)}>
+  <button className="proficiency primary-light" onClick={() => props.setAttr(props.index, props.name, props.prof)}>
     <i className="icon" />
     {
       props.name.toUpperCase()

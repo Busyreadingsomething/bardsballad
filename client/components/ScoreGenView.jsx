@@ -21,14 +21,14 @@ const ScoreGenView = ({ rollSelect, race, selectPage }) => (
     <div className="page-button-list">
       <button
         motion="prev"
-        className="gen-page"
+        className="gen-page primary"
         onClick={selectPage}
       >
         PREV
       </button>
       <button
         motion="next"
-        className="gen-page"
+        className="gen-page primary"
         onClick={selectPage}
       >
         NEXT

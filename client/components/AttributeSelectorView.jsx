@@ -23,8 +23,8 @@ const AttributeSelectorView = props => (
           index={index}
         />))
     }
-    <button motion="prev" className="gen-page" onClick={props.selectPage}>PREV</button>
-    <button className="gen-submit" onClick={props.genCharacter}>MAKE CHARACTER</button>
+    <button motion="prev" className="gen-page primary" onClick={props.selectPage}>PREV</button>
+    <button className="gen-submit primary" onClick={props.genCharacter}>MAKE CHARACTER</button>
   </div>
 );
 

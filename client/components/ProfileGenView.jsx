@@ -34,7 +34,7 @@ const ProfileGenView = ({ selectPage }) => {
       }
       <button
         id="profile"
-        className="gen-page"
+        className="gen-page primary"
         motion="next"
         onClick={e => selectPage(e)}
       >
