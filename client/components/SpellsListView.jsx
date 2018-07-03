@@ -3,11 +3,13 @@ import { arrayOf, object } from 'prop-types';
 import SpellView from './SpellView';
 
 const SpellsListView = ({ spells }) => (
-  <div className="spells-container">
+  <div className="spells-container card">
     SPELLS:
-    {
-      spells.map(spell => <SpellView key={spell.id} info={spell} />)
-    }
+    <div className="item-list">
+      {
+        spells.map(spell => <SpellView key={spell.id} info={spell} />)
+      }
+    </div>
   </div>
 );
 

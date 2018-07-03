@@ -3,16 +3,18 @@ import { arrayOf, object } from 'prop-types';
 import WeaponsView from './WeaponsView';
 
 const WeaponsListView = ({ weapons }) => (
-  <div className="weapons-container">
+  <div className="weapon-list-container item-list card">
     WEAPONS:
-    {
-      weapons.map(weapon => (
-        <WeaponsView
-          key={weapon.id}
-          info={weapon}
-        />
-      ))
-    }
+    <div className="item-list">
+      {
+        weapons.map(weapon => (
+          <WeaponsView
+            key={weapon.id}
+            info={weapon}
+          />
+        ))
+      }
+    </div>
   </div>
 );
 
