@@ -2,14 +2,15 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const EyeView = ({ setEyes }) => (
-  <label className="gen-label" >Eye Color
+  <div className="input-wrapper">
     <input
       id="profile-eye"
       className="gen-profile-input"
       type="text"
       onKeyUp={e => setEyes(e)}
     />
-  </label>
+    <label className="label" >Eye Color</label>
+  </div>
 );
 
 EyeView.propTypes = {

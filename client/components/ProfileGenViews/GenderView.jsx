@@ -2,17 +2,18 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const GenderView = ({ setGender }) => (
-  <label className="gen-label"> Gender
+  <div className="input-wrapper">
     <select
       id="profile-gender"
       className="gen-profile-input"
       onChange={e => setGender(e)}
     >
-      <option value="">Select One</option>
+      <option value=""></option>
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select>
-  </label>
+    <label className="label">Gender</label>
+  </div>
 );
 
 GenderView.propTypes = {

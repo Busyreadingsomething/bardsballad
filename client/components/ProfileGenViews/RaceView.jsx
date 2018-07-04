@@ -2,13 +2,13 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const RaceView = ({ setRace }) => (
-  <label className="gen-label"> Race
+  <div className="input-wrapper">
     <select
       id="race"
       className="gen-profile-input"
       onChange={e => setRace(e)}
     >
-      <option value="">Select a Race</option>
+      <option value=""></option>
       <option value="dragonborne">Dragonborne</option>
       <option value="dwarf">Dwarf</option>
       <option value="elf">Elf</option>
@@ -19,7 +19,8 @@ const RaceView = ({ setRace }) => (
       <option value="human">Human</option>
       <option value="tiefling">Tiefling</option>
     </select>
-  </label>
+    <label className="label"> Race</label>
+  </div>
 );
 
 RaceView.propTypes = {
