@@ -3,7 +3,7 @@ import { arrayOf, object } from 'prop-types';
 import WeaponsView from './WeaponsView';
 
 const WeaponsListView = ({ weapons }) => (
-  <div className="weapon-list-container item-list card">
+  <div className="weapon-list-container card">
     WEAPONS:
     <div className="item-list">
       {
