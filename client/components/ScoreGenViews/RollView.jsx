@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RollView = ({ roll, position, setScore }) => (
-  <div className="roll-container">
+  <div className="roll-container animated rubberBand">
     <button className="scoregen-roll" id={position} onClick={() => setScore(roll, position)}>{ roll }</button>
   </div>
 );

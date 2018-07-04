@@ -8,7 +8,7 @@ const RollListView = ({
   rollKeys,
   reroll,
 }) => (
-  <div className="gen-roll-container">
+  <div className="gen-roll-container animated slideInBottom">
     <div className="gen-roll-list">
       {
         rolls.map((roll, index) =>
