@@ -2,9 +2,9 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const ClassView = ({ setClass }) => (
-  <label className="gen-label"> Class
+  <div className="input-wrapper">
     <select className="gen-profile-input" onChange={e => setClass(e)}>
-      <option value="">Select a Class</option>
+      <option value=""></option>
       <option value="barbarian">Barbarian</option>
       <option value="bard">Bard</option>
       <option value="cleric">Cleric</option>
@@ -18,7 +18,8 @@ const ClassView = ({ setClass }) => (
       <option value="warlock">Warlock</option>
       <option value="wizard">Wizard</option>
     </select>
-  </label>
+    <label className="label"> Class</label>
+  </div>
 );
 
 ClassView.propTypes = {

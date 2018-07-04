@@ -2,9 +2,9 @@ import React from 'react';
 import { func } from 'prop-types';
 
 const AlignView = ({ setAlign }) => (
-  <label className="gen-label"> Alignment:
+  <div className="input-wrapper">
     <select className="gen-profile-input" onChange={e => setAlign(e)}>
-      <option value="">Select an Alignment</option>
+      <option value=""></option>
       <option value="LAWFUL GOOD">Lawful Good</option>
       <option value="NEUTRAL GOOD">Neutral Good</option>
       <option value="CHAOTIC GOOD">Chaotic Good</option>
@@ -15,7 +15,8 @@ const AlignView = ({ setAlign }) => (
       <option value="NEUTRAL EVIL">Neutral Evil</option>
       <option value="CHAOTIC EVIL">Chaotic Evil</option>
     </select>
-  </label>
+    <label className="label"> Alignment:</label>
+  </div>
 );
 
 AlignView.propTypes = {
