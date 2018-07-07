@@ -245,6 +245,7 @@ const testWeapon1 = {
   name: 'Long Sword',
   dice: 1,
   dieType: 8,
+  rolled: false,
   description: 'This is the mystical TEST blade. When people weild it, will demonstrate what it is supposed to look like and people can play around with it. Indeed a formidable blade',
 };
 
@@ -253,6 +254,7 @@ const testWeapon2 = {
   name: 'Hammer of Thor',
   dice: 2,
   dieType: 10,
+  rolled: false,
   description: 'This is Thor\'s hammer. Kratos will probably kill him in the next game...',
 };
 
