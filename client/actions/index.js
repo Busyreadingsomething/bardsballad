@@ -2,7 +2,7 @@ import actionTypes from '../actionTypes';
 
 export const updateProfile = profile => ({
   type: actionTypes.UPDATE_PROFILE,
-  prop: profile.target.id.split('-'),
+  prop: profile.target.getAttribute('data-path').split('-'),
   value: profile.target.value,
 });
 
@@ -52,6 +52,15 @@ export const modPage = e => ({
   motion: e.target.getAttribute('motion'),
 });
 
+export const reroll = () => ({
+  type: actionTypes.REROLL,
+});
+
+export const rolling = index => ({
+  type: actionTypes.ROLLING,
+  index,
+});
+
 export default {
   updateProfile,
   updateClass,
@@ -63,4 +72,6 @@ export default {
   setAbility,
   makeCharacter,
   modPage,
+  reroll,
+  rolling,
 };

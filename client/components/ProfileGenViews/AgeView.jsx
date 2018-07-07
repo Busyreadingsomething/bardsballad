@@ -1,20 +1,23 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, number } from 'prop-types';
 
 
-const AgeView = ({ setAge }) => (
-  <label className="gen-label">Age
+const AgeView = ({ setAge, value }) => (
+  <div className="input-wrapper">
     <input
-      id="profile-age"
+      data-path="profile-age"
       className="gen-profile-input"
       type="number"
-      onKeyUp={e => setAge(e)}
+      valeu={value}
+      onChange={e => setAge(e)}
     />
-  </label>
+    <label className="label">Age</label>
+  </div>
 );
 
 AgeView.propTypes = {
   setAge: func.isRequired,
+  value: number.isRequired,
 };
 
 export default AgeView;

@@ -1,19 +1,22 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 
-const EyeView = ({ setEyes }) => (
-  <label className="gen-label" >Eye Color
+const EyeView = ({ setEyes, value }) => (
+  <div className="input-wrapper">
     <input
-      id="profile-eye"
+      data-path="profile-eye"
       className="gen-profile-input"
       type="text"
-      onKeyUp={e => setEyes(e)}
+      value={value}
+      onChange={e => setEyes(e)}
     />
-  </label>
+    <label className="label">Eye Color</label>
+  </div>
 );
 
 EyeView.propTypes = {
   setEyes: func.isRequired,
+  value: string.isRequired,
 };
 
 export default EyeView;

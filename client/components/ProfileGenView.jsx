@@ -28,13 +28,13 @@ const ProfileGenView = ({ selectPage }) => {
     'Eye',
   ];
   return (
-    <div className="gen-profile-container">
+    <div className="gen-profile-container gen-card animated slideInRight">
       {
         list.map((Component, index) => <Component key={key[index]} />)
       }
       <button
         id="profile"
-        className="gen-page"
+        className="gen-page primary"
         motion="next"
         onClick={e => selectPage(e)}
       >

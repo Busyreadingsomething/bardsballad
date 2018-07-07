@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 const SpellView = ({ info }) => (
-  <div className="spell-container">
+  <div className="spell-container item-card">
     <div className="spell-main-profile">
       <div className="spell-name">{info.name}</div>
       <div className="spell-level">Lv. {info.level}</div>

@@ -10,9 +10,7 @@ const GenerateView = ({ page }) => {
   const CurrentComponent = list[page];
   return (
     <div className="gen-container">
-      {
-        <CurrentComponent />
-      }
+      <CurrentComponent />
     </div>
   );
 };

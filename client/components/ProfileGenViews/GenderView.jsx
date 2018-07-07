@@ -1,22 +1,28 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 
-const GenderView = ({ setGender }) => (
-  <label className="gen-label"> Gender
-    <select
-      id="profile-gender"
-      className="gen-profile-input"
-      onChange={e => setGender(e)}
-    >
-      <option value="">Select One</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-  </label>
-);
+const GenderView = ({ setGender, value }) => {
+  const focused = value === '' ? 'empty' : 'focused';
+  return (
+    <div className="input-wrapper">
+      <select
+        data-path="profile-gender"
+        className="gen-profile-input"
+        value={value}
+        onChange={e => setGender(e)}
+      >
+        <option value="" />
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label className={`select-label ${focused}`}>Gender</label>
+    </div>
+  )
+};
 
 GenderView.propTypes = {
   setGender: func.isRequired,
+  value: string.isRequired,
 };
 
 export default GenderView;

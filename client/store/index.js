@@ -51,7 +51,7 @@ const testSpells = [
   },
 ];
 
-const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', '5ft 3', 31, 'silver', 'green', 'GOOD', 'elf', 'bard', testWeapons, testSpells);
+const blankCharacter = character.genCharacter(fillerScores, 'BORT', 'MALE', '5ft 3', 31, 'silver', 'green', 'hold on GOOD', 'elf', 'bard', testWeapons, testSpells);
 
 const initialState = fromJS(blankCharacter);
 

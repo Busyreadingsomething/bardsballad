@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ExpProgressView = ({ experience, nextLevel }) => (
   <div className="exp-container">
-    <progress value={experience} max={nextLevel} />
+    <progress className="exp" value={experience} max={nextLevel} />
   </div>
 );
 

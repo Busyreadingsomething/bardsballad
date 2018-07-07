@@ -10,7 +10,7 @@ const StatusView = ({
   tempHP,
   hitDie,
 }) => (
-  <div className="status-container">
+  <div className="status-container card">
     <div className="status-row-1">
       <div className="status-armor">
         <div className="status-armor-value">{armor}</div>

@@ -7,7 +7,7 @@ import SelectRollContainer from '../containers/SelectRollContainer';
 import HalfElfAbilityList from '../components/HalfElfViews/HalfElfAbilityList';
 
 const ScoreGenView = ({ rollSelect, race, selectPage }) => (
-  <div className="gen-score-container">
+  <div className="gen-score-container gen-card animated slideInRight">
     <h2 className="gen-title">Select Your Ability Score</h2>
     <StatListContainer />
     <ModListContainer />
@@ -21,14 +21,14 @@ const ScoreGenView = ({ rollSelect, race, selectPage }) => (
     <div className="page-button-list">
       <button
         motion="prev"
-        className="gen-page"
+        className="gen-page primary"
         onClick={selectPage}
       >
         PREV
       </button>
       <button
         motion="next"
-        className="gen-page"
+        className="gen-page primary"
         onClick={selectPage}
       >
         NEXT

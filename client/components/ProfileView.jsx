@@ -7,7 +7,7 @@ const ProfileView = ({
   charClass,
   level,
 }) => (
-  <div className="profile-container">
+  <div className="profile-container card">
     <div className="player-base">
       <div className="player-name">{profile.name}</div>
       <div className="player-level">Lv. {level}</div>
