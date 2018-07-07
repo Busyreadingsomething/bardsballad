@@ -6,7 +6,7 @@ const GenderView = ({ setGender, value }) => {
   return (
     <div className="input-wrapper">
       <select
-        id="profile-gender"
+        data-path="profile-gender"
         className="gen-profile-input"
         value={value}
         onChange={e => setGender(e)}

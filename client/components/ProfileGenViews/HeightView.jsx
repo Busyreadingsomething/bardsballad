@@ -4,7 +4,7 @@ import { func, string } from 'prop-types';
 const HeightView = ({ setHeight, value }) => (
   <div className="input-wrapper">
     <input
-      id="profile-height"
+      data-path="profile-height"
       className="gen-profile-input"
       type="text"
       value={value}

@@ -4,7 +4,7 @@ import { func, string } from 'prop-types';
 const EyeView = ({ setEyes, value }) => (
   <div className="input-wrapper">
     <input
-      id="profile-eye"
+      data-path="profile-eye"
       className="gen-profile-input"
       type="text"
       value={value}

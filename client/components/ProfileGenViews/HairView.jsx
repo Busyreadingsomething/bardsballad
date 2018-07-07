@@ -4,7 +4,7 @@ import { func, string } from 'prop-types';
 const HairView = ({ setHair, value }) => (
   <div className="input-wrapper">
     <input
-      id="profile-hair"
+      data-path="profile-hair"
       className="gen-profile-input"
       type="text"
       value={value}

@@ -5,7 +5,7 @@ import { func, number } from 'prop-types';
 const AgeView = ({ setAge, value }) => (
   <div className="input-wrapper">
     <input
-      id="profile-age"
+      data-path="profile-age"
       className="gen-profile-input"
       type="number"
       valeu={value}

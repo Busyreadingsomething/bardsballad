@@ -23,7 +23,7 @@ const RaceView = ({ setRace, value }) => {
       </select>
       <label className={`select-label ${focused}`}>Race</label>
     </div>
-  )
+  );
 };
 
 RaceView.propTypes = {

@@ -2,7 +2,7 @@ import actionTypes from '../actionTypes';
 
 export const updateProfile = profile => ({
   type: actionTypes.UPDATE_PROFILE,
-  prop: profile.target.id.split('-'),
+  prop: profile.target.getAttribute('data-path').split('-'),
   value: profile.target.value,
 });
 
