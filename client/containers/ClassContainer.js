@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import ClassView from '../components/ClassView';
 import { updateClass } from '../actions';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  value: state.getIn(['charClass', 'name']),
+});
 
 const mapDispatchToProps = dispatch => ({
   setClass: e => dispatch(updateClass(e)),
