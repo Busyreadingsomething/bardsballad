@@ -170,9 +170,12 @@ describe('### GENERATE CHARACTER ###', () => {
       expect(race).toBeInstanceOf(Object);
     });
 
-    it('Should have return an empty object ', () => {
-      const { length } = Object.keys(character.genRace());
-      expect(length).toBe(0);
+    it('Should have return an object an empty name property if nothing is passed in', () => {
+      const race = character.genRace();
+      const { length } = Object.keys(race);
+      const { name } = race;
+      expect(length).toBe(1);
+      expect(name).toBe('');
     });
 
     it('Should set the value according to the race', () => {

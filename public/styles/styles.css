@@ -65,10 +65,26 @@ div, label, input, select, option {
   top: -2rem;
 }
 
-.focused ~ label{
+.focused {
   font-size: 1rem;
   text-indent: 0rem;
   top: -2rem;
+}
+
+.empty {
+  font-size: 1.5rem;
+  text-indent: 0.5rem;
+  top: 0;
+}
+
+.select-label {
+  position: absolute;
+  transition: 0.2s all ease-in-out;
+  left: 0;
+  font-weight: bolder;
+  margin: 1px 1px;
+  line-height: 2rem;
+  color: rgba(0,0,0,0.54);
 }
 
 .label {

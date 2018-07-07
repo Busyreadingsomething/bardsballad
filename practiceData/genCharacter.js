@@ -80,6 +80,7 @@ const genProfile = (name, gender, height, age, hair, eye, align) => {
 
 const genRace = (raceName) => {
   let race = {};
+  race.name = '';
   if (raceName && raceList[raceName]) {
     race.name = raceName;
     race = Object.assign(race, raceList[raceName]);
