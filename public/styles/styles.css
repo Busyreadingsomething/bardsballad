@@ -15,6 +15,32 @@ div, label, input, select, option {
   align-items: center;
 }
 
+/* --------------------- */
+/* -- TESTING OVERLAY -- */
+/* --------------------- */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+.roll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
 /* ------------------------ */
 /* -- INPUT WRAPPER TEST -- */
 /* ------------------------ */
@@ -24,13 +50,15 @@ div, label, input, select, option {
   position: relative;
   border: 1px;
 }
-/* .input-wrapper input:not([value=""]) ~ label, */
+
+.input-wrapper input:not([value=""]) ~ label,
 .input-wrapper input:focus ~ label{
   font-size: 1rem;
   text-indent: 0rem;
   top: -2rem;
 }
 
+/* .input-wrapper select:not([value=""]) ~ label, */
 .input-wrapper select:focus ~ label{
   font-size: 1rem;
   text-indent: 0rem;
@@ -56,9 +84,9 @@ div, label, input, select, option {
   color: rgba(0,0,0,0.54);
 }
 
-/* --------------------- */
-/* -- SLIDE ANIMATION -- */
-/* --------------------- */
+/* ---------------- */
+/* -- ANIMATIONS -- */
+/* ---------------- */
 .animated {
   animation-duration: 0.8s;
   animation-fill-mode: both;
@@ -66,7 +94,7 @@ div, label, input, select, option {
 
 @keyframes slideInRight {
   from {
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(200%, 0, 0);
     visibility: visible;
   }
 
@@ -113,6 +141,73 @@ div, label, input, select, option {
   to {
     transform: scale3d(1, 1, 1);
   }
+}
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+  }
+
+  20% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -130deg);
+  }
+
+  40% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -110deg);
+  }
+  
+  60% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -50deg);
+  }
+
+  80% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  to {
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.rotateIn {
+  animation-name: rotateIn;
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
 }
 
 .slideInRight {
@@ -224,7 +319,7 @@ div, label, input, select, option {
   align-items: center;
   justify-content: center;
   border: 0.5px solid lightgray;
-  padding: 15px;
+  padding: 1.9rem 1rem;
   border-radius: 2px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -679,10 +774,10 @@ input[type="checkbox"], input[type="radio"] {
   cursor: pointer;
 }
 
-.item-card:hover {
+/* .item-card:hover {
   box-shadow: 0 10px 28px rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.22);
   transform: scale(1.05);
-}
+} */
 
 .weapon-list-container {
   flex-flow: column;
