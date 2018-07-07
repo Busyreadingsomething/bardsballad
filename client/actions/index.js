@@ -56,6 +56,11 @@ export const reroll = () => ({
   type: actionTypes.REROLL,
 });
 
+export const rolling = index => ({
+  type: actionTypes.ROLLING,
+  index,
+});
+
 export default {
   updateProfile,
   updateClass,
@@ -68,4 +73,5 @@ export default {
   makeCharacter,
   modPage,
   reroll,
+  rolling,
 };

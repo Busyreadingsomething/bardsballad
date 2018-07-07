@@ -10,6 +10,7 @@ const actionTypes = {
   MAKE_CHARACTER: 'MAKE_CHARACTER',
   MOD_PAGE: 'MOD_PAGE',
   REROLL: 'REROLL',
+  ROLLING: 'ROLLING',
 };
 
 export default actionTypes;

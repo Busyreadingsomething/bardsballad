@@ -13,6 +13,7 @@ const {
   MAKE_CHARACTER,
   MOD_PAGE,
   REROLL,
+  ROLLING,
 } = actionTypes;
 
 const {
@@ -53,6 +54,8 @@ const generateSheet = (state, action) => {
       return changePage(state, action.motion);
     case REROLL:
       return reroll(state);
+    case ROLLING:
+      return state.updateIn(['equipped', 'weapons', action.index, 'rolled'], roll => !roll);
     default:
       return state;
   }
