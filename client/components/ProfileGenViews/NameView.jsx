@@ -1,20 +1,22 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 
-const NameView = ({ setName }) => (
+const NameView = ({ setName, value }) => (
   <div className="input-wrapper">
     <input
       id="profile-name"
       className="gen-profile-input"
       type="text"
-      onKeyUp={e => setName(e)}
+      value={value}
+      onChange={e => setName(e)}
     />
-    <label className="label">Character Name</label>
+    <label className="label">Name</label>
   </div>
 );
 
 NameView.propTypes = {
   setName: func.isRequired,
+  value: string.isRequired,
 };
 
 export default NameView;

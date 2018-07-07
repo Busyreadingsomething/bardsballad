@@ -1,20 +1,22 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 
-const HairView = ({ setHair }) => (
+const HairView = ({ setHair, value }) => (
   <div className="input-wrapper">
     <input
       id="profile-hair"
       className="gen-profile-input"
       type="text"
-      onKeyUp={e => setHair(e)}
+      value={value}
+      onChange={e => setHair(e)}
     />
-    <label className="label" >Hair Color</label>
+    <label className="label">Hair Color</label>
   </div>
 );
 
 HairView.propTypes = {
   setHair: func.isRequired,
+  value: string.isRequired,
 };
 
 export default HairView;
