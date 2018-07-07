@@ -17,9 +17,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(name.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-name', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(name.find('input').hasClass('gen-profile-input')).toBe(true);
-      expect(name.find('#profile-name')).toHaveLength(1);
       expect(name.find('input')).toHaveLength(1);
     });
 
@@ -33,7 +32,6 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(name.prop('setName'));
       name.find('.gen-profile-input').simulate('change', { target: { value: 'TEST' } });
       expect(mockName.mock.calls.length).toBe(1);
-      console.log(mockName.mock.calls);
       expect(mockName.mock.calls[0][0].target.value).toBe('TEST');
     });
   });
@@ -46,9 +44,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(gender.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-gender', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(gender.find('select').hasClass('gen-profile-input')).toBe(true);
-      expect(gender.find('#profile-gender')).toHaveLength(1);
       expect(gender.find('select')).toHaveLength(1);
     });
 
@@ -101,9 +98,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(height.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-height', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(height.find('input').hasClass('gen-profile-input')).toBe(true);
-      expect(height.find('#profile-height')).toHaveLength(1);
       expect(height.find('input')).toHaveLength(1);
     });
 
@@ -128,9 +124,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(age.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-age', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(age.find('input').hasClass('gen-profile-input')).toBe(true);
-      expect(age.find('#profile-age')).toHaveLength(1);
       expect(age.find('input')).toHaveLength(1);
     });
 
@@ -155,9 +150,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(hair.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-hair', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(hair.find('input').hasClass('gen-profile-input')).toBe(true);
-      expect(hair.find('#profile-hair')).toHaveLength(1);
       expect(hair.find('input')).toHaveLength(1);
     });
 
@@ -183,9 +177,8 @@ describe('### PROFILE GEN VIEWS ###', () => {
       expect(eye.hasClass('input-wrapper')).toBe(true);
     });
 
-    it('Should render an input with the .gen-profile-input and #profile-eye', () => {
+    it('Should render an input with the .gen-profile-input', () => {
       expect(eye.find('input').hasClass('gen-profile-input')).toBe(true);
-      expect(eye.find('#profile-eye')).toHaveLength(1);
       expect(eye.find('input')).toHaveLength(1);
     });
 
