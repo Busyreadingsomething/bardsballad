@@ -22,10 +22,11 @@ What things you need to install the software and how to install them
 
 **Install Homebrew**
 ``` /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ```
+You'll be using this to install any major tech such as Node or Postgres. Real rangers use Homebrew~
 
-**Brew install node (npm comes with it)**
+**Brew install node**
 ``` brew install node```
-
+This will add node and npm. Neat~
 **This app runs on PORT 4000**
 
 ### Installing
@@ -53,8 +54,8 @@ To see if the tests are passing:
 * [Node](http://www.nodejs.org) - The server language
 * [Express](https://www.expressjs.com) - The server framework
 * [React](https://www.reactjs.org/) - Dependency Management
-* [Redux](https://redux.js.org) - Used to generate RSS Feeds
-* [ImmutableJS](https://facebook.github.io/immutable-js/) - Used to generate RSS Feeds
+* [Redux](https://redux.js.org) - Global store management
+* [ImmutableJS](https://facebook.github.io/immutable-js/) - Solving the mutability problem with ease
 
 ## Contributing
 
