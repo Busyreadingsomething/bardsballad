@@ -35,10 +35,10 @@ div, label, input, select, option {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 50px;
+  font-size: 10rem;
   color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+  /* transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); */
 }
 
 /* ------------------------ */
@@ -110,11 +110,12 @@ div, label, input, select, option {
 
 @keyframes slideInRight {
   from {
-    transform: translate3d(200%, 0, 0);
-    visibility: visible;
+    opacity: 0;
+    transform: translate3d(500%, 0, 0);
   }
 
   to {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
@@ -185,40 +186,20 @@ div, label, input, select, option {
   }
 }
 
-@keyframes rotateIn {
+@keyframes rolling {
   from {
     transform-origin: center;
-    transform: rotate3d(0, 0, 1, -200deg);
-  }
-
-  20% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -130deg);
-  }
-
-  40% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -110deg);
-  }
-  
-  60% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -50deg);
-  }
-
-  80% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -10deg);
+    transform: translate3d(2000%, 0, 0) rotate3d(0, 0, 1, 1000deg);
   }
 
   to {
     transform-origin: center;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 
-.rotateIn {
-  animation-name: rotateIn;
+.rolling {
+  animation-name: rolling;
 }
 
 .bounce {
@@ -716,8 +697,20 @@ input[type="checkbox"], input[type="radio"] {
   flex-flow: row;
 }
 
+.player-info {
+  margin: 0px;
+}
+
+.dragon {
+  height: 40px;
+  width: auto;
+}
+
 .player-base {
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-flow: row;
 }
 
 .ability-stat-container {
@@ -725,11 +718,11 @@ input[type="checkbox"], input[type="radio"] {
   align-items: center;
 }
 
-.player-name, .weapon-name, .spell-name {
+.weapon-name, .spell-name {
   flex-grow: 3;
 }
 
-.player-level, .weapon-damage, .spell-level {
+.weapon-damage, .spell-level {
   flex-grow: 1;
 }
 
@@ -860,7 +853,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .card {
   display: flex;
-  flex-flow: row;
+  /* flex-flow: row; */
   flex-wrap: wrap;
   width: auto;
   padding: 15px;
