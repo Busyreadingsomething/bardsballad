@@ -18,6 +18,7 @@ const ProfileGenView = ({ selectPage }) => {
     HairContainer,
     EyeContainer,
   ];
+
   const key = [
     'Name',
     'Gender',
@@ -27,6 +28,7 @@ const ProfileGenView = ({ selectPage }) => {
     'Hair',
     'Eye',
   ];
+
   return (
     <div className="gen-profile-container gen-card animated slideInRight">
       {
