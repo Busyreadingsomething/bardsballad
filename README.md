@@ -1,4 +1,5 @@
 # Bards Ballad
+[![CircleCI](https://circleci.com/gh/Busyreadingsomething/bardsballad.svg?style=shield)](https://circleci.com/gh/Busyreadingsomething/bardsballad)
 
 Bards Ballad is a on the go interactive character sheet for Dungeons and Dragons. Currently set up for 5th Edition, the player would have the ability to generate a character, and made the adjustments as they wish. Once generated the player can set skills, weapons, and etc. Each item is meant to be interactive and intuitive, with out the need of paper or dice (I do prefer dice myself).
 
@@ -21,13 +22,20 @@ Some future plans:
 What things you need to install the software and how to install them
 
 **Install Homebrew**
+
 ``` /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ```
+
 You'll be using this to install any major tech such as Node or Postgres. Real rangers use Homebrew~
 
-**Brew install node**
+**Install node via Homebrew**
+
 ``` brew install node```
+
 This will add node and npm. Neat~
+
 **This app runs on PORT 4000**
+
+---
 
 ### Installing
 
@@ -56,6 +64,8 @@ To see if the tests are passing:
 * [React](https://www.reactjs.org/) - Dependency Management
 * [Redux](https://redux.js.org) - Global store management
 * [ImmutableJS](https://facebook.github.io/immutable-js/) - Solving the mutability problem with ease
+* [Jest](https://jestjs.io) - Facebook's testing framework (great with React)
+* [Enzyme](https://airbnb.io/enzyme/) - AirBnB's testing framework for testing rendering (pairs great with Jest)
 
 ## Contributing
 
@@ -68,6 +78,7 @@ If you'd like to contribute please contact [Busy](oro1919@gmail.com)
 ## Authors
 
 * **Makan Azarshahy** - *Initial work* - [BardsBallad](https://github.com/Busyreadingsomething)
+
 If you would like to contribute please see the **Contributing** section above
 
 ## License
