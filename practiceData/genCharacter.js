@@ -163,7 +163,7 @@ const genProficiencies = () => ({
     proficient: false,
     base: 'int',
   },
-  atheltics: {
+  athletics: {
     val: 0,
     proficient: false,
     base: 'str',
