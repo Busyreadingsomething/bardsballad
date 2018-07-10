@@ -9,7 +9,7 @@ import HairView from '../client/components/ProfileGenViews/HairView';
 import EyeView from '../client/components/ProfileGenViews/EyeView';
 
 describe('### PROFILE GEN VIEWS ###', () => {
-  describe('___ <NAMEVIEW /> ___', () => {
+  describe('___<NAMEVIEW />___', () => {
     const mockName = jest.fn();
     const name = shallow(<NameView setName={e => mockName(e)} />);
 
@@ -36,7 +36,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <GENDERVIEW /> ___', () => {
+  describe('___<GENDERVIEW />___', () => {
     const mockGender = jest.fn();
     const gender = shallow(<GenderView setGender={e => mockGender(e)} />);
 
@@ -63,7 +63,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <RACEVIEW /> ___', () => {
+  describe('___<RACEVIEW />___', () => {
     const mockRace = jest.fn();
     const race = shallow(<RaceView setRace={e => mockRace(e)} />);
     it('Should render an .input-wrapper', () => {
@@ -90,7 +90,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <HEIGHTVIEW /> ___', () => {
+  describe('___<HEIGHTVIEW />___', () => {
     const mockHeight = jest.fn();
     const height = shallow(<HeightView setHeight={e => mockHeight(e)} />);
 
@@ -116,7 +116,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <AGEVIEW /> ___', () => {
+  describe('___<AGEVIEW />___', () => {
     const mockAge = jest.fn();
     const age = shallow(<AgeView setAge={e => mockAge(e)} />);
 
@@ -142,7 +142,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <HAIRVIEW /> ___', () => {
+  describe('___<HAIRVIEW />___', () => {
     const mockHair = jest.fn();
     const hair = shallow(<HairView setHair={e => mockHair(e)} />);
 
@@ -169,7 +169,7 @@ describe('### PROFILE GEN VIEWS ###', () => {
     });
   });
 
-  describe('___ <EYEVIEW /> ___', () => {
+  describe('___<EYEVIEW />___', () => {
     const mockEye = jest.fn();
     const eye = shallow(<EyeView setEyes={e => mockEye(e)} />);
 
