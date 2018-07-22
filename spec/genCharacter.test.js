@@ -238,8 +238,8 @@ describe('### GENERATE CHARACTER ###', () => {
 
     it('Should have the properties level, maxHP, currentHP, tempHP, armorClass, speed, init, and saves', () => {
       expect(status).toHaveProperty('level', 0);
-      expect(status).toHaveProperty('maxHP', null);
-      expect(status).toHaveProperty('currentHP', null);
+      expect(status).toHaveProperty('maxHP');
+      expect(status).toHaveProperty('currentHP');
       expect(status).toHaveProperty('tempHP', null);
       expect(status).toHaveProperty('armorClass', null);
       expect(status).toHaveProperty('speed', null);

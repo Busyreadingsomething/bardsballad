@@ -117,8 +117,8 @@ const genStatus = () => ({
   level: 0,
   experience: Math.floor(Math.random() * 201),
   nextLevel: 200,
-  maxHP: null,
-  currentHP: null,
+  maxHP: 100,
+  currentHP: 20,
   tempHP: null,
   armorClass: null,
   speed: null,
@@ -127,6 +127,7 @@ const genStatus = () => ({
     success: [null, null, null],
     failures: [null, null, null],
   },
+  images: ['assets/8_bit.jpg', 'assets/16_bit.png', 'assets/64_bit.png', 'assets/switch_bit.png'],
 });
 
 const genGear = (weapons, spells, money) => {
@@ -317,7 +318,7 @@ const genCharacter = (
   character.notes = genNotes();
   character.genList = ['profile', 'score', 'class', 'attributes'];
   character.genPage = 0;
-  character.madeCharacter = false;
+  character.madeCharacter = true;
   character.stats = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   character.currentValue = null;
   character.currentIndex = null;
