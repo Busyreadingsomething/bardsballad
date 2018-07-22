@@ -127,6 +127,7 @@ const genStatus = () => ({
     success: [null, null, null],
     failures: [null, null, null],
   },
+  images: ['assets/8_bit.jpg', 'assets/16_bit.jpg', 'assets/64_bit.jpg', 'assets/switch_bit.jpg'],
 });
 
 const genGear = (weapons, spells, money) => {
