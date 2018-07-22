@@ -189,7 +189,7 @@ div, label, input, select, option {
 @keyframes rolling {
   from {
     transform-origin: center;
-    transform: translate3d(2000%, 0, 0) rotate3d(0, 0, 1, 1000deg);
+    transform: translate3d(500%, 0, 0) rotate3d(0, 0, 1, 720deg);
   }
 
   to {
@@ -637,7 +637,7 @@ input[type="checkbox"], input[type="radio"] {
   width: 160px;
   font-size: 1.5em;
   margin-top: 10px;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19);
   align-items: center;
   justify-content: center;
