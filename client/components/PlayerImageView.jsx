@@ -20,7 +20,7 @@ const generateIndex = (max, curr) => {
 const PlayerImageView = ({ images, maxHP, currHP }) => {
   const index = generateIndex(maxHP, currHP);
   return (
-    <div>
+    <div className="player-image-container">
       <img src={images[index]} alt="character" />
     </div>
   );
