@@ -5,6 +5,8 @@ import SpellsListContainer from '../containers/SpellsListContainer';
 import AbilityListContainer from '../containers/AbilityListContainer';
 import StatusContainer from '../containers/StatusContainer';
 import ExpProgressContainer from '../containers/ExpProgressContainer';
+import PlayerImageContainer from '../containers/PlayerImageContainer';
+
 
 const CharacterView = () => (
   <div className="character-container">
@@ -17,7 +19,7 @@ const CharacterView = () => (
     <div className="bard-col-2">
       <ExpProgressContainer />
       <AbilityListContainer />
-      <div className="character-image-container">CHARACTER IMAGE VIEW</div>
+      <PlayerImageContainer />
       <div className="gear-container">GEAR VIEW</div>
     </div>
   </div>
