@@ -189,7 +189,7 @@ div, label, input, select, option {
 @keyframes rolling {
   from {
     transform-origin: center;
-    transform: translate3d(2000%, 0, 0) rotate3d(0, 0, 1, 1000deg);
+    transform: translate3d(500%, 0, 0) rotate3d(0, 0, 1, 720deg);
   }
 
   to {
