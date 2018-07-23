@@ -9,10 +9,20 @@ class GearView extends React.Component {
     };
   }
 
+  handleClick = () => {
+    console.log('HELLO THERE');
+  }
+
   render() {
     return (
-      <div>
-        HELLO WORLD
+      <div className="gear-container">
+        <h1>Equipment</h1>
+        <div>
+          <h2 onClick={this.handleClick}>Weapons</h2>
+          <h2 onClick={this.handleClick}>Armor</h2>
+          <h2 onClick={this.handleClick}>Spells</h2>
+          <h2 onClick={this.handleClick}>Gear</h2>
+        </div>
       </div>
     );
   }
