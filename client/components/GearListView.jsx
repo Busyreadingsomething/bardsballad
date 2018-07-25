@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class GearView extends React.Component {
+class GearListView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,4 +30,4 @@ class GearView extends React.Component {
 
 GearView.propTypes = {};
 
-export default GearView;
+export default GearListView;
