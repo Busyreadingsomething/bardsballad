@@ -1,5 +1,6 @@
 const generateRandomItem = (id) => {
   const item = {};
+
   item.id = `item${id}`;
   item.dieType = 6;
   item.name = 'Dagger';
@@ -7,10 +8,12 @@ const generateRandomItem = (id) => {
   item.description = 'This is test dagger.';
   item.proficient = true;
   item.bonus = Math.floor(Math.random() * 6);
+
+  return item;
 };
 
 const addItems = () => {
-  const stop = Math.floor(Math.random() * 10 + 1);
+  const stop = Math.floor((Math.random() * 10) + 1);
   const list = [];
 
   for (let i = 0; i < stop; i += 1) {
