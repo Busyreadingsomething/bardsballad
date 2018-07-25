@@ -6,7 +6,7 @@ import AbilityListContainer from '../containers/AbilityListContainer';
 import StatusContainer from '../containers/StatusContainer';
 import ExpProgressContainer from '../containers/ExpProgressContainer';
 import PlayerImageContainer from '../containers/PlayerImageContainer';
-import GearView from './GearView';
+import GearListView from './GearListView';
 
 const CharacterView = () => (
   <div className="character-container">
@@ -20,8 +20,7 @@ const CharacterView = () => (
       <ExpProgressContainer />
       <AbilityListContainer />
       <PlayerImageContainer />
-      {/* <div className="gear-container">GEAR VIEW</div> */}
-      <GearView />
+      <GearListView />
     </div>
   </div>
 );
