@@ -5,7 +5,8 @@ class GearListView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 0,
+      tab: 'Weapons',
+      tabs: ['Weapons', 'Armor', 'Spells', 'Gear'],
     };
   }
 
@@ -14,20 +15,20 @@ class GearListView extends React.Component {
   }
 
   render() {
+    const { tabs } = this.state;
     return (
       <div className="gear-container card">
         <p className="card-title">Equipment</p>
         <div className="tab-selection">
-          <p className="tab" onClick={this.handleClick}>Weapons</p>
-          <p className="tab" onClick={this.handleClick}>Armor</p>
-          <p className="tab" onClick={this.handleClick}>Spells</p>
-          <p className="tab" onClick={this.handleClick}>Gear</p>
+          {
+            tabs.map(tab => <p key={tab} tab={tab} className="tab" onClick={this.handleClick}>{tab}</p>)
+          }
         </div>
       </div>
     );
   }
 }
 
-GearView.propTypes = {};
+GearListView.propTypes = {};
 
 export default GearListView;
