@@ -916,21 +916,21 @@ input[type="checkbox"], input[type="radio"] {
 
 .tab {
   align-items: center;
-  justify-content: center;
   border: 0px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2rem;
   height: 40px;
+  justify-content: center;
   width: 100%;
   padding: 5px 10px;
   transform: all 0.5s;
 }
 
 .tab:hover {
-  font-style: underline;
+  border-bottom: 1px white solid;
 }
 
 .tab:focus {
-  font-weight: bolder;
+  border-bottom: 1px white solid;
 }
