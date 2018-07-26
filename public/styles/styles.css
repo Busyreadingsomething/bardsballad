@@ -733,13 +733,42 @@ input[type="checkbox"], input[type="radio"] {
   margin: 5px;
 }
 
-.weapon-name, .spell-name {
+.weapon-container {
+  align-items: flex-start;
+  font-size: 0.8rem;
+  justify-content: flex-start;
+  max-height: 130px;
+}
+
+.weapon-base {
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.weapon-base > :first-child {
+  margin-left: 5px;
+}
+
+.weapon-base > :last-child {
+  margin-right: 5px;
+}
+
+.weapon-description {
+  align-items: center;
+  margin: 0;
+}
+
+.weapon-name, .weapon-damage {
+  margin: 0 0 3px 0;
+}
+
+/* .weapon-name, .spell-name {
   flex-grow: 3;
 }
 
 .weapon-damage, .spell-level {
   flex-grow: 1;
-}
+} */
 
 .roll-select-container, .ability-rolled, .ability, .roll-container {
   margin: 5px;
@@ -817,11 +846,6 @@ input[type="checkbox"], input[type="radio"] {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-.weapon-container {
-  background-color: #2659ff;
-  color: white;
 }
 
 .spell-container {
