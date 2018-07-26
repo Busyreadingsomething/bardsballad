@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GearView from './GearViewList/GearView';
+import Tab from './GearViewList/TabView';
 import genGear from '../../practiceData/genItems';
 
 const gear = genGear();
@@ -24,11 +25,7 @@ class GearListView extends React.Component {
     const items = gear[current.toLowerCase()];
     return (
       <div className="gear-container card">
-        <div className="tab-selection">
-          {
-            tabs.map(tab => <p key={tab} tab={tab} className="tab" onClick={() => this.handleClick(tab)}>{tab}</p>)
-          }
-        </div>
+        <Tab tabs={tabs} select={this.handleClick}/>
         <GearView tab={current} items={items}/>
       </div>
     );
