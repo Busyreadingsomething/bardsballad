@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ItemView from './ItemView';
 
 const GearView = ({ items }) => (
-  <div className="gear-container">
+  <div className="gear-container animated fadeInDown">
     {
       items.map(item => <ItemView key={item.id} item={item} />)
     }
