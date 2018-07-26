@@ -1,10 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, string, func } from 'prop-types';
 
-const Tab = props => (
-  <p>TAB</p>
+const Tab = ({ tabs, select }) => (
+  <React.Fragment>
+    {
+      tabs.map(tab => (
+        <button
+          key={tab}
+          tab={tab}
+          className="tab"
+          onClick={() => select(tab)}
+        >{tab}
+        </button>))
+    }
+  </React.Fragment>
 );
 
-Tab.propTypes = {};
+Tab.propTypes = {
+  tabs: arrayOf(string).isRequired,
+  select: func.isRequired,
+};
 
 export default Tab;
