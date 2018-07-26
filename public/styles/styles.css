@@ -198,6 +198,18 @@ div, label, input, select, option {
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .rolling {
   animation-name: rolling;
 }
@@ -217,6 +229,10 @@ div, label, input, select, option {
 
 .rubberBand {
   animation-name: rubberBand;
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
 }
 
 /* ----------------- */
@@ -867,25 +883,28 @@ input[type="checkbox"], input[type="radio"] {
 /* ------------------------- */
 
 .gear-container {
-  flex-flow: column;
   background-color: white;
+  flex-flow: column;
 }
 
 .card-title {
   font-size: 2rem;
-  margin: 0;
   line-height: 1.2em;
+  margin: 0;
 }
 
 .tab-selection {
   flex-flow: row;
-  justify-content: space-between;
 }
 
 .tab {
-  font-size: 1.5rem;
-  margin: 0;
+  align-items: center;
+  border: 1px dotted lightblue;
   cursor: pointer;
+  font-size: 1.5rem;
+  height: 30px;
+  margin: 0 25px;
+  width: 100%;
 }
 
 .tab:hover {
