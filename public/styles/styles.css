@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  font-family: 'Roboto', sans-serif;
   background-color: #EEEEEE;
+  font-family: 'Roboto', sans-serif;
 }
 
 div, label, input, select, option {
@@ -10,45 +10,44 @@ div, label, input, select, option {
 }
 
 #app {
+  align-items: center;
   display: flex;
   flex-flow: column;
-  align-items: center;
 }
 
 /* --------------------- */
 /* -- TESTING OVERLAY -- */
 /* --------------------- */
 .overlay {
-  position: fixed;
-  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  cursor: pointer;
   height: 100%;
   justify-content: center;
-  top: 0;
   left: 0;
+  position: fixed;
   right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  width: 100%;
   z-index: 2;
-  cursor: pointer;
 }
+
 .roll {
+  color: white;
+  font-size: 10rem;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  font-size: 10rem;
-  color: white;
-  /* transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%); */
 }
 
 /* ------------------------ */
 /* -- INPUT WRAPPER TEST -- */
 /* ------------------------ */
 .input-wrapper {
-  margin: 1rem;
-  line-height: 2rem;
-  position: relative;
   border: 1px;
+  line-height: 2rem;
+  margin: 1rem;
+  position: relative;
 }
 
 .input-wrapper input:not([value=""]) ~ label,
@@ -78,26 +77,26 @@ div, label, input, select, option {
 }
 
 .select-label {
+  color: rgba(0,0,0,0.54);
+  font-weight: bolder;
+  left: 0;
+  line-height: 2rem;
+  margin: 1px 1px;
   position: absolute;
   transition: 0.2s all ease-in-out;
-  left: 0;
-  font-weight: bolder;
-  margin: 1px 1px;
-  line-height: 2rem;
-  color: rgba(0,0,0,0.54);
 }
 
 .label {
-  position: absolute;
-  transition: 0.2s all ease-in-out;
-  top: 0;
-  left: 0;
-  text-indent: 0.5rem;
+  color: rgba(0,0,0,0.54);
   font-size: 1.5rem;
   font-weight: bolder;
-  margin: 1px 1px;
+  left: 0;
   line-height: 2rem;
-  color: rgba(0,0,0,0.54);
+  margin: 1px 1px;
+  position: absolute;
+  top: 0;
+  transition: 0.2s all ease-in-out;
+  text-indent: 0.5rem;
 }
 
 /* ---------------- */
@@ -198,6 +197,18 @@ div, label, input, select, option {
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .rolling {
   animation-name: rolling;
 }
@@ -217,6 +228,10 @@ div, label, input, select, option {
 
 .rubberBand {
   animation-name: rubberBand;
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
 }
 
 /* ----------------- */
@@ -311,16 +326,16 @@ div, label, input, select, option {
 /* -- GEN CARD & TITLE-- */
 /* --------------------- */
 .gen-card {
-  display: flex;
-  flex-flow: column;
   align-items: center;
-  justify-content: center;
+  background-color: #fafafa;
   border: 0.5px solid lightgray;
-  padding: 1.9rem 1rem;
   border-radius: 2px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 1.9rem 1rem;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  background-color: #fafafa;
 }
 
 .gen-card:focus {
@@ -348,41 +363,41 @@ option {
 }
 
 .gen-profile-input {
-  width: 400px;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  text-indent: 5px;
-  line-height: 2.0rem;
-  transition: all 0.30s ease-in-out;
-  padding: 0;
-  outline: none;
   background-color: white;
   border: 1px solid #00b28f;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  outline: none;
+  padding: 0;
+  text-indent: 5px;
+  transition: all 0.30s ease-in-out;
+  width: 400px;
 }
 
 .gen-profile-input:focus {
-  box-shadow: 0 0 5px #68fff2;
   border: 1px solid #68fff2;
+  box-shadow: 0 0 5px #68fff2;
 }
 
 .gen-label {
+  color: rgba(0,0,0,0.54);
   display: flex;
   flex-flow: column;
   font-weight: bolder;
   margin-top: 3px; 
-  color: rgba(0,0,0,0.54);
 }
 
 .gen-page {
   border: 0.1px grey;
-  height: 40px;
-  width: 85px;
-  font-size: 1.2em;
-  margin-top: 10px;
   border-radius: 5px;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-  transition: all .2s ease-in-out;
   cursor: pointer;
+  font-size: 1.2em;
+  height: 40px;
+  margin-top: 10px;
+  transition: all .2s ease-in-out;
+  width: 85px;
 }
 
 .gen-page:hover {
@@ -418,17 +433,17 @@ option {
 
 /* MOD */
 .mod-container {
-  width: 30px;
-  height: 30px;
-  margin: 0 12.3%;
-  display: flex;
-  color: white;
-  font-size: 0.9rem;
+  align-items: center;
   background-color: #448AFF;
   border-radius: 50%;
+  color: white;
+  display: flex;
   flex-shrink: 0;
-  align-items: center;
+  font-size: 0.9rem;
+  height: 30px;
   justify-content: center;
+  margin: 0 12.3%;
+  width: 30px;
 }
 
 .mod-container > span {
@@ -444,14 +459,14 @@ option {
 }
 
 .gen-ability-value {
-  height: 100px;
-  width: 100px;
+  align-items: center;
   border: 0.2px solid transparent;
   border-radius: 50%;
   flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
   font-size: 1.8rem;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
 }
 
 /* SELECT ROLL */
@@ -563,17 +578,17 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .scoregen-roll, .scoregen-stat-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.05rem;
-  border: 0px;
-  margin: 3px;
-  font-weight: bolder;
   background-color: #F5F5F5;
+  border: 0px;
+  border-radius: 50%;
   box-shadow: 0 3px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: bolder;
+  height: 50px;
+  margin: 3px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 50px;
 }
 
 .scoregen-roll:hover, .scoregen-stat-button:hover, .proficiency:hover {
@@ -582,17 +597,17 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .gen-roll-button {
-  border: 0.1px grey;
-  color: #FEFEFE;
-  height: 35px;
-  width: 75px;
-  font-size: 1rem;
-  margin-top: 10px;
+  background-color: #ff1744;
+  border: 0 grey;
   border-radius: 2px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19);
-  transition: all .2s ease-in-out;
-  background-color: #ff1744;
+  color: #FEFEFE;
   cursor: pointer;
+  font-size: 1rem;
+  height: 35px;
+  margin-top: 10px;
+  transition: all .2s ease-in-out;
+  width: 75px;
 }
 
 .gen-roll-button:hover {
@@ -631,17 +646,17 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .gen-submit {
-  display: flex;
+  align-items: center;
   border: 0.1px transparent;
-  height: 75px;
-  width: 160px;
-  font-size: 1.5em;
-  margin-top: 10px;
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19);
-  align-items: center;
+  display: flex;
+  font-size: 1.5em;
+  height: 75px;
   justify-content: center;
   transition: all .2s ease-in-out;
+  margin-top: 10px;
+  width: 160px;
 }
 
 .gen-submit:hover {
@@ -653,30 +668,30 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .gen-attribute-container {
+  align-items: center;
   display: flex;
   flex-flow: column;
-  align-items: center;
   justify-content: center;
 }
 
 .gen-attribute-list {
+  align-items: center;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 
 .proficiency {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
   border: 0px;
-  margin: 5px;
-  font-weight: bolder;
+  border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19);
-  transition: all .2s ease-in-out;
   flex-shrink: 0;
+  font-weight: bolder;
+  height: 100px;
+  margin: 5px;
+  width: 100px;
+  transition: all .2s ease-in-out;
 }
 
 /* -------------------------- */
@@ -707,24 +722,72 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .player-base {
-  justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-flow: row;
+  justify-content: flex-start;
 }
 
 .ability-stat-container {
-  margin: 5px;
   align-items: center;
+  margin: 5px;
 }
 
-.weapon-name, .spell-name {
+.weapon-container {
+  align-items: flex-start;
+  font-size: 0.8rem;
+  justify-content: flex-start;
+  max-height: 130px;
+  max-width: 220px;
+}
+
+.weapon-base {
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.weapon-base > :first-child {
+  margin-left: 5px;
+}
+
+.weapon-base > :last-child {
+  margin-right: 5px;
+}
+
+.weapon-description {
+  align-items: center;
+  margin: 0;
+}
+
+.weapon-name, .weapon-damage {
+  margin: 0 0 3px 0;
+}
+
+.spell-container {
+  align-items: flex-start;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  max-height: 130px;
+  max-width: 220px;
+}
+
+.spell-name, .spell-level, .spell-duration, .spell-range,
+.spell-save, .spell-effect {
+  margin: 0 0 3px 0;
+}
+
+.spell-main-container, .spell-secondary-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* .weapon-name, .spell-name {
   flex-grow: 3;
 }
 
 .weapon-damage, .spell-level {
   flex-grow: 1;
-}
+} */
 
 .roll-select-container, .ability-rolled, .ability, .roll-container {
   margin: 5px;
@@ -737,16 +800,16 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .button {
+  border: 1px solid lightblue;
   margin: 5px 8px;
   padding: 5px 8px;
-  border: 1px solid lightblue;
 }
 
 .experience-row, .ability-row, .character-image-container,
 .gear-container {
+  border: 1px dotted blue;
   margin: 5px 8px;
   padding: 5px 8px;
-  border: 1px dotted blue;
 }
 
 .ability-row {
@@ -754,11 +817,11 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .ability-value {
-  justify-content: center;
   align-items: center;
-  width: 15px;
   height: 20px;
-  font-size: 20px
+  justify-content: center;
+  font-size: 20px;
+  width: 15px;
 }
 
 .modifier-value {
@@ -766,21 +829,21 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .ability-stat-container, .ability-value {
-  margin: 5px 8px;
-  padding: 5px 8px;
   border: 1px dotted green;
   border-radius: 50%;
+  margin: 5px 8px;
+  padding: 5px 8px;
 }
 
 .item-card {
-  margin: 5px 0;
-  padding: 8px 8px;
-  height: auto;
-  flex-shrink: 0;
   border-radius: 5px;
   box-shadow: 3px 3px 6px rgba(0,0,0,0.19), 6px 6px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   cursor: pointer;
+  flex-shrink: 0;
+  height: auto;
+  padding: 8px 8px;
+  margin: 5px 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 /* .item-card:hover {
@@ -802,23 +865,16 @@ input[type="checkbox"], input[type="radio"] {
 
 ::-webkit-scrollbar {
   display: none;
-  }
-
-.weapon-container {
-  background-color: #2659ff;
-  color: white;
 }
 
-.spell-container {
-  background-color: #2659ff;
-}
+
 /* ---------------- */
 /* - PROGRESS BAR - */
 /* ---------------- */
 .exp {
-	width: 400px;
   height: 14px;
   margin: 3px 5px;
+	width: 400px;
 	-webkit-appearance: none;
 }
 
@@ -829,16 +885,16 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .exp::-webkit-progress-value {
+	background: linear-gradient(to right, #ffedb3, #ffcc26);
 	border-radius: 50px;
 	box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-	background: linear-gradient(to right, #ffedb3, #ffcc26);
 }
 
 /*  */
 .bard-col-1, .bard-col-2 {
+  border: 1px dotted red;
   margin: 5px 8px;
   padding: 5px 8px;
-  border: 1px dotted red;
 }
 
 .bard-col-1 {
@@ -852,14 +908,13 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .card {
-  display: flex;
-  /* flex-flow: row; */
-  flex-wrap: wrap;
-  width: auto;
-  padding: 15px;
-  margin: 3px 2px;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  margin: 3px 2px;
+  width: auto;
 }
 
 /* ------------------------- */
@@ -867,27 +922,54 @@ input[type="checkbox"], input[type="radio"] {
 /* ------------------------- */
 
 .gear-container {
-  flex-flow: column;
   background-color: white;
+  flex-flow: column;
+  max-height: 300px;
+  overflow: scroll;
+  padding: 0;
 }
 
 .card-title {
   font-size: 2rem;
-  margin: 0;
   line-height: 1.2em;
+  margin: 0;
 }
 
 .tab-selection {
+  align-items: center;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: center;
+  max-height: 60px;
+  min-height: 60px;
+  width: 100%;
+}
+
+.tab-selection > * {
+  margin: 1.1rem 0;
+  margin-left: 25px;
+}
+
+.tab-selection > :last-child {
+  margin-right: 25px;
 }
 
 .tab {
-  font-size: 1.5rem;
-  margin: 0;
+  align-items: center;
+  border: 0px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1.2rem;
+  height: 40px;
+  justify-content: center;
+  width: 100%;
+  padding: 5px 10px;
+  transform: all 0.5s;
 }
 
 .tab:hover {
-  color: blue;
+  border-bottom: 1px white solid;
+}
+
+.tab:focus {
+  border-bottom: 1px white solid;
 }

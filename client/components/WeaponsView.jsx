@@ -3,19 +3,20 @@ import { number, shape, string, func, bool } from 'prop-types';
 import DiceRollView from './DiceRollViews/DiceRollView';
 
 const WeaponsView = ({ index, info, roll }) => (
-  <div className="weapon-container item-card"
+  <button
+    className="weapon-container item-card primary"
     die={info.dieType}
     dice={info.dice}
     onClick={() => roll(index)}>
     <div className="weapon-base">
-      <div className="weapon-name">{info.name}</div>
-      <div className="weapon-damage">{`${info.dice}d${info.dieType}`}</div>
+      <p className="weapon-name">{info.name}</p>
+      <p className="weapon-damage">{`${info.dice}d${info.dieType}`}</p>
     </div>
-    <div className="weapon-description">{info.description}</div>
+    <p className="weapon-description">{info.description}</p>
     {
       info.rolled ? <DiceRollView die={info.dieType} dice={info.dice} /> : null
     }
-  </div>
+  </button>
 );
 
 WeaponsView.propTypes = {

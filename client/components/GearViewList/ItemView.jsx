@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ItemView = ({ item }) => (
-  <div className="item-container">
+  <div className="item-container item-card animated fadeInDown">
     <p>{item.name}</p>
     <p>{item.proficient}</p>
     <p>{item.description}</p>
