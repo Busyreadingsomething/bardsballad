@@ -738,6 +738,7 @@ input[type="checkbox"], input[type="radio"] {
   font-size: 0.8rem;
   justify-content: flex-start;
   max-height: 130px;
+  max-width: 220px;
 }
 
 .weapon-base {
@@ -760,6 +761,24 @@ input[type="checkbox"], input[type="radio"] {
 
 .weapon-name, .weapon-damage {
   margin: 0 0 3px 0;
+}
+
+.spell-container {
+  align-items: flex-start;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  max-height: 130px;
+  max-width: 220px;
+}
+
+.spell-name, .spell-level, .spell-duration, .spell-range,
+.spell-save, .spell-effect {
+  margin: 0 0 3px 0;
+}
+
+.spell-main-container, .spell-secondary-container {
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* .weapon-name, .spell-name {
@@ -848,9 +867,7 @@ input[type="checkbox"], input[type="radio"] {
   display: none;
 }
 
-.spell-container {
-  background-color: #2659ff;
-}
+
 /* ---------------- */
 /* - PROGRESS BAR - */
 /* ---------------- */
