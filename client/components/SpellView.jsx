@@ -2,23 +2,23 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 const SpellView = ({ info }) => (
-  <div className="spell-container item-card">
+  <button className="spell-container item-card primary">
     <div className="spell-main-profile">
-      <div className="spell-name">{info.name}</div>
-      <div className="spell-level">Lv. {info.level}</div>
+      <p className="spell-name">{info.name}</p>
+      <p className="spell-level">Lv. {info.level}</p>
     </div>
     <div className="spell-secondary-profile">
-      <div className="spell-time">{info.time}</div>
-      <div className="spell-duration">{info.duration}</div>
-      <div className="spell-range">{info.range.join(' ')}</div>
-      <div className="spell-save">{info.save}</div>
-      <div className="spell-effect">{info.effect}</div>
+      <p className="spell-time">{info.time}</p>
+      <p className="spell-duration">{info.duration}</p>
+      <p className="spell-range">{info.range.join(' ')}</p>
+      <p className="spell-save">{info.save}</p>
+      <p className="spell-effect">{info.effect}</p>
       {
-        info.dieType ? <div className="spell-damange" die={info.dieType} dice={info.dice}>{`${info.dice}d${info.dieType}`}</div> : null
+        info.dieType ? <p className="spell-damange" die={info.dieType} dice={info.dice}>{`${info.dice}d${info.dieType}`}</p> : null
       }
     </div>
-    <div className="spell-description">{info.description}</div>
-  </div>
+    <p className="spell-description">{info.description}</p>
+  </button>
 );
 
 SpellView.propTypes = {
